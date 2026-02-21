@@ -1,0 +1,484 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: light dark;
+}
+
+:root {
+    --primaria:  #081827;
+    --secundaria: #ce9835;
+    --escuro:   rgba(56, 56, 56, 1);
+    --maisEscuro: rgba(0, 0, 0, 1);
+    --claro: #e2e8f0;
+    --vidro: rgba(255, 255, 255, .2);
+    --foto-perfil: #ffa500;
+    --background: #0f2e4b;
+    --box-shadow: rgba(134, 134, 134, 0.3);
+    --navegacao: rgba(34, 34, 34, 0.8);
+
+    /* Glass / Neutros */
+  --glass-bg-light: rgba(255, 255, 255, 0.05);
+  --glass-bg-medium: rgba(255, 255, 255, 0.08);
+  --glass-bg-strong: rgba(255, 255, 255, 0.12);
+
+  --glass-border: rgba(255, 255, 255, 0.2);
+
+  /* Textos claros */
+  --text-light-85: rgba(255, 255, 255, 0.85);
+  --text-light-80: rgba(255, 255, 255, 0.8);
+  --text-light-70: rgba(255, 255, 255, 0.7);
+  --text-light-60: rgba(255, 255, 255, 0.6);
+
+  /* Sombras */
+  --shadow-glass-soft:rgba(227, 228, 237, 0.4);
+  --shadow-glass-medium:rgba(227, 228, 237, 0.25);
+  --shadow-glass-strong:rgba(227, 228, 237, 0.4);
+  --shadow-glass-hover:rgba(227, 228, 237, 0.45);
+
+  --shadow-dark-soft: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('https://images.wallpapersden.com/image/download/mountains-in-dark-night_a2hoaG6UmZqaraWkpJRpbGZsrWdubWk.jpg');
+    color: #fff;
+    margin: 0;
+}
+
+.titulo {
+    font-size: 3rem;
+    color: var(--claro);
+    font-weight: bold;
+}
+
+.topo-projeto {
+    position: relative;
+    padding: 40px 20px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Cabeçalho central */
+.projeto-cabecalho {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.projeto-titulo {
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+    color: var(--claro);
+}
+
+.subtitulo {
+    max-width: 700px;
+    margin: 0 auto;
+    color: var(--text-light-80);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Botão voltar */
+.btn-voltar {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--secundaria);
+    color: #fff;
+
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 1.6rem;
+
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease;
+}
+
+.btn-voltar:hover {
+    transform: translateY(-3px) scale(1.08);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.btn-voltar i {
+    font-size: 1.8rem;
+    color: #fff;
+    pointer-events: none;
+}
+
+
+/* Mobile */
+@media (max-width: 768px) {
+    .projeto-titulo {
+        font-size: 2rem;
+    }
+
+    .subtitulo {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+
+    .btn-voltar {
+        width: 44px;
+        height: 44px;
+        font-size: 1.4rem;
+    }
+}
+
+
+
+.projeto-detalhe {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+.sobre {
+  padding: 4rem 2rem;
+  
+}
+
+.sobre-titulo {
+  font-size: 3rem;
+  color: var(--claro);
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Caixa principal */
+.sobre-caixa {
+  padding: 2.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 18px;
+  /* Glass */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 2px solid var(--glass-border);
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.03),
+    rgba(255,255,255,0.01)
+  );
+}
+
+/* Texto */
+.sobre-paragrafo {
+  font-size: 1.15rem;
+  line-height: 1.9;
+  color: var(--text-light-85);
+  text-align: justify;
+}
+
+/* Quebra visual entre parágrafos */
+.sobre-paragrafo p + p {
+  margin-top: 1.4rem;
+}
+
+/* Destaques sutis */
+.sobre-paragrafo strong {
+  color: var(--secundaria);
+  font-weight: 600;
+}
+
+/* Barra lateral elegante */
+.sobre-caixa {
+  position: relative;
+}
+
+.sobre-caixa::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 20px;
+  bottom: 20px;
+  width: 4px;
+  border-radius: 4px;
+  background: linear-gradient(
+    180deg,
+    var(--secundaria),
+    transparent
+  );
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .sobre-titulo {
+    font-size: 2.2rem;
+  }
+
+  .sobre-caixa {
+    padding: 1.8rem;
+  }
+
+  .sobre-paragrafo {
+    font-size: 1rem;
+    line-height: 1.8;
+    text-align: left;
+  }
+}
+
+/* lista de tecnologias centralizada */
+.lista-tech {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.lista-tech li {
+    background: #1c1c2e;
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.lista-tech li:hover{
+    transform: translateY(-10px);
+  box-shadow: 0 0 35px var(--shadow-glass-hover);
+}
+
+
+    .carousel {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .carousel-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1220px;
+}
+
+/* Área abaixo da imagem */
+.carousel-indicators-area {
+    position: relative;
+    width: 100%;
+    margin-top: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Indicadores SEMPRE no centro */
+.carousel-indicators {
+    display: flex;
+    gap: 10px;
+}
+
+/* Bolinhas */
+.carousel-indicators span {
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.carousel-indicators span.active {
+    background: var(--secundaria);
+    transform: scale(1.2);
+}
+
+/* Botão alinhado ao início da imagem */
+.btn-site {
+    position: absolute;
+    left: 0;
+
+    color: var(--secundaria);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+
+    transition: 0.3s ease;
+}
+
+.btn-site:hover {
+    opacity: 0.8;
+    transform: translateX(4px);
+}
+
+
+    .carousel-image {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .carousel-image img {
+        width: 100%;
+        border-radius: 14px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        transition: opacity 0.3s ease;
+    }
+
+/* Botões */
+.carousel-btn {
+    background: var(--secundaria);
+    border: none;
+    color: var(--claro);
+    font-size: 2.5rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.carousel-btn:hover {
+    background: var(--primaria);
+    color: #fff;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .carousel {
+        gap: 10px;
+    }
+
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 2rem;
+    }
+}
+
+.social-media {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0;
+  list-style: none;
+
+  div {
+    width: 100%;
+    max-width: 1500px;
+
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      margin: 10px 0;
+      gap: 20px;
+
+      a {
+        transition: all .5s ease;
+      }
+
+      a:hover {
+        transform: translateX(8px) rotate(8deg);
+      }
+
+      li {
+        cursor: pointer;
+        color: rgba(255, 255, 255, .6);
+        
+        .bx {
+          font-size: 3rem;
+          color: #fff;
+        }
+      }
+
+      p {
+        margin: 0;
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+/* =========================
+   SESSAO GAMEPLAY & MECANICAS
+========================= */
+.gameplay {
+  padding: 80px 0px;
+  max-width: 1500px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.gameplay .titulo {
+  font-size: 2.8rem;
+  margin-bottom: 60px;
+  color: var(--text-light-85);
+}
+
+.gameplay-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+.gameplay-card {
+  padding: 30px 20px;
+  border-radius: 25px;
+  background: var(--glass-bg-medium);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 0 25px var(--shadow-glass-medium);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gameplay-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 35px var(--shadow-glass-hover);
+}
+
+.gameplay-card i {
+  font-size: 3rem;
+  color: var(--green-primary);
+  margin-bottom: 15px;
+}
+
+.gameplay-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+  color: var(--text-light-85);
+}
+/* Destaques sutis */
+.gameplay-card strong {
+  color: var(--secundaria);
+  font-weight: 600;
+}
+
+.gameplay-card p {
+  font-size: 1rem;
+  color: var(--text-light-80);
+}
+
+@media (max-width: 1024px) {
+  .gameplay-cards {
+    grid-template-columns: repeat(auto-fit, minmax(4, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .gameplay-cards {
+    grid-template-columns: 1fr;
+  }
+}

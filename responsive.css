@@ -1,0 +1,23 @@
+@media screen and (max-width: 480px) {
+
+    .navegacao {
+      display: none;
+    }
+
+    .navegacao-resp {
+      position: fixed;
+      background: var(--navegacao);
+      width: 100%;
+      z-index: 100;
+      padding: 1.5rem;
+    }
+
+    .tema-toggle {
+      justify-content: right;
+    }
+
+  h1 {
+    text-align: center;
+  }
+
+}
