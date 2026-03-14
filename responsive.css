@@ -19,5 +19,69 @@
   h1 {
     text-align: center;
   }
+  .caixa-botoes-projeto {
+        flex-direction: column;
+    }
 
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .navegacao {
+        height: 60px;
+        padding: 0 20px;
+    }
+
+    .menu {
+        gap: 16px;
+    }
+
+    .menu-link {
+        font-size: 0.85rem;
+        padding: 8px 12px;
+    }
+
+    .tecnologias-track i {
+        font-size: 2rem;
+    }
+
+    .sobre-titulo {
+    font-size: 2.2rem;
+  }
+
+  .sobre-caixa {
+    padding: 1.8rem;
+  }
+
+  .sobre-paragrafo {
+    font-size: 1rem;
+    line-height: 1.8;
+    text-align: left;
+  }
+
+  .contato-titulo {
+    font-size: 2.2rem;
+  }
+
+  .formulario-contato {
+    padding: 1.8rem;
+  }
+
+  .campo-form {
+    font-size: 0.95rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+    .cabecalho-conteudo {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .foto-perfil {
+        width: 260px;
+        height: 260px;
+    }
 }

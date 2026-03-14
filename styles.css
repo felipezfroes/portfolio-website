@@ -129,23 +129,6 @@ body {
     transition: width 0.5s ease;
 }
 
-/* MOBILE */
-@media (max-width: 768px) {
-    .navegacao {
-        height: 60px;
-        padding: 0 20px;
-    }
-
-    .menu {
-        gap: 16px;
-    }
-
-    .menu-link {
-        font-size: 0.85rem;
-        padding: 8px 12px;
-    }
-}
-
 
 .caixa-botoes-projeto {
     display: flex;
@@ -243,11 +226,6 @@ body {
     background: var(--secundaria);
     color: #fff;
 }
-@media (max-width: 480px) {
-    .caixa-botoes-projeto {
-        flex-direction: column;
-    }
-}
 
 .cabecalho {
     min-height: 100vh;
@@ -292,20 +270,6 @@ body {
 .cabecalho-subtitulo {
     font-size: 1.5rem;
     color: var(--claro);
-}
-
-/* Mobile */
-@media (max-width: 900px) {
-    .cabecalho-conteudo {
-        flex-direction: column;
-        text-align: center;
-        gap: 30px;
-    }
-
-    .foto-perfil {
-        width: 260px;
-        height: 260px;
-    }
 }
 
 .scroll-indicator {
@@ -366,13 +330,6 @@ body {
     }
     to {
         transform: translateX(-100%);
-    }
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-    .tecnologias-track i {
-        font-size: 2rem;
     }
 }
 
@@ -442,23 +399,6 @@ body {
     var(--secundaria),
     transparent
   );
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .sobre-titulo {
-    font-size: 2.2rem;
-  }
-
-  .sobre-caixa {
-    padding: 1.8rem;
-  }
-
-  .sobre-paragrafo {
-    font-size: 1rem;
-    line-height: 1.8;
-    text-align: left;
-  }
 }
 
 
@@ -668,22 +608,6 @@ body {
   transform: translateY(-4px);
   box-shadow: 0 8px 20px var(--box-shadow);
 }
-
-/* Mobile */
-@media (max-width: 768px) {
-  .contato-titulo {
-    font-size: 2.2rem;
-  }
-
-  .formulario-contato {
-    padding: 1.8rem;
-  }
-
-  .campo-form {
-    font-size: 0.95rem;
-  }
-}
-
 
 .fundo {
   position: fixed;
