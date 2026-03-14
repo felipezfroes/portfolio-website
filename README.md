@@ -1,13 +1,15 @@
 # Personal Portfolio Website
 
-My personal portfolio website developed to showcase my projects, technical skills, and professional journey as a front-end developer.
+Personal portfolio built from scratch at 17, 
+showcasing front-end projects and my indie game 
+Ecos do Olimpo. Deployed at felipezfroes.com.
 
-![Project Preview](./preview.png)
+![Project Preview](https://raw.githubusercontent.com/felipezfroes/portfolio-website/main/preview.png)
 
 ## 🚀 Technologies
-- HTML5
-- CSS3
-- JavaScript
+- HTML5 — semantic structure
+- CSS3 — custom animations, flexbox/grid layout  
+- JavaScript — form handling, smooth scroll
 
 ## 📌 Sections
 - About Me
