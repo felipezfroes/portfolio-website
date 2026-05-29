@@ -1,254 +1,559 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <link rel="stylesheet" href="styles.css">
-  <title>Felipe Zotareli Froes — Dev</title>
-</head>
-<body>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- FUNDO ANIMADO -->
-  <div class="bg-orbs">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <title>Felipe Zotareli Froes — Engenharia de Software | Game Dev</title>
+</head>
+
+<body>
+  <div class="bg-orbs" aria-hidden="true">
     <div class="orb orb-1"></div>
     <div class="orb orb-2"></div>
     <div class="orb orb-3"></div>
+    <div class="grain"></div>
   </div>
 
-  <!-- NAVBAR -->
-  <header>
-    <nav class="navegacao">
-      <ul class="menu">
-        <li><a href="#inicio" class="menu-link"><i class='bx bxs-home'></i><span>Início</span></a></li>
-        <li><a href="#sobre" class="menu-link"><i class='bx bxs-user'></i><span>Sobre</span></a></li>
-        <li><a href="#projetos" class="menu-link"><i class='bx bx-code'></i><span>Projetos</span></a></li>
-        <li><a href="#contato" class="menu-link"><i class='bx bxs-conversation'></i><span>Contato</span></a></li>
+  <header class="header">
+    <nav class="nav">
+      <a href="#inicio" class="nav-logo">FZF<span>.</span></a>
+
+      <ul class="nav-menu">
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#conquistas">Conquistas</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#habilidades">Habilidades</a></li>
+        <li><a href="#contato">Contato</a></li>
       </ul>
+
+      <a href="./assets/Felipe_Zotareli_Froes_CV.pdf" download class="nav-cta">
+        Baixar CV <i class="bx bx-download"></i>
+      </a>
     </nav>
 
-    <!-- NAVBAR MOBILE -->
-    <nav class="navegacao-resp">
-      <ul class="menu-resp">
-        <li><a href="#inicio"><i class='bx bxs-home'></i></a></li>
-        <li><a href="#sobre"><i class='bx bxs-user'></i></a></li>
-        <li><a href="#projetos"><i class='bx bx-code'></i></a></li>
-        <li><a href="#contato"><i class='bx bxs-conversation'></i></a></li>
-      </ul>
+    <nav class="mobile-nav" aria-label="Navegação mobile">
+      <a href="#inicio" aria-label="Início"><i class="bx bxs-home"></i></a>
+      <a href="#sobre" aria-label="Sobre"><i class="bx bxs-user"></i></a>
+      <a href="#conquistas" aria-label="Conquistas"><i class="bx bxs-trophy"></i></a>
+      <a href="#projetos" aria-label="Projetos"><i class="bx bx-code-alt"></i></a>
+      <a href="#habilidades" aria-label="Habilidades"><i class="bx bx-chip"></i></a>
+      <a href="#contato" aria-label="Contato"><i class="bx bxs-envelope"></i></a>
     </nav>
   </header>
 
-  <!-- HERO -->
-  <main id="inicio" class="cabecalho">
-    <div class="cabecalho-conteudo">
+  <main>
+    <section id="inicio" class="hero section">
+      <div class="hero-content">
+        <div class="hero-photo">
+          <div class="photo-frame">
+            <img src="./img/foto_perfil.jpg" alt="Foto de Felipe Zotareli Froes" />
+          </div>
+          <div class="photo-ring"></div>
 
-      <div class="foto-wrapper reveal-left">
-        <img src="./img/foto_perfil.jpeg" alt="Foto de Felipe Froes" class="foto-perfil">
-        <div class="foto-anel"></div>
+          <div class="photo-badge badge-left">
+            <i class="bx bxs-trophy"></i>
+            2× Campeão
+          </div>
+
+          <div class="photo-badge badge-right">
+            <i class="bx bxs-medal"></i>
+            3× Pódios
+          </div>
+        </div>
+
+        <div class="hero-text">
+          <span class="eyebrow">
+            <span></span>
+            Engenharia de Software · UniCesumar
+          </span>
+
+          <h1>
+            Felipe
+            <strong>Zotareli Froes</strong>
+          </h1>
+
+          <div class="role-list">
+            <span>Front-End</span>
+            <span>Game Dev</span>
+            <span>Hackathons</span>
+          </div>
+
+          <p>
+            Desenvolvo projetos digitais, interfaces web e jogos enquanto curso Engenharia de Software.
+            Sou 2× campeão de hackathons, 3º lugar no Hackathon InovaAgro da Expoingá e criador do
+            <strong>Ecos do Olimpo</strong>, um jogo indie em desenvolvimento.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#projetos" class="btn btn-primary">
+              Ver projetos <i class="bx bx-right-arrow-alt"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/in/felipezfroesdev/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              LinkedIn <i class="bx bxl-linkedin"></i>
+            </a>
+          </div>
+
+          <div class="socials">
+            <a href="https://github.com/felipezfroes" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <i class="bx bxl-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/felipezfroesdev/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <i class="bx bxl-linkedin"></i>
+            </a>
+            <a href="https://fzf-productions.itch.io" target="_blank" rel="noopener noreferrer" aria-label="Itch.io">
+              <i class="bx bx-joystick"></i>
+            </a>
+            <a href="https://www.youtube.com/@FZF_Productions" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+              <i class="bx bxl-youtube"></i>
+            </a>
+            <a href="https://www.instagram.com/felipe_zfr/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <i class="bx bxl-instagram"></i>
+            </a>
+          </div>
+        </div>
       </div>
 
-      <div class="cabecalho-textos reveal-right">
-        <span class="label-hero">Desenvolvedor Front-End</span>
-        <h1 class="titulo"></h1>
-        <p class="cabecalho-subtitulo">
-          Transformo ideias em interfaces reais — web e gamedev.
-        </p>
+      <div class="tech-marquee" aria-hidden="true">
+        <div class="tech-track">
+          <span><i class="bx bxl-html5"></i> HTML5</span>
+          <span><i class="bx bxl-css3"></i> CSS3</span>
+          <span><i class="bx bxl-javascript"></i> JavaScript</span>
+          <span><i class="bx bx-joystick"></i> GameMaker</span>
+          <span><i class="bx bx-code"></i> GML</span>
+          <span><i class="bx bxl-github"></i> GitHub</span>
+          <span><i class="bx bxl-python"></i> Python</span>
+          <span><i class="bx bx-network-chart"></i> Redes</span>
 
-        <section class="social-media">
-          <div><ul>
-            <a href="https://github.com/felipezfroes" target="_blank"><li><i class='bx bxl-github'></i></li></a>
-            <a href="https://www.linkedin.com/in/felipezfroesdev/" target="_blank"><li><i class='bx bxl-linkedin'></i></li></a>
-            <a href="https://fzf-productions.itch.io" target="_blank"><li><i class='bx bx-joystick'></i></li></a>
-            <a href="https://www.youtube.com/@FZF_Productions" target="_blank"><li><i class='bx bxl-youtube'></i></li></a>
-            <a href="https://www.instagram.com/felipe_zfr/" target="_blank"><li><i class='bx bxl-instagram'></i></li></a>
-          </ul></div>
-        </section>
+          <span><i class="bx bxl-html5"></i> HTML5</span>
+          <span><i class="bx bxl-css3"></i> CSS3</span>
+          <span><i class="bx bxl-javascript"></i> JavaScript</span>
+          <span><i class="bx bx-joystick"></i> GameMaker</span>
+          <span><i class="bx bx-code"></i> GML</span>
+          <span><i class="bx bxl-github"></i> GitHub</span>
+          <span><i class="bx bxl-python"></i> Python</span>
+          <span><i class="bx bx-network-chart"></i> Redes</span>
+        </div>
+      </div>
+    </section>
 
-        <div class="caixa-botoes-hero">
-          <a href="#projetos" class="btn-projetos">
-            Ver projetos <i class='bx bx-right-arrow-alt'></i>
+    <section id="sobre" class="about section">
+      <div class="section-grid">
+        <div>
+          <span class="section-label">Sobre mim</span>
+          <h2 class="section-title left">Projetos reais desde cedo.</h2>
+
+          <div class="text-block">
+            <p>
+              Tenho 18 anos e sou estudante de <strong>Engenharia de Software na UniCesumar</strong>.
+              Comecei a programar aos 15 anos por curiosidade e, desde então, venho transformando
+              aprendizado em projetos reais.
+            </p>
+
+            <p>
+              Já conquistei <strong>2 primeiros lugares em hackathons</strong> e um
+              <strong>3º lugar no Hackathon InovaAgro da Expoingá</strong>, em Maringá.
+              Essas experiências me ajudaram a desenvolver visão de produto, trabalho em equipe,
+              resolução de problemas e apresentação de soluções sob pressão.
+            </p>
+
+            <p>
+              Atualmente desenvolvo o <strong>Ecos do Olimpo</strong>, um jogo indie em pixel art
+              feito no GameMaker Studio 2, além de landing pages, projetos acadêmicos e estudos em
+              desenvolvimento web, jogos digitais e tecnologia.
+            </p>
+          </div>
+
+          <div class="button-row">
+            <a href="#contato" class="btn btn-primary">
+              Entrar em contato <i class="bx bx-message-rounded-dots"></i>
+            </a>
+            <a href="https://github.com/felipezfroes" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              Ver GitHub <i class="bx bxl-github"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="about-side">
+          <div class="stats">
+            <div class="stat-card">
+              <strong>2×</strong>
+              <span>Campeão de hackathons</span>
+            </div>
+
+            <div class="stat-card">
+              <strong>3×</strong>
+              <span>Pódios em hackathons</span>
+            </div>
+
+            <div class="stat-card">
+              <strong>2+</strong>
+              <span>Anos programando</span>
+            </div>
+
+            <div class="stat-card">
+              <strong>1º</strong>
+              <span>Semestre — Eng. Software</span>
+            </div>
+          </div>
+
+          <div class="mini-cards">
+            <article class="mini-card">
+              <i class="bx bx-joystick"></i>
+              <div>
+                <strong>Game Developer</strong>
+                <span>Ecos do Olimpo em GameMaker Studio 2</span>
+              </div>
+            </article>
+
+            <article class="mini-card">
+              <i class="bx bx-code-alt"></i>
+              <div>
+                <strong>Front-End</strong>
+                <span>Landing pages e interfaces responsivas</span>
+              </div>
+            </article>
+
+            <article class="mini-card">
+              <i class="bx bxs-bulb"></i>
+              <div>
+                <strong>Hackathons</strong>
+                <span>Inovação, pitch e validação de ideias</span>
+              </div>
+            </article>
+
+            <article class="mini-card">
+              <i class="bx bx-camera"></i>
+              <div>
+                <strong>Criação digital</strong>
+                <span>Fotografia, edição e conteúdo técnico</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="conquistas" class="achievements section">
+      <div class="section-header">
+        <span class="section-label">Reconhecimentos</span>
+        <h2 class="section-title">Conquistas & Prêmios</h2>
+        <p>Resultados concretos em hackathons, projetos acadêmicos e desenvolvimento autoral.</p>
+      </div>
+
+      <div class="cards-grid three">
+        <article class="info-card highlight">
+          <div class="card-icon"><i class="bx bxs-trophy"></i></div>
+          <span class="badge">🥇 1º Lugar</span>
+          <h3>Hackathon Expo Paranavaí</h3>
+          <p>
+            Projeto desenvolvido em equipe sob pressão real de tempo, com foco em inovação,
+            validação de solução e apresentação para banca avaliadora.
+          </p>
+          <div class="tags">
+            <span>Hackathon</span>
+            <span>Inovação</span>
+            <span>Paranavaí</span>
+          </div>
+        </article>
+
+        <article class="info-card highlight">
+          <div class="card-icon"><i class="bx bxs-medal"></i></div>
+          <span class="badge">🥇 1º Lugar</span>
+          <h3>Inovathon FIMAN</h3>
+          <p>
+            ManiProtein — projeto de inovação no setor alimentar. Atuei no desenvolvimento
+            da landing page e apoio à estruturação da apresentação.
+          </p>
+          <div class="tags">
+            <span>Landing Page</span>
+            <span>Pitch</span>
+            <span>Inovação</span>
+          </div>
+        </article>
+
+        <article class="info-card highlight">
+          <div class="card-icon"><i class="bx bxs-award"></i></div>
+          <span class="badge">🥉 3º Lugar</span>
+          <h3>Hackathon InovaAgro — Expoingá</h3>
+          <p>
+            Conquista do 3º lugar no Hackathon InovaAgro da Expoingá, em Maringá,
+            com experiência prática em trabalho em equipe, validação e pitch.
+          </p>
+          <div class="tags">
+            <span>Agro</span>
+            <span>Maringá</span>
+            <span>Equipe</span>
+          </div>
+        </article>
+
+        <article class="info-card">
+          <div class="card-icon"><i class="bx bx-microphone"></i></div>
+          <span class="badge">Destaque acadêmico</span>
+          <h3>Podcast Papotech</h3>
+          <p>
+            Produção de identidade visual, edição e organização de publicação para podcast
+            acadêmico de tecnologia.
+          </p>
+          <div class="tags">
+            <span>Design</span>
+            <span>Edição</span>
+            <span>Podcast</span>
+          </div>
+        </article>
+
+        <article class="info-card">
+          <div class="card-icon"><i class="bx bx-package"></i></div>
+          <span class="badge">Publicado</span>
+          <h3>Asset Pack no itch.io</h3>
+          <p>
+            Publicação de um pacote de pixel art temático grego, ligado ao universo visual
+            do Ecos do Olimpo.
+          </p>
+          <div class="tags">
+            <span>Pixel Art</span>
+            <span>itch.io</span>
+            <span>Game Dev</span>
+          </div>
+        </article>
+
+        <article class="info-card">
+          <div class="card-icon"><i class="bx bx-video"></i></div>
+          <span class="badge">Devlog</span>
+          <h3>Ecos do Olimpo — Devlog</h3>
+          <p>
+            Registro em vídeo do desenvolvimento do jogo, mostrando processos, decisões
+            de sistemas e evolução do projeto.
+          </p>
+          <div class="tags">
+            <span>YouTube</span>
+            <span>Game Dev</span>
+            <span>Conteúdo</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="projetos" class="projects section">
+      <div class="section-header">
+        <span class="section-label">O que eu construo</span>
+        <h2 class="section-title">Projetos</h2>
+        <p>Projetos autorais, acadêmicos e de hackathon com foco em desenvolvimento prático.</p>
+      </div>
+
+      <div class="projects-grid">
+        <article class="project-card featured">
+          <div class="project-image">
+            <img src="./projetos/img/ecos-olimpo/ecos-2.png" alt="Imagem do jogo Ecos do Olimpo" />
+            <span class="project-status">Em desenvolvimento</span>
+          </div>
+
+          <div class="project-content">
+            <h3>Ecos do Olimpo</h3>
+            <p>
+              Jogo indie solo em pixel art desenvolvido no GameMaker Studio 2, com sistemas
+              de coleta, crafting, plantação, mineração, automação e reconstrução de um mundo
+              inspirado na mitologia grega.
+            </p>
+
+            <div class="tags">
+              <span>GameMaker Studio 2</span>
+              <span>GML</span>
+              <span>Game Design</span>
+              <span>Pixel Art</span>
+            </div>
+
+            <div class="project-actions">
+              <a href="https://ecos-do-olimpo.felipezfroes.com" target="_blank" rel="noopener noreferrer" class="btn-small primary">
+                Ver site <i class="bx bx-globe"></i>
+              </a>
+              <a href="https://fzf-productions.itch.io" target="_blank" rel="noopener noreferrer" class="btn-small secondary">
+                itch.io <i class="bx bx-joystick"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-image">
+            <img src="./projetos/img/maniprotein/maniprotein-1.png" alt="Imagem do projeto ManiProtein" />
+            <span class="project-status gold">1º Lugar</span>
+          </div>
+
+          <div class="project-content">
+            <h3>ManiProtein</h3>
+            <p>
+              Landing page desenvolvida para projeto vencedor do Inovathon FIMAN,
+              com foco em apresentação, clareza da proposta e apoio ao pitch.
+            </p>
+
+            <div class="tags">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>Hackathon</span>
+            </div>
+
+            <div class="project-actions">
+              <a href="https://maniprotein.felipezfroes.com" target="_blank" rel="noopener noreferrer" class="btn-small primary">
+                Ver site <i class="bx bx-globe"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-placeholder">
+            <i class="bx bx-microphone"></i>
+            <span>Papotech Podcast</span>
+          </div>
+
+          <div class="project-content">
+            <h3>Podcast Papotech</h3>
+            <p>
+              Projeto acadêmico de tecnologia com identidade visual, edição de áudio,
+              organização de publicação e materiais de divulgação.
+            </p>
+
+            <div class="tags">
+              <span>Design</span>
+              <span>Podcast</span>
+              <span>Edição</span>
+            </div>
+
+            <div class="project-actions">
+              <a href="https://open.spotify.com/episode/2IP40OF1JJQwI08dFBaYFG?si=839de045b0ec478f/" target="_blank" rel="noopener noreferrer" class="btn-small primary">
+                Ouvir <i class="bx bxl-spotify"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="habilidades" class="skills section">
+      <div class="section-header">
+        <span class="section-label">Stack técnica</span>
+        <h2 class="section-title">Habilidades</h2>
+        <p>Tecnologias que uso em projetos e ferramentas que venho estudando.</p>
+      </div>
+
+      <div class="skills-grid">
+        <article class="skill-group">
+          <h3><i class="bx bx-code-alt"></i> Front-End</h3>
+          <ul>
+            <li><i class="bx bxl-html5"></i> HTML5</li>
+            <li><i class="bx bxl-css3"></i> CSS3</li>
+            <li><i class="bx bxl-javascript"></i> JavaScript</li>
+            <li><i class="bx bx-mobile-alt"></i> Responsividade</li>
+          </ul>
+        </article>
+
+        <article class="skill-group">
+          <h3><i class="bx bx-joystick"></i> Game Dev</h3>
+          <ul>
+            <li><i class="bx bx-joystick"></i> GameMaker Studio 2</li>
+            <li><i class="bx bx-code"></i> GML</li>
+            <li><i class="bx bx-map-alt"></i> Game Design</li>
+            <li><i class="bx bx-image"></i> Pixel Art</li>
+          </ul>
+        </article>
+
+        <article class="skill-group">
+          <h3><i class="bx bx-wrench"></i> Ferramentas</h3>
+          <ul>
+            <li><i class="bx bxl-github"></i> Git / GitHub</li>
+            <li><i class="bx bxl-figma"></i> Figma</li>
+            <li><i class="bx bx-video"></i> CapCut</li>
+            <li><i class="bx bx-camera"></i> Fotografia</li>
+          </ul>
+        </article>
+
+        <article class="skill-group">
+          <h3><i class="bx bx-book-open"></i> Em aprendizado</h3>
+          <ul>
+            <li><i class="bx bxl-python"></i> Python</li>
+            <li><i class="bx bx-data"></i> SQL</li>
+            <li><i class="bx bxl-nodejs"></i> Node.js básico</li>
+            <li><i class="bx bx-network-chart"></i> Redes de Computadores</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="contato" class="contact section">
+      <div class="section-grid">
+        <div>
+          <span class="section-label">Contato</span>
+          <h2 class="section-title left">Vamos conversar?</h2>
+
+          <p class="contact-text">
+            Estou aberto a oportunidades de estágio, networking, projetos acadêmicos,
+            colaborações e conversas sobre tecnologia, jogos digitais e inovação.
+          </p>
+        </div>
+
+        <div class="contact-links">
+          <a href="mailto:felipefroes.dev@gmail.com" class="contact-card">
+            <i class="bx bx-envelope"></i>
+            <div>
+              <strong>E-mail</strong>
+              <span>felipefroes.dev@gmail.com</span>
+            </div>
           </a>
-          <a href="./assets/Felipe_Zotareli_Froes_CV_Frontend.pdf" download class="btn-projetos btn-outline">
-            Baixar CV <i class='bx bx-download'></i>
+
+          <a href="https://www.linkedin.com/in/felipezfroesdev/" target="_blank" rel="noopener noreferrer" class="contact-card">
+            <i class="bx bxl-linkedin"></i>
+            <div>
+              <strong>LinkedIn</strong>
+              <span>/in/felipezfroesdev</span>
+            </div>
+          </a>
+
+          <a href="https://github.com/felipezfroes" target="_blank" rel="noopener noreferrer" class="contact-card">
+            <i class="bx bxl-github"></i>
+            <div>
+              <strong>GitHub</strong>
+              <span>/felipezfroes</span>
+            </div>
           </a>
         </div>
       </div>
-    </div>
-
-    <div class="scroll-indicator">
-      <i class='bx bx-chevrons-down'></i>
-    </div>
-
-    <div class="tecnologias-marquee">
-      <div class="tecnologias-track">
-        <span><i class='bx bxl-html5'></i> HTML5</span>
-        <span><i class='bx bxl-css3'></i> CSS3</span>
-        <span><i class='bx bxl-javascript'></i> JavaScript</span>
-        <span><i class='bx bxl-react'></i> React</span>
-        <span><i class='bx bxl-github'></i> GitHub</span>
-        <span><i class='bx bxl-html5'></i> HTML5</span>
-        <span><i class='bx bxl-css3'></i> CSS3</span>
-        <span><i class='bx bxl-javascript'></i> JavaScript</span>
-        <span><i class='bx bxl-react'></i> React</span>
-        <span><i class='bx bxl-github'></i> GitHub</span>
-      </div>
-    </div>
+    </section>
   </main>
 
-  <!-- SOBRE -->
-  <section id="sobre" class="sobre">
-    <h2 class="section-titulo reveal-up">Sobre mim</h2>
-    <div class="sobre-caixa reveal-up">
-      <div class="sobre-paragrafo">
-        <p>
-          Sou <strong>desenvolvedor Front-End</strong> em constante evolução, com 17 anos e uma grande paixão por tecnologia e criação digital. Desde os 15 anos, venho me aventurando no mundo da programação, desenvolvendo projetos e aprendendo de forma contínua.
-        </p>
-        <p>
-          Atualmente curso <strong>Engenharia de Software na Unicesumar</strong>, buscando evoluir todos os dias — explorando boas práticas de desenvolvimento, interfaces modernas e experiências que realmente façam sentido para o usuário.
-        </p>
-        <p>
-          Além do Front-End, desenvolvo jogos no <strong>GameMaker Studio 2</strong> — atualmente construindo o <strong>Ecos do Olimpo</strong>, um jogo indie com farming, automação e mitologia grega.
-        </p>
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <span class="footer-logo">FZF<span>.</span></span>
+        <p>Estudante de Engenharia de Software. Projetos reais, jogos digitais e inovação.</p>
+      </div>
+
+      <div class="footer-socials">
+        <a href="https://github.com/felipezfroes" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <i class="bx bxl-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/felipezfroesdev/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <i class="bx bxl-linkedin"></i>
+        </a>
+        <a href="https://www.instagram.com/felipe_zfr/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <i class="bx bxl-instagram"></i>
+        </a>
       </div>
     </div>
-  </section>
 
-  <!-- PROJETOS -->
-  <section id="projetos" class="projetos">
-    <h2 class="section-titulo reveal-up">Meus Projetos</h2>
-
-    <div class="projetos-caixa">
-
-      <!-- ECOS DO OLIMPO — destaque -->
-      <div class="projetos-caixa-item destaque reveal-up">
-        <div class="destaque-badge">⭐ Em destaque</div>
-        <img src="./projetos/img/ecos-olimpo/ecos-2.png" alt="Ecos do Olimpo" class="projetos-imagem">
-        <div class="caixa-textos-projeto">
-          <h3 class="info-projetos">Ecos do Olimpo</h3>
-          <p class="paragrafo-projetos">Jogo indie solo — farming, construção por grid, automação e mitologia grega feito no GameMaker Studio 2.</p>
-          <div class="caixa-recursos-projetos">
-            <span class="tag-tech gms2">GameMaker Studio 2</span>
-            <span class="tag-tech desenv">Em desenvolvimento</span>
-          </div>
-          <div class="caixa-botoes-projeto">
-            <a href="https://ecos-do-olimpo.felipezfroes.com" target="_blank" class="btn-projeto"><i class='bx bx-globe'></i> Ver site</a>
-            <a href="./projetos/ecos.html" class="btn-detalhes">Ver projeto</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- MANIPROTEIN -->
-      <div class="projetos-caixa-item reveal-up">
-        <img src="./projetos/img/maniprotein/maniprotein-1.png" alt="Maniprotein" class="projetos-imagem">
-        <div class="caixa-textos-projeto">
-          <h3 class="info-projetos">Maniprotein</h3>
-          <p class="paragrafo-projetos">Landing page desenvolvida para apresentar um projeto inovador do setor alimentar.</p>
-          <div class="caixa-recursos-projetos">
-            <span class="tag-tech html">HTML</span>
-            <span class="tag-tech css">CSS</span>
-            <span class="tag-tech js">JavaScript</span>
-          </div>
-          <div class="caixa-botoes-projeto">
-            <a href="https://maniprotein.felipezfroes.com" target="_blank" class="btn-projeto"><i class='bx bx-globe'></i> Ver site</a>
-            <a href="./projetos/maniprotein.html" class="btn-detalhes">Ver projeto</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- ESPORTE FAVORITO -->
-      <div class="projetos-caixa-item reveal-up">
-        <img src="./projetos/img/esporte-fav/esporte-fav-1.png" alt="Esporte Favorito" class="projetos-imagem">
-        <div class="caixa-textos-projeto">
-          <h3 class="info-projetos">LinkTree Esporte Favorito</h3>
-          <p class="paragrafo-projetos">Hub de links com design limpo e funcional para perfil esportivo.</p>
-          <div class="caixa-recursos-projetos">
-            <span class="tag-tech html">HTML</span>
-            <span class="tag-tech css">CSS</span>
-            <span class="tag-tech js">JavaScript</span>
-          </div>
-          <div class="caixa-botoes-projeto">
-            <a href="https://esportefavorito.felipezfroes.com" target="_blank" class="btn-projeto"><i class='bx bx-globe'></i> Ver site</a>
-            <a href="./projetos/esporte-fav.html" class="btn-detalhes">Ver projeto</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- LOGIN -->
-      <div class="projetos-caixa-item reveal-up">
-        <img src="./projetos/img/login/login-1.png" alt="Tela de Login" class="projetos-imagem">
-        <div class="caixa-textos-projeto">
-          <h3 class="info-projetos">Tela de Login Responsiva</h3>
-          <p class="paragrafo-projetos">Design limpo e funcional para autenticação de usuários.</p>
-          <div class="caixa-recursos-projetos">
-            <span class="tag-tech html">HTML</span>
-            <span class="tag-tech css">CSS</span>
-            <span class="tag-tech js">JavaScript</span>
-          </div>
-          <div class="caixa-botoes-projeto">
-            <a href="https://login.felipezfroes.com" target="_blank" class="btn-projeto"><i class='bx bx-globe'></i> Ver site</a>
-            <a href="./projetos/login.html" class="btn-detalhes">Ver projeto</a>
-          </div>
-        </div>
-      </div>
-
+    <div class="footer-bottom">
+      © 2026 Felipe Zotareli Froes · FZF Productions
     </div>
-  </section>
-
-  <!-- CONTATO -->
-  <section id="contato" class="contato">
-    <h2 class="section-titulo reveal-up">Entre em Contato</h2>
-    <form class="formulario-contato reveal-up" id="formulario" onsubmit="enviarWhats(event)">
-      <div class="grupo-form">
-        <input placeholder="Nome" class="campo-form" id="nome">
-      </div>
-      <div class="grupo-form">
-        <textarea class="campo-form" placeholder="Digite sua mensagem" rows="6" id="mensagem"></textarea>
-      </div>
-      <button type="submit" class="botao-form">Enviar pelo WhatsApp <i class='bx bxl-whatsapp'></i></button>
-    </form>
-  </section>
-
-  <script>
-    // WHATSAPP
-    function enviarWhats(event) {
-      event.preventDefault();
-      const nome = document.getElementById('nome').value;
-      const mensagem = document.getElementById('mensagem').value;
-      const telefone = '5544998973366';
-      const texto = `Olá! Me chamo ${nome}, ${mensagem}`;
-      const url = `https://wa.me/${telefone}?text=${encodeURIComponent(texto)}`;
-      window.open(url, '_blank');
-    }
-
-    // EFEITO DE DIGITAÇÃO
-    window.addEventListener('DOMContentLoaded', () => {
-      const titulo = document.querySelector('.titulo');
-      const texto = 'Felipe Zotareli Froes';
-      titulo.innerHTML = '';
-      texto.split('').forEach((char, i) => {
-        setTimeout(() => {
-          titulo.innerHTML += char;
-        }, i * 80);
-      });
-    });
-
-    // SCROLL REVEAL
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right').forEach(el => {
-      revealObserver.observe(el);
-    });
-  </script>
-
+  </footer>
 </body>
 </html>
