@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Página não encontrada | Felipe Zotareli Froes</title>
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#060f1a" />
+
+  <!-- Caminhos absolutos: esta página pode ser exibida em qualquer endereço do site. -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css?v=20261104" />
+  <style>
+    .error-page { min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+    .error-page .section-header { width: 100%; margin-bottom: 0; }
+    .error-page .button-row { justify-content: center; margin-top: 28px; }
+    .error-page .other-lang { margin-top: 22px; font-size: 0.86rem; }
+    .error-page .other-lang a { color: var(--gold); text-decoration: underline; }
+  </style>
+</head>
+
+<body>
+  <div class="bg-orbs" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="grain"></div>
+  </div>
+
+  <!--
+    Página 404 única para as duas versões (configurada no .htaccess).
+    Mostra o conteúdo em inglês quando o endereço começa com /en/.
+  -->
+  <main class="error-page section">
+    <div class="section-header" data-lang-block="pt">
+      <span class="section-label">Erro 404</span>
+      <h1 class="section-title">Página não encontrada</h1>
+      <p>O endereço pode ter mudado ou não existe mais. Os projetos e o contato continuam a um clique.</p>
+      <div class="button-row">
+        <a href="/" class="btn btn-primary">Ir para o início <i class="bx bx-home" aria-hidden="true"></i></a>
+        <a href="/#projetos" class="btn btn-secondary">Ver projetos <i class="bx bx-code-alt" aria-hidden="true"></i></a>
+      </div>
+      <p class="other-lang" lang="en">Looking for the English version? <a href="/en/" hreflang="en">Go to the English homepage</a>.</p>
+    </div>
+
+    <div class="section-header" data-lang-block="en" lang="en" hidden>
+      <span class="section-label">Error 404</span>
+      <h1 class="section-title">Page not found</h1>
+      <p>This address may have changed or no longer exists. Projects and contact details are just one click away.</p>
+      <div class="button-row">
+        <a href="/en/" class="btn btn-primary">Go to the homepage <i class="bx bx-home" aria-hidden="true"></i></a>
+        <a href="/en/#projects" class="btn btn-secondary">View projects <i class="bx bx-code-alt" aria-hidden="true"></i></a>
+      </div>
+      <p class="other-lang" lang="pt-BR">Prefere português? <a href="/" hreflang="pt-BR">Ir para a versão em português</a>.</p>
+    </div>
+  </main>
+
+  <script>
+    if (/^\/en(\/|$)/.test(location.pathname)) {
+      document.documentElement.lang = 'en';
+      document.title = 'Page not found | Felipe Zotareli Froes';
+      document.querySelector('[data-lang-block="pt"]').hidden = true;
+      document.querySelector('[data-lang-block="en"]').hidden = false;
+    }
+  </script>
+</body>
+</html>

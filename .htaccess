@@ -1,0 +1,17 @@
+# =============================================
+# Configuração do servidor (Hostinger / Apache / LiteSpeed)
+# =============================================
+
+# Página de erro personalizada
+ErrorDocument 404 /404.html
+
+# Endereços antigos das páginas de projeto → novos estudos de caso
+Redirect 301 /projetos/ecos.html /projetos/ecos-do-olimpo/
+Redirect 301 /projetos/maniprotein.html /projetos/maniprotein/
+
+# Opcional: unificar www.felipezfroes.com em felipezfroes.com.
+# Hoje o www responde 200 sem redirecionar (as tags canonical já evitam conteúdo duplicado).
+# Para ativar, remova o "#" das três linhas abaixo e teste após publicar.
+# RewriteEngine On
+# RewriteCond %{HTTP_HOST} ^www\.felipezfroes\.com$ [NC]
+# RewriteRule ^(.*)$ https://felipezfroes.com/$1 [R=301,L]

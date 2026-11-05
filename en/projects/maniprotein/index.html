@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>ManiProtein — Landing page for an innovation project | Felipe Zotareli Froes</title>
+  <meta name="description" content="Case study of the ManiProtein landing page, the winning project at Inovathon FIMAN 2025: content structure, interface and development in HTML, CSS and JavaScript." />
+  <meta name="author" content="Felipe Zotareli Froes" />
+  <meta name="theme-color" content="#060f1a" />
+  <link rel="canonical" href="https://felipezfroes.com/en/projects/maniprotein/" />
+  <link rel="alternate" hreflang="pt-BR" href="https://felipezfroes.com/projetos/maniprotein/" />
+  <link rel="alternate" hreflang="en" href="https://felipezfroes.com/en/projects/maniprotein/" />
+  <link rel="alternate" hreflang="x-default" href="https://felipezfroes.com/projetos/maniprotein/" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="pt_BR" />
+  <meta property="og:site_name" content="Felipe Zotareli Froes" />
+  <meta property="og:title" content="ManiProtein — Landing page for an innovation project" />
+  <meta property="og:description" content="Landing page for the winning project at Inovathon FIMAN 2025, built with HTML, CSS and JavaScript." />
+  <meta property="og:url" content="https://felipezfroes.com/en/projects/maniprotein/" />
+  <meta property="og:image" content="https://felipezfroes.com/img/og/og-maniprotein.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="ManiProtein landing page hero section" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ManiProtein — Landing page for an innovation project" />
+  <meta name="twitter:description" content="Landing page for the winning project at Inovathon FIMAN 2025, built with HTML, CSS and JavaScript." />
+  <meta name="twitter:image" content="https://felipezfroes.com/img/og/og-maniprotein.jpg" />
+
+  <link rel="icon" href="../../../favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../../../favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="../../../apple-touch-icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../../../styles.css?v=20261104" />
+  <link rel="stylesheet" href="../../../projetos/css/case-study.css?v=20261104" />
+
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "CreativeWork",
+      "name": "ManiProtein — Landing page",
+      "description": "Landing page for ManiProtein, a plant-based protein made from cassava and the winning project at Inovathon FIMAN 2025.",
+      "url": "https://felipezfroes.com/en/projects/maniprotein/",
+      "sameAs": ["https://maniprotein.felipezfroes.com", "https://github.com/felipezfroes/maniprotein-landing-page"],
+      "image": "https://felipezfroes.com/projetos/img/maniprotein/maniprotein-1.webp",
+      "dateCreated": "2025",
+      "author": { "@type": "Person", "name": "Felipe Zotareli Froes", "url": "https://felipezfroes.com/en/" }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://felipezfroes.com/en/" },
+        { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://felipezfroes.com/en/#projects" },
+        { "@type": "ListItem", "position": 3, "name": "ManiProtein", "item": "https://felipezfroes.com/en/projects/maniprotein/" }
+      ]
+    }
+  ]
+  </script>
+</head>
+
+<body data-project="maniprotein">
+  <a href="#content" class="skip-link">Skip to content</a>
+
+  <div class="bg-orbs" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="grain"></div>
+  </div>
+
+  <header class="header">
+    <nav class="nav" aria-label="Main navigation">
+      <a href="../../" class="nav-logo" aria-label="FZF — homepage">FZF<span>.</span></a>
+      <ul class="nav-menu">
+        <li><a href="../../#home">Home</a></li>
+        <li><a href="../../#projects" class="is-active">Projects</a></li>
+        <li><a href="../../#services">Services</a></li>
+        <li><a href="../../#about">About</a></li>
+        <li><a href="../../#skills">Skills</a></li>
+        <li><a href="../../#contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="lang-switch" role="group" aria-label="Language / Idioma">
+          <a href="../../../projetos/maniprotein/" lang="pt-BR" hreflang="pt-BR" data-lang-switch aria-label="Português">PT</a>
+          <span class="lang-sep" aria-hidden="true">|</span>
+          <a href="./" lang="en" hreflang="en" aria-current="true" aria-label="English">EN</a>
+        </div>
+        <a href="../../../assets/Felipe_Zotareli_Froes_CV_Frontend.pdf" download hreflang="pt-BR" class="nav-cta" aria-label="Download CV in Portuguese (PDF)">
+          CV <small>PT</small> <i class="bx bx-download" aria-hidden="true"></i>
+        </a>
+      </div>
+    </nav>
+
+    <div class="lang-switch lang-switch-mobile" role="group" aria-label="Language / Idioma">
+      <a href="../../../projetos/maniprotein/" lang="pt-BR" hreflang="pt-BR" data-lang-switch aria-label="Português">PT</a>
+      <span class="lang-sep" aria-hidden="true">|</span>
+      <a href="./" lang="en" hreflang="en" aria-current="true" aria-label="English">EN</a>
+    </div>
+
+    <nav class="mobile-nav" aria-label="Mobile navigation">
+      <a href="../../" aria-label="Home"><i class="bx bxs-home" aria-hidden="true"></i></a>
+      <a href="../../#projects" aria-label="Projects" class="is-active"><i class="bx bx-code-alt" aria-hidden="true"></i></a>
+      <a href="../../#services" aria-label="Services"><i class="bx bx-briefcase-alt-2" aria-hidden="true"></i></a>
+      <a href="../../#about" aria-label="About"><i class="bx bxs-user" aria-hidden="true"></i></a>
+      <a href="../../#contact" aria-label="Contact"><i class="bx bxs-envelope" aria-hidden="true"></i></a>
+      <a href="../../../assets/Felipe_Zotareli_Froes_CV_Frontend.pdf" download hreflang="pt-BR" aria-label="Download CV in Portuguese (PDF)"><i class="bx bx-download" aria-hidden="true"></i></a>
+    </nav>
+  </header>
+
+  <main id="content">
+    <article>
+      <!-- 1. Overview -->
+      <header class="case-hero">
+        <nav class="breadcrumb" aria-label="You are here">
+          <ol>
+            <li><a href="../../">Home</a></li>
+            <li><a href="../../#projects">Projects</a></li>
+            <li aria-current="page">ManiProtein</li>
+          </ol>
+        </nav>
+
+        <div class="case-hero-grid">
+          <div>
+            <span class="section-label">Web · Landing page</span>
+            <h1>ManiProtein</h1>
+            <p class="case-tagline">Building a landing page for an innovation project</p>
+            <p class="case-summary">
+              Landing page for ManiProtein, a plant-based protein made from cassava that won Inovathon
+              FIMAN 2025. I built the website's interface and code; the product idea and the pitch were
+              developed by the team.
+            </p>
+            <div class="button-row">
+              <a href="https://maniprotein.felipezfroes.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                Live site <i class="bx bx-globe" aria-hidden="true"></i>
+              </a>
+              <a href="https://github.com/felipezfroes/maniprotein-landing-page" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                GitHub <i class="bx bxl-github" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+          <dl class="case-facts">
+            <div><dt>Type</dt><dd>Landing page for an innovation project</dd></div>
+            <div><dt>My role</dt><dd>Interface and front-end development</dd></div>
+            <div><dt>Team</dt><dd>5 members</dd></div>
+            <div><dt>Result</dt><dd>1st place at Inovathon FIMAN 2025</dd></div>
+          </dl>
+        </div>
+
+        <figure class="case-cover">
+          <img src="../../../projetos/img/maniprotein/maniprotein-1.webp" alt="Landing page hero section with the product packaging and the headline ManiProtein é Sem lactose (ManiProtein is lactose-free)" width="1280" height="662" fetchpriority="high" decoding="async" />
+          <figcaption>Hero section: the headline cycles through the product's attributes (site in Portuguese).</figcaption>
+        </figure>
+      </header>
+
+      <div class="case-body">
+        <!-- 2 & 3. Problem and goal -->
+        <section class="case-section" aria-labelledby="context-title">
+          <h2 class="case-title" id="context-title">Problem and goal</h2>
+          <div class="case-grid">
+            <div class="case-box">
+              <h3>The problem</h3>
+              <p>
+                At FIMAN's Inovathon, the team created ManiProtein: a plant-based protein made from cassava
+                that is vegan, gluten-free, lactose-free and free of common allergens. The idea needed an
+                online presence that explained it clearly and felt credible to the judges and to potential
+                partners.
+              </p>
+            </div>
+            <div class="case-box">
+              <h3>The website's goal</h3>
+              <p>
+                Present the product, the innovation, its benefits and the team on a short page that
+                supported the pitch and ended with a direct way to get in touch.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. My role -->
+        <section class="case-section" aria-labelledby="role-title">
+          <h2 class="case-title" id="role-title">My role</h2>
+          <div class="case-grid">
+            <div class="case-box">
+              <h3>What I did</h3>
+              <p>
+                I built the landing page: section structure, layout, styling and the JavaScript for the
+                contact form and animations. I also published the site and helped structure the team's
+                pitch.
+              </p>
+            </div>
+            <div class="case-box">
+              <h3>What was a team effort</h3>
+              <p>
+                The product concept, the research and the pitch were developed by the five-person team.
+                First place at the Inovathon is a team result.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 5. Technologies -->
+        <section class="case-section" aria-labelledby="tech-title">
+          <h2 class="case-title" id="tech-title">Technologies</h2>
+          <ul class="tech-list" aria-label="Technologies used">
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript</li>
+            <li>Boxicons</li>
+            <li>Git & GitHub</li>
+          </ul>
+        </section>
+
+        <!-- 6. Features -->
+        <section class="case-section" aria-labelledby="features-title">
+          <h2 class="case-title" id="features-title">Structure and features</h2>
+          <p class="case-text">The page follows the order in which a visitor needs to understand the idea:</p>
+          <ol class="pipeline five">
+            <li><strong>Hero</strong>Animated headline and two calls to action: explore the innovation or contact the team.</li>
+            <li><strong>Innovation</strong>Research, production and sustainability in three short cards.</li>
+            <li><strong>Benefits</strong>The product's key benefits, also in three cards.</li>
+            <li><strong>Team</strong>All five members, with photos and links.</li>
+            <li><strong>Contact</strong>A form that opens the team's email, already filled in.</li>
+          </ol>
+          <ul class="check-list two-cols">
+            <li><i class="bx bx-text" aria-hidden="true"></i><span><strong>Animated headline</strong> that cycles through the product's attributes using CSS only.</span></li>
+            <li><i class="bx bx-show" aria-hidden="true"></i><span><strong>Scroll-triggered entrance animations</strong> with <code>IntersectionObserver</code>.</span></li>
+            <li><i class="bx bx-envelope" aria-hidden="true"></i><span><strong>Contact without a backend</strong>: name and message become a ready-to-send email.</span></li>
+            <li><i class="bx bx-navigation" aria-hidden="true"></i><span><strong>Navigation menu</strong> with shortcuts to each section.</span></li>
+          </ul>
+        </section>
+
+        <!-- 7. Technical decisions -->
+        <section class="case-section" aria-labelledby="decisions-title">
+          <h2 class="case-title" id="decisions-title">Technical decisions</h2>
+          <ul class="check-list two-cols">
+            <li><i class="bx bx-code-alt" aria-hidden="true"></i><span><strong>HTML, CSS and JavaScript, no framework.</strong> A static page is quick to build within a competition deadline and simple to publish.</span></li>
+            <li><i class="bx bx-paint" aria-hidden="true"></i><span><strong>The main effect is CSS-only.</strong> The animated headline doesn't depend on JavaScript to work.</span></li>
+            <li><i class="bx bx-show" aria-hidden="true"></i><span><strong>Animate only what's visible.</strong> <code>IntersectionObserver</code> avoids animating content the visitor can't see yet.</span></li>
+            <li><i class="bx bx-envelope" aria-hidden="true"></i><span><strong><code>mailto</code> instead of a server.</strong> Contact works with no backend, no cost and no visitor data stored.</span></li>
+          </ul>
+        </section>
+
+        <!-- 8. Challenges -->
+        <section class="case-section" aria-labelledby="challenges-title">
+          <h2 class="case-title" id="challenges-title">Challenges and solutions</h2>
+          <div class="challenges">
+            <div class="challenge">
+              <div>
+                <span class="challenge-label"><i class="bx bx-error-circle" aria-hidden="true"></i> Challenge</span>
+                <h3>Too many attributes to communicate up front</h3>
+                <p>Vegan, lactose-free, gluten-free, allergen-free and affordable: all important, but a long list at the top loses impact.</p>
+              </div>
+              <div>
+                <span class="challenge-label"><i class="bx bx-check-circle" aria-hidden="true"></i> Solution</span>
+                <h3>A rotating headline</h3>
+                <p>The “ManiProtein é…” (“ManiProtein is…”) headline loops through the attributes with a CSS animation, highlighting one at a time without taking up more space.</p>
+              </div>
+            </div>
+
+            <div class="challenge">
+              <div>
+                <span class="challenge-label"><i class="bx bx-error-circle" aria-hidden="true"></i> Challenge</span>
+                <h3>Technical content for any audience</h3>
+                <p>Research, the production process and sustainability had to make sense to people unfamiliar with the subject.</p>
+              </div>
+              <div>
+                <span class="challenge-label"><i class="bx bx-check-circle" aria-hidden="true"></i> Solution</span>
+                <h3>Short cards with icons</h3>
+                <p>The Innovation and Benefits sections use three cards each — an icon, a title and one sentence — so they can be scanned quickly.</p>
+              </div>
+            </div>
+
+            <div class="challenge">
+              <div>
+                <span class="challenge-label"><i class="bx bx-error-circle" aria-hidden="true"></i> Challenge</span>
+                <h3>Contact without a server</h3>
+                <p>The site is static and was built during a competition, with neither the time nor the need for a backend.</p>
+              </div>
+              <div>
+                <span class="challenge-label"><i class="bx bx-check-circle" aria-hidden="true"></i> Solution</span>
+                <h3>A pre-filled email with JavaScript</h3>
+                <p>The form validates the name and message, then opens an email compose window with the recipient, subject and text already filled in.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 9. Results -->
+        <section class="case-section" aria-labelledby="results-title">
+          <h2 class="case-title" id="results-title">Verifiable results</h2>
+          <ul class="check-list">
+            <li><i class="bx bxs-trophy" aria-hidden="true"></i><span>1st place at Inovathon FIMAN 2025, won by the team.</span></li>
+            <li><i class="bx bx-globe" aria-hidden="true"></i><span>Landing page live at <a href="https://maniprotein.felipezfroes.com" target="_blank" rel="noopener noreferrer">maniprotein.felipezfroes.com</a> (in Portuguese).</span></li>
+            <li><i class="bx bxl-github" aria-hidden="true"></i><span>Public source code on <a href="https://github.com/felipezfroes/maniprotein-landing-page" target="_blank" rel="noopener noreferrer">GitHub</a>.</span></li>
+          </ul>
+        </section>
+
+        <!-- 10. What I learned -->
+        <section class="case-section" aria-labelledby="learnings-title">
+          <h2 class="case-title" id="learnings-title">What I learned</h2>
+          <!-- PENDENTE: revisar e complementar com aprendizados pessoais. -->
+          <ul class="check-list two-cols">
+            <li><i class="bx bx-message-square-dots" aria-hidden="true"></i><span>Turning a technical proposal into a page anyone can understand.</span></li>
+            <li><i class="bx bx-timer" aria-hidden="true"></i><span>Shipping fast during a competition by prioritizing what supports the pitch.</span></li>
+            <li><i class="bx bx-code-curly" aria-hidden="true"></i><span>Solving a requirement (contact) with plain JavaScript and no extra infrastructure.</span></li>
+            <li><i class="bx bx-group" aria-hidden="true"></i><span>Aligning the website with the pitch while working in a multidisciplinary team.</span></li>
+          </ul>
+        </section>
+
+        <!-- 11. Gallery -->
+        <section class="case-section" aria-labelledby="gallery-title">
+          <h2 class="case-title" id="gallery-title">Gallery</h2>
+          <div class="carousel" data-carousel role="region" aria-roledescription="carousel" aria-label="Screenshots of the ManiProtein landing page" tabindex="0">
+            <div class="carousel-viewport">
+              <figure class="carousel-slide">
+                <img src="../../../projetos/img/maniprotein/maniprotein-2.webp" alt="Innovation section with cards on scientific research, production technology and sustainability" width="1280" height="660" loading="lazy" decoding="async" />
+                <figcaption>The Innovation section, organized into short cards.</figcaption>
+              </figure>
+              <figure class="carousel-slide">
+                <img src="../../../projetos/img/maniprotein/maniprotein-3.webp" alt="Benefits section with cards on high protein, 100% vegan and health and nutrition" width="1280" height="660" loading="lazy" decoding="async" />
+                <figcaption>The product's benefits.</figcaption>
+              </figure>
+              <figure class="carousel-slide">
+                <img src="../../../projetos/img/maniprotein/maniprotein-4.webp" alt="ManiProtein team section with the five members and their links" width="1280" height="660" loading="lazy" decoding="async" />
+                <figcaption>The team section, with all five members.</figcaption>
+              </figure>
+              <figure class="carousel-slide">
+                <img src="../../../projetos/img/maniprotein/maniprotein-5.webp" alt="Contact form with name and message fields" width="1280" height="654" loading="lazy" decoding="async" />
+                <figcaption>A contact form that opens a pre-filled email.</figcaption>
+              </figure>
+            </div>
+            <div class="carousel-controls">
+              <button type="button" class="carousel-btn prev" aria-label="Previous image"><i class="bx bx-chevron-left" aria-hidden="true"></i></button>
+              <div class="carousel-indicators"></div>
+              <span class="carousel-counter" aria-live="polite"></span>
+              <button type="button" class="carousel-btn next" aria-label="Next image"><i class="bx bx-chevron-right" aria-hidden="true"></i></button>
+            </div>
+          </div>
+        </section>
+
+        <!-- 12. Links -->
+        <section class="case-section" aria-labelledby="links-title">
+          <h2 class="case-title" id="links-title">Links</h2>
+          <div class="button-row">
+            <a href="https://maniprotein.felipezfroes.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+              Live site <i class="bx bx-globe" aria-hidden="true"></i>
+            </a>
+            <a href="https://github.com/felipezfroes/maniprotein-landing-page" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              Repository on GitHub <i class="bx bxl-github" aria-hidden="true"></i>
+            </a>
+          </div>
+        </section>
+      </div>
+
+      <nav class="case-nav" aria-label="Other case studies">
+        <a href="../papotech-editor/" class="prev">
+          <span>← Previous</span>
+          <strong>Papotech Editor</strong>
+        </a>
+        <a href="../ecos-do-olimpo/" class="next">
+          <span>Next →</span>
+          <strong>Ecos do Olimpo</strong>
+        </a>
+      </nav>
+
+      <aside class="case-cta" aria-label="Contact">
+        <div class="case-cta-box">
+          <div>
+            <h2>Need a landing page?</h2>
+            <p>I build responsive pages that present services, businesses and projects.</p>
+          </div>
+          <a href="../../?topic=orcamento#contact" class="btn btn-primary">
+            Request a quote <i class="bx bx-right-arrow-alt" aria-hidden="true"></i>
+          </a>
+        </div>
+      </aside>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <a href="../../" class="footer-logo" aria-label="FZF — homepage">FZF<span>.</span></a>
+        <p>Front-end developer in training: web, automation and games. Software Engineering and Digital Games student.</p>
+      </div>
+      <div class="footer-socials">
+        <a href="https://github.com/felipezfroes" target="_blank" rel="noopener noreferrer" aria-label="GitHub (opens in a new tab)"><i class="bx bxl-github" aria-hidden="true"></i></a>
+        <a href="https://www.linkedin.com/in/felipezfroesdev/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in a new tab)"><i class="bx bxl-linkedin" aria-hidden="true"></i></a>
+        <a href="https://fzf-dev.itch.io" target="_blank" rel="noopener noreferrer" aria-label="itch.io (opens in a new tab)"><i class="bx bx-joystick" aria-hidden="true"></i></a>
+        <a href="https://www.youtube.com/@FZFDev" target="_blank" rel="noopener noreferrer" aria-label="FZF Dev on YouTube (opens in a new tab)"><i class="bx bxl-youtube" aria-hidden="true"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 Felipe Zotareli Froes · FZF Dev</div>
+  </footer>
+
+  <script src="../../../js/main.js?v=20261104" defer></script>
+  <script src="../../../projetos/js/gallery.js?v=20261104" defer></script>
+</body>
+</html>

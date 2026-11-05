@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>O Relógio das Consequências — Jogo feito em 5 dias | Felipe Zotareli Froes</title>
+  <meta name="description" content="Estudo de caso de O Relógio das Consequências, jogo de puzzle feito em 5 dias para a NoNeJam 13 em GameMaker: controle de escopo, ecos temporais e boss final." />
+  <meta name="author" content="Felipe Zotareli Froes" />
+  <meta name="theme-color" content="#060f1a" />
+  <link rel="canonical" href="https://felipezfroes.com/projetos/relogio-das-consequencias/" />
+  <link rel="alternate" hreflang="pt-BR" href="https://felipezfroes.com/projetos/relogio-das-consequencias/" />
+  <link rel="alternate" hreflang="en" href="https://felipezfroes.com/en/projects/relogio-das-consequencias/" />
+  <link rel="alternate" hreflang="x-default" href="https://felipezfroes.com/projetos/relogio-das-consequencias/" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:site_name" content="Felipe Zotareli Froes" />
+  <meta property="og:title" content="O Relógio das Consequências — Estudo de caso" />
+  <meta property="og:description" content="Jogo de puzzle e ação feito em 5 dias para a NoNeJam 13: grave seus passos e use um eco do passado para avançar." />
+  <meta property="og:url" content="https://felipezfroes.com/projetos/relogio-das-consequencias/" />
+  <meta property="og:image" content="https://felipezfroes.com/img/og/og-relogio-das-consequencias.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Tela inicial de O Relógio das Consequências" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="O Relógio das Consequências — Estudo de caso" />
+  <meta name="twitter:description" content="Jogo de puzzle e ação feito em 5 dias para a NoNeJam 13: grave seus passos e use um eco do passado para avançar." />
+  <meta name="twitter:image" content="https://felipezfroes.com/img/og/og-relogio-das-consequencias.jpg" />
+
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../../favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="../../apple-touch-icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css?v=20261104" />
+  <link rel="stylesheet" href="../css/case-study.css?v=20261104" />
+
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoGame",
+      "name": "O Relógio das Consequências",
+      "description": "Jogo 2D de puzzle e ação desenvolvido em 5 dias para a NoNeJam 13, baseado em ecos temporais que repetem as ações do jogador.",
+      "url": "https://felipezfroes.com/projetos/relogio-das-consequencias/",
+      "image": "https://felipezfroes.com/projetos/img/relogio/relogio-4.webp",
+      "sameAs": ["https://fzf-dev.itch.io/o-relogio-das-consequencias", "https://github.com/felipezfroes/NoneJam-13"],
+      "genre": ["Puzzle", "Ação"],
+      "gamePlatform": "Windows",
+      "inLanguage": "pt-BR",
+      "author": { "@type": "Person", "name": "Felipe Zotareli Froes", "url": "https://felipezfroes.com/" }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://felipezfroes.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Projetos", "item": "https://felipezfroes.com/#outros-projetos" },
+        { "@type": "ListItem", "position": 3, "name": "O Relógio das Consequências", "item": "https://felipezfroes.com/projetos/relogio-das-consequencias/" }
+      ]
+    }
+  ]
+  </script>
+</head>
+
+<body data-project="relogio-das-consequencias">
+  <a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
+
+  <div class="bg-orbs" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="grain"></div>
+  </div>
+
+  <header class="header">
+    <nav class="nav" aria-label="Navegação principal">
+      <a href="../../" class="nav-logo" aria-label="FZF — página inicial">FZF<span>.</span></a>
+      <ul class="nav-menu">
+        <li><a href="../../#inicio">Início</a></li>
+        <li><a href="../../#projetos" class="is-active">Projetos</a></li>
+        <li><a href="../../#servicos">Serviços</a></li>
+        <li><a href="../../#sobre">Sobre</a></li>
+        <li><a href="../../#habilidades">Habilidades</a></li>
+        <li><a href="../../#contato">Contato</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="lang-switch" role="group" aria-label="Idioma / Language">
+          <a href="./" lang="pt-BR" hreflang="pt-BR" aria-current="true" aria-label="Português">PT</a>
+          <span class="lang-sep" aria-hidden="true">|</span>
+          <a href="../../en/projects/relogio-das-consequencias/" lang="en" hreflang="en" data-lang-switch aria-label="English">EN</a>
+        </div>
+        <a href="../../assets/Felipe_Zotareli_Froes_CV_Frontend.pdf" download class="nav-cta">
+          Baixar CV <i class="bx bx-download" aria-hidden="true"></i>
+        </a>
+      </div>
+    </nav>
+
+    <div class="lang-switch lang-switch-mobile" role="group" aria-label="Idioma / Language">
+      <a href="./" lang="pt-BR" hreflang="pt-BR" aria-current="true" aria-label="Português">PT</a>
+      <span class="lang-sep" aria-hidden="true">|</span>
+      <a href="../../en/projects/relogio-das-consequencias/" lang="en" hreflang="en" data-lang-switch aria-label="English">EN</a>
+    </div>
+
+    <nav class="mobile-nav" aria-label="Navegação mobile">
+      <a href="../../" aria-label="Início"><i class="bx bxs-home" aria-hidden="true"></i></a>
+      <a href="../../#projetos" aria-label="Projetos" class="is-active"><i class="bx bx-code-alt" aria-hidden="true"></i></a>
+      <a href="../../#servicos" aria-label="Serviços"><i class="bx bx-briefcase-alt-2" aria-hidden="true"></i></a>
+      <a href="../../#sobre" aria-label="Sobre"><i class="bx bxs-user" aria-hidden="true"></i></a>
+      <a href="../../#contato" aria-label="Contato"><i class="bx bxs-envelope" aria-hidden="true"></i></a>
+      <a href="../../assets/Felipe_Zotareli_Froes_CV_Frontend.pdf" download aria-label="Baixar currículo em PDF"><i class="bx bx-download" aria-hidden="true"></i></a>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <article>
+      <!-- 1. Visão geral -->
+      <header class="case-hero">
+        <nav class="breadcrumb" aria-label="Você está em">
+          <ol>
+            <li><a href="../../">Início</a></li>
+            <li><a href="../../#outros-projetos">Projetos</a></li>
+            <li aria-current="page">O Relógio das Consequências</li>
+          </ol>
+        </nav>
+
+        <div class="case-hero-grid">
+          <div>
+            <span class="section-label">GameDev · Game jam</span>
+            <h1>O Relógio das Consequências</h1>
+            <p class="case-tagline">Um jogo completo em cinco dias, guiado por uma única mecânica</p>
+            <p class="case-summary">
+              Jogo 2D top-down de puzzle e ação feito em 5 dias para a NoNeJam 13, minha primeira game jam.
+              Seus movimentos ficam gravados: ao criar um eco temporal, uma cópia do seu passado repete o
+              caminho enquanto você joga uma nova linha do tempo.
+            </p>
+            <div class="button-row">
+              <a href="https://fzf-dev.itch.io/o-relogio-das-consequencias" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                Baixar no itch.io <i class="bx bx-joystick" aria-hidden="true"></i>
+              </a>
+              <a href="https://github.com/felipezfroes/NoneJam-13" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                Código no GitHub <i class="bx bxl-github" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+          <dl class="case-facts">
+            <div><dt>Tipo</dt><dd>Jogo de puzzle e ação 2D</dd></div>
+            <div><dt>Papel</dt><dd>Desenvolvimento solo</dd></div>
+            <div><dt>Prazo</dt><dd>5 dias, durante a NoNeJam 13</dd></div>
+            <div><dt>Ferramentas</dt><dd>GameMaker · GML</dd></div>
+          </dl>
+        </div>
+
+        <figure class="case-cover">
+          <img src="../img/relogio/relogio-4.webp" alt="Tela inicial com o título O Relógio das Consequências e o subtítulo Seus passos deixam ecos" width="1280" height="720" fetchpriority="high" decoding="async" />
+          <figcaption>Tela inicial: “seus passos deixam ecos”.</figcaption>
+        </figure>
+      </header>
+
+      <div class="case-body">
+        <!-- 2 e 3. Problema e objetivo -->
+        <section class="case-section" aria-labelledby="contexto-title">
+          <h2 class="case-title" id="contexto-title">Problema e objetivo</h2>
+          <div class="case-grid">
+            <div class="case-box">
+              <h3>O tema da jam</h3>
+              <p>
+                O tema era <strong>Reação em Cadeia / Efeito Borboleta</strong>. Em vez de usá-lo só na
+                história, transformei o tema na mecânica principal: uma ação feita agora desencadeia
+                consequências alguns segundos depois.
+              </p>
+            </div>
+            <div class="case-box">
+              <h3>O objetivo</h3>
+              <p>
+                Entregar em 5 dias uma experiência curta, mas completa: mecânica clara, introdução
+                progressiva, puzzles, identidade visual, som, menu, começo, meio e fim — e um boss final.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. Minha participação -->
+        <section class="case-section" aria-labelledby="participacao-title">
+          <h2 class="case-title" id="participacao-title">Minha participação</h2>
+          <p class="case-text">
+            Desenvolvimento solo: programação, direção do projeto, game design, level design, identidade
+            visual, produção e integração dos sistemas. Os efeitos sonoros vêm do 400 Sounds Pack (Cafofo)
+            e as fontes são Alagard e Algerian, com créditos no projeto.
+          </p>
+        </section>
+
+        <!-- 5. Tecnologias -->
+        <section class="case-section" aria-labelledby="tecnologias-title">
+          <h2 class="case-title" id="tecnologias-title">Tecnologias</h2>
+          <ul class="tech-list" aria-label="Tecnologias utilizadas">
+            <li>GameMaker</li>
+            <li>GML</li>
+            <li>Level Design</li>
+            <li>Git e GitHub</li>
+          </ul>
+        </section>
+
+        <!-- 6. Funcionalidades -->
+        <section class="case-section" aria-labelledby="funcionalidades-title">
+          <h2 class="case-title" id="funcionalidades-title">Mecânica principal: o eco temporal</h2>
+          <ol class="pipeline">
+            <li><strong>Gravar</strong>Durante a fase, o jogo registra os movimentos do jogador.</li>
+            <li><strong>Criar o eco</strong>Ao apertar Espaço, o caminho gravado vira um eco.</li>
+            <li><strong>Reproduzir</strong>O eco surge no início e repete exatamente os passos gravados.</li>
+            <li><strong>Cooperar</strong>O jogador volta ao início e age junto com o próprio passado.</li>
+          </ol>
+          <p class="case-text">
+            Isso permite ativar duas placas ao mesmo tempo, manter um mecanismo acionado enquanto segue por
+            outro caminho, empurrar caixas e abrir portas com ações sincronizadas. Também foram implementados:
+          </p>
+          <ul class="check-list two-cols">
+            <li><i class="bx bx-move" aria-hidden="true"></i><span><strong>Movimento top-down</strong> com colisão e sprites direcionais.</span></li>
+            <li><i class="bx bx-cube" aria-hidden="true"></i><span><strong>Caixas empurráveis</strong>, placas de pressão e placas temporais.</span></li>
+            <li><i class="bx bx-door-open" aria-hidden="true"></i><span><strong>Portas e bloqueios</strong> abertos por ações sincronizadas.</span></li>
+            <li><i class="bx bx-revision" aria-hidden="true"></i><span><strong>Reinício rápido</strong> da fase e transições entre salas.</span></li>
+            <li><i class="bx bx-target-lock" aria-hidden="true"></i><span><strong>Boss final</strong> com projéteis e padrões de ataque.</span></li>
+            <li><i class="bx bx-rewind" aria-hidden="true"></i><span><strong>Retrocesso temporal</strong>: ataques do boss devolvem o jogador a uma posição anterior.</span></li>
+            <li><i class="bx bx-volume-full" aria-hidden="true"></i><span><strong>Menu, tela de vitória</strong>, efeitos sonoros e feedback visual.</span></li>
+            <li><i class="bx bx-history" aria-hidden="true"></i><span><strong>Ecos temporais</strong>: registro e reprodução das ações do jogador.</span></li>
+          </ul>
+        </section>
+
+        <!-- 7. Decisões técnicas -->
+        <section class="case-section" aria-labelledby="decisoes-title">
+          <h2 class="case-title" id="decisoes-title">Decisões técnicas</h2>
+          <ul class="check-list two-cols">
+            <li><i class="bx bx-bulb" aria-hidden="true"></i><span><strong>O tema virou mecânica.</strong> Toda fase, inclusive o boss, usa a ideia de ações que geram consequências depois.</span></li>
+            <li><i class="bx bx-git-compare" aria-hidden="true"></i><span><strong>Quem grava e quem reproduz separados.</strong> <code>obj_time_manager</code> registra; <code>obj_echo</code> repete a sequência.</span></li>
+            <li><i class="bx bx-revision" aria-hidden="true"></i><span><strong>Errar precisa custar pouco.</strong> Em um puzzle de tentativa, reiniciar a fase é imediato.</span></li>
+            <li><i class="bx bx-music" aria-hidden="true"></i><span><strong>Som e fontes de terceiros, com crédito.</strong> O tempo da jam foi para gameplay, não para produzir áudio do zero.</span></li>
+          </ul>
+        </section>
+
+        <!-- 8. Desafios -->
+        <section class="case-section" aria-labelledby="desafios-title">
+          <h2 class="case-title" id="desafios-title">Desafios e soluções</h2>
+          <div class="challenges">
+            <div class="challenge">
+              <div>
+                <span class="challenge-label"><i class="bx bx-error-circle" aria-hidden="true"></i> Desafio</span>
+                <h3>Cinco dias para um jogo completo</h3>
+                <p>Havia mais ideias do que tempo. O risco era terminar a jam com várias mecânicas pela metade.</p>
+              </div>
+              <div>
+                <span class="challenge-label"><i class="bx bx-check-circle" aria-hidden="true"></i> Solução</span>
+                <h3>Controle de escopo</h3>
+                <p>Uma única mecânica central guiou todas as decisões. Várias ideias foram simplificadas ou deixadas de fora para garantir começo, meio, fim, som e polimento.</p>
+              </div>
+            </div>
+
+            <div class="challenge">
+              <div>
+                <span class="challenge-label"><i class="bx bx-error-circle" aria-hidden="true"></i> Desafio</span>
+                <h3>Ensinar uma mecânica incomum</h3>
+                <p>Cooperar com o próprio passado não é intuitivo, e o jogador de jam costuma jogar poucos minutos.</p>
+              </div>
+              <div>
+                <span class="challenge-label"><i class="bx bx-check-circle" aria-hidden="true"></i> Solução</span>
+                <h3>Progressão em etapas</h3>
+                <p>O fluxo vai do menu ao tutorial do eco, depois ao tutorial de caixas, ao puzzle principal e ao boss: cada sistema aparece sozinho antes de ser combinado.</p>
+              </div>
+            </div>
+
+            <div class="challenge">
+              <div>
+                <span class="challenge-label"><i class="bx bx-error-circle" aria-hidden="true"></i> Desafio</span>
+                <h3>Repetir exatamente as ações do jogador</h3>
+                <p>O eco só funciona se reproduzir o caminho gravado com fidelidade, no mesmo ritmo.</p>
+              </div>
+              <div>
+                <span class="challenge-label"><i class="bx bx-check-circle" aria-hidden="true"></i> Solução</span>
+                <h3>Gerenciador de tempo + objeto eco</h3>
+                <p>Os movimentos são registrados durante a fase e, ao criar o eco, ele nasce no ponto inicial e reproduz a sequência armazenada.</p>
+              </div>
+            </div>
+
+            <div class="challenge">
+              <div>
+                <span class="challenge-label"><i class="bx bx-error-circle" aria-hidden="true"></i> Desafio</span>
+                <h3>Levar o tema para o combate</h3>
+                <p>O boss precisava usar a ideia de tempo, não ser só uma luta comum.</p>
+              </div>
+              <div>
+                <span class="challenge-label"><i class="bx bx-check-circle" aria-hidden="true"></i> Solução</span>
+                <h3>Histórico de posições</h3>
+                <p>O jogo guarda um histórico curto das posições do jogador. Alguns ataques do boss o forçam a voltar para onde estava instantes antes.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 9. Resultados -->
+        <section class="case-section" aria-labelledby="resultados-title">
+          <h2 class="case-title" id="resultados-title">Resultados verificáveis</h2>
+          <!-- PENDENTE: se a jam divulgou colocação ou avaliações, adicionar aqui com o link. -->
+          <ul class="check-list">
+            <li><i class="bx bx-check-double" aria-hidden="true"></i><span>Versão da jam concluída dentro do prazo e publicada no <a href="https://fzf-dev.itch.io/o-relogio-das-consequencias" target="_blank" rel="noopener noreferrer">itch.io</a>, com download para Windows.</span></li>
+            <li><i class="bx bxl-github" aria-hidden="true"></i><span>Código-fonte completo no <a href="https://github.com/felipezfroes/NoneJam-13" target="_blank" rel="noopener noreferrer">GitHub</a>, com README sobre mecânicas, controles e estrutura do projeto.</span></li>
+            <li><i class="bx bxl-youtube" aria-hidden="true"></i><span>Processo de desenvolvimento registrado em vídeo no <a href="https://www.youtube.com/@FZFDev" target="_blank" rel="noopener noreferrer">canal FZF Dev</a>.</span></li>
+          </ul>
+        </section>
+
+        <!-- 10. Aprendizados -->
+        <section class="case-section" aria-labelledby="aprendizados-title">
+          <h2 class="case-title" id="aprendizados-title">Aprendizados</h2>
+          <p class="case-text">
+            Mais do que implementar sistemas, o maior desafio foi decidir o que realmente precisava estar
+            pronto para que a ideia virasse um jogo completo em cinco dias.
+          </p>
+          <ul class="check-list two-cols">
+            <li><i class="bx bx-crop" aria-hidden="true"></i><span>Controle de escopo e priorização sob prazo.</span></li>
+            <li><i class="bx bx-bulb" aria-hidden="true"></i><span>Game design guiado por uma mecânica central.</span></li>
+            <li><i class="bx bx-map-alt" aria-hidden="true"></i><span>Level design para introduzir sistemas aos poucos.</span></li>
+            <li><i class="bx bx-rocket" aria-hidden="true"></i><span>Finalizar e publicar, com feedback visual e sonoro.</span></li>
+          </ul>
+        </section>
+
+        <!-- 11. Galeria -->
+        <section class="case-section" aria-labelledby="galeria-title">
+          <h2 class="case-title" id="galeria-title">Galeria</h2>
+          <div class="carousel" data-carousel role="region" aria-roledescription="carrossel" aria-label="Capturas de tela de O Relógio das Consequências" tabindex="0">
+            <div class="carousel-viewport">
+              <figure class="carousel-slide">
+                <img src="../img/relogio/relogio-1.webp" alt="Primeira fase: o jogador e o eco temporal na sala, com o objetivo de alcançar a saída" width="1280" height="720" loading="lazy" decoding="async" />
+                <figcaption>Tutorial do eco temporal: o eco repete o caminho gravado.</figcaption>
+              </figure>
+              <figure class="carousel-slide">
+                <img src="../img/relogio/relogio-2.webp" alt="Fase em que é preciso combinar o eco e uma caixa para abrir o caminho" width="1280" height="720" loading="lazy" decoding="async" />
+                <figcaption>Combinar eco e caixa para abrir o caminho.</figcaption>
+              </figure>
+              <figure class="carousel-slide">
+                <img src="../img/relogio/relogio-3.webp" alt="Confronto com o boss, um relógio com ampulheta, enquanto o jogador desvia de projéteis" width="1280" height="720" loading="lazy" decoding="async" />
+                <figcaption>Boss final: rebater o projétil e mover a caixa.</figcaption>
+              </figure>
+              <figure class="carousel-slide">
+                <img src="../img/relogio/relogio-5.webp" alt="Tela de vitória com a mensagem Você quebrou o ciclo" width="1280" height="720" loading="lazy" decoding="async" />
+                <figcaption>Tela de vitória.</figcaption>
+              </figure>
+            </div>
+            <div class="carousel-controls">
+              <button type="button" class="carousel-btn prev" aria-label="Imagem anterior"><i class="bx bx-chevron-left" aria-hidden="true"></i></button>
+              <div class="carousel-indicators"></div>
+              <span class="carousel-counter" aria-live="polite"></span>
+              <button type="button" class="carousel-btn next" aria-label="Próxima imagem"><i class="bx bx-chevron-right" aria-hidden="true"></i></button>
+            </div>
+          </div>
+        </section>
+
+        <!-- 12. Links -->
+        <section class="case-section" aria-labelledby="links-title">
+          <h2 class="case-title" id="links-title">Links</h2>
+          <div class="button-row">
+            <a href="https://fzf-dev.itch.io/o-relogio-das-consequencias" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+              Jogar no itch.io <i class="bx bx-joystick" aria-hidden="true"></i>
+            </a>
+            <a href="https://github.com/felipezfroes/NoneJam-13" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              Repositório no GitHub <i class="bx bxl-github" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.youtube.com/@FZFDev" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              Vídeo no YouTube <i class="bx bxl-youtube" aria-hidden="true"></i>
+            </a>
+          </div>
+        </section>
+      </div>
+
+      <nav class="case-nav" aria-label="Outros estudos de caso">
+        <a href="../chipre/" class="prev">
+          <span>← Anterior</span>
+          <strong>C.H.I.P.R.E.</strong>
+        </a>
+        <a href="../papotech-editor/" class="next">
+          <span>Próximo →</span>
+          <strong>Papotech Editor</strong>
+        </a>
+      </nav>
+
+      <aside class="case-cta" aria-label="Contato">
+        <div class="case-cta-box">
+          <div>
+            <h2>Precisa de alguém que entregue no prazo?</h2>
+            <p>Estou aberto a estágio, projetos freelance e colaborações técnicas, incluindo game jams.</p>
+          </div>
+          <a href="../../#contato" class="btn btn-primary">
+            Entrar em contato <i class="bx bx-message-rounded-dots" aria-hidden="true"></i>
+          </a>
+        </div>
+      </aside>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <a href="../../" class="footer-logo" aria-label="FZF — página inicial">FZF<span>.</span></a>
+        <p>Desenvolvedor Front-End em formação: web, automação e jogos. Estudante de Engenharia de Software e Jogos Digitais.</p>
+      </div>
+      <div class="footer-socials">
+        <a href="https://github.com/felipezfroes" target="_blank" rel="noopener noreferrer" aria-label="GitHub (abre em nova aba)"><i class="bx bxl-github" aria-hidden="true"></i></a>
+        <a href="https://www.linkedin.com/in/felipezfroesdev/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (abre em nova aba)"><i class="bx bxl-linkedin" aria-hidden="true"></i></a>
+        <a href="https://fzf-dev.itch.io" target="_blank" rel="noopener noreferrer" aria-label="itch.io (abre em nova aba)"><i class="bx bx-joystick" aria-hidden="true"></i></a>
+        <a href="https://www.youtube.com/@FZFDev" target="_blank" rel="noopener noreferrer" aria-label="YouTube da FZF Dev (abre em nova aba)"><i class="bx bxl-youtube" aria-hidden="true"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 Felipe Zotareli Froes · FZF Dev</div>
+  </footer>
+
+  <script src="../../js/main.js?v=20261104" defer></script>
+  <script src="../js/gallery.js?v=20261104" defer></script>
+</body>
+</html>

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Papotech Editor — Podcast editing automation with Python | Felipe Zotareli Froes</title>
+  <meta name="description" content="Case study of Papotech Editor, a Python tool that automates podcast editing: clap-based audio sync, pause trimming, Whisper transcription and review reports." />
+  <meta name="author" content="Felipe Zotareli Froes" />
+  <meta name="theme-color" content="#060f1a" />
+  <link rel="canonical" href="https://felipezfroes.com/en/projects/papotech-editor/" />
+  <link rel="alternate" hreflang="pt-BR" href="https://felipezfroes.com/projetos/papotech-editor/" />
+  <link rel="alternate" hreflang="en" href="https://felipezfroes.com/en/projects/papotech-editor/" />
+  <link rel="alternate" hreflang="x-default" href="https://felipezfroes.com/projetos/papotech-editor/" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="pt_BR" />
+  <meta property="og:site_name" content="Felipe Zotareli Froes" />
+  <meta property="og:title" content="Papotech Editor — Podcast editing automation with Python" />
+  <meta property="og:description" content="A Python tool that automates the repetitive part of podcast editing: syncing, pause trimming, transcription and review markers." />
+  <meta property="og:url" content="https://felipezfroes.com/en/projects/papotech-editor/" />
+  <meta property="og:image" content="https://felipezfroes.com/img/og/og-papotech-editor-en.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Papotech Editor case study page" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Papotech Editor — Podcast editing automation with Python" />
+  <meta name="twitter:description" content="A Python tool that automates the repetitive part of podcast editing: syncing, pause trimming, transcription and review markers." />
+  <meta name="twitter:image" content="https://felipezfroes.com/img/og/og-papotech-editor-en.jpg" />
+
+  <link rel="icon" href="../../../favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../../../favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="../../../apple-touch-icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../../../styles.css?v=20261104" />
+  <link rel="stylesheet" href="../../../projetos/css/case-study.css?v=20261104" />
+
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareSourceCode",
+      "name": "Papotech Editor",
+      "description": "A Python tool that automates part of editing podcasts recorded with two microphones: clap-based syncing, pause trimming, Whisper transcription and review markers.",
+      "url": "https://felipezfroes.com/en/projects/papotech-editor/",
+      "codeRepository": "https://github.com/felipezfroes/papotech-editor",
+      "programmingLanguage": "Python",
+      "runtimePlatform": "Python 3",
+      "author": { "@type": "Person", "name": "Felipe Zotareli Froes", "url": "https://felipezfroes.com/en/" }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://felipezfroes.com/en/" },
+        { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://felipezfroes.com/en/#projects" },
+        { "@type": "ListItem", "position": 3, "name": "Papotech Editor", "item": "https://felipezfroes.com/en/projects/papotech-editor/" }
+      ]
+    }
+  ]
+  </script>
+</head>
+
+<body data-project="papotech-editor">
+  <a href="#content" class="skip-link">Skip to content</a>
+
+  <div class="bg-orbs" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="grain"></div>
+  </div>
+
+  <header class="header">
+    <nav class="nav" aria-label="Main navigation">
+      <a href="../../" class="nav-logo" aria-label="FZF — homepage">FZF<span>.</span></a>
+      <ul class="nav-menu">
+        <li><a href="../../#home">Home</a></li>
+        <li><a href="../../#projects" class="is-active">Projects</a></li>
+        <li><a href="../../#services">Services</a></li>
+        <li><a href="../../#about">About</a></li>
+        <li><a href="../../#skills">Skills</a></li>
+        <li><a href="../../#contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="lang-switch" role="group" aria-label="Language / Idioma">
+          <a href="../../../projetos/papotech-editor/" lang="pt-BR" hreflang="pt-BR" data-lang-switch aria-label="Português">PT</a>
+          <span class="lang-sep" aria-hidden="true">|</span>
+          <a href="./" lang="en" hreflang="en" aria-current="true" aria-label="English">EN</a>
+        </div>
+        <a href="../../../assets/Felipe_Zotareli_Froes_CV_Frontend.pdf" download hreflang="pt-BR" class="nav-cta" aria-label="Download CV in Portuguese (PDF)">
+          CV <small>PT</small> <i class="bx bx-download" aria-hidden="true"></i>
+        </a>
+      </div>
+    </nav>
+
+    <div class="lang-switch lang-switch-mobile" role="group" aria-label="Language / Idioma">
+      <a href="../../../projetos/papotech-editor/" lang="pt-BR" hreflang="pt-BR" data-lang-switch aria-label="Português">PT</a>
+      <span class="lang-sep" aria-hidden="true">|</span>
+      <a href="./" lang="en" hreflang="en" aria-current="true" aria-label="English">EN</a>
+    </div>
+
+    <nav class="mobile-nav" aria-label="Mobile navigation">
+      <a href="../../" aria-label="Home"><i class="bx bxs-home" aria-hidden="true"></i></a>
+      <a href="../../#projects" aria-label="Projects" class="is-active"><i class="bx bx-code-alt" aria-hidden="true"></i></a>
+      <a href="../../#services" aria-label="Services"><i class="bx bx-briefcase-alt-2" aria-hidden="true"></i></a>
+      <a href="../../#about" aria-label="About"><i class="bx bxs-user" aria-hidden="true"></i></a>
+      <a href="../../#contact" aria-label="Contact"><i class="bx bxs-envelope" aria-hidden="true"></i></a>
+      <a href="../../../assets/Felipe_Zotareli_Froes_CV_Frontend.pdf" download hreflang="pt-BR" aria-label="Download CV in Portuguese (PDF)"><i class="bx bx-download" aria-hidden="true"></i></a>
+    </nav>
+  </header>
+
+  <main id="content">
+    <article>
+      <!-- 1. Overview -->
+      <header class="case-hero">
+        <nav class="breadcrumb" aria-label="You are here">
+          <ol>
+            <li><a href="../../">Home</a></li>
+            <li><a href="../../#projects">Projects</a></li>
+            <li aria-current="page">Papotech Editor</li>
+          </ol>
+        </nav>
+
+        <div class="case-hero-grid">
+          <div>
+            <span class="section-label">Automation · Python</span>
+            <h1>Papotech Editor</h1>
+            <p class="case-tagline">Podcast editing automation with Python</p>
+            <p class="case-summary">
+              A command-line tool that automates the repetitive part of editing episodes of Papotech, the
+              podcast of a university outreach project. It takes the recordings from two microphones and
+              returns synced audio with long pauses shortened, a transcript and a list of spots to review.
+            </p>
+            <div class="button-row">
+              <a href="https://github.com/felipezfroes/papotech-editor" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                View code on GitHub <i class="bx bxl-github" aria-hidden="true"></i>
+              </a>
+              <a href="https://open.spotify.com/episode/2IP40OF1JJQwI08dFBaYFG" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                Listen to the podcast <i class="bx bxl-spotify" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+          <dl class="case-facts">
+            <div><dt>Type</dt><dd>Command-line tool</dd></div>
+            <div><dt>Role</dt><dd>Sole developer</dd></div>
+            <div><dt>Context</dt><dd>Papotech university outreach podcast (in Portuguese)</dd></div>
+            <div><dt>Stack</dt><dd>Python · FFmpeg · Whisper</dd></div>
+          </dl>
+        </div>
+      </header>
+
+      <div class="case-body">
+        <section class="case-section" aria-labelledby="flow-title">
+          <h2 class="case-title" id="flow-title">How it works</h2>
+          <p class="case-text">
+            With <code>mic1.wav</code> and <code>mic2.wav</code> in the input folder, a single command
+            (<code>python main.py</code>) runs the whole workflow:
+          </p>
+          <ol class="pipeline five">
+            <li><strong>Recordings</strong>Loads both microphones from the episode.</li>
+            <li><strong>Sync</strong>Finds the claps at the start and aligns the files.</li>
+            <li><strong>Processing</strong>Shortens long pauses with identical cuts on both tracks.</li>
+            <li><strong>Transcription</strong>Transcribes with Whisper and flags spots to review.</li>
+            <li><strong>Output files</strong>Edited WAVs, a reference mix and reports.</li>
+          </ol>
+        </section>
+
+        <!-- 2 & 3. Problem and goal -->
+        <section class="case-section" aria-labelledby="context-title">
+          <h2 class="case-title" id="context-title">Problem and goal</h2>
+          <div class="case-grid">
+            <div class="case-box">
+              <h3>The problem</h3>
+              <p>
+                Each episode is recorded with two microphones, into two separate files. Before any real
+                editing could start, the files had to be aligned, long pauses had to be found and
+                shortened, and the whole recording had to be listened to for speech mistakes — the same
+                repetitive work on every single episode.
+              </p>
+            </div>
+            <div class="case-box">
+              <h3>The goal</h3>
+              <p>
+                Cut down that manual work: automate syncing, pause trimming and finding speech mistakes,
+                leaving only the final polish in CapCut to a human editor.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. My role -->
+        <section class="case-section" aria-labelledby="role-title">
+          <h2 class="case-title" id="role-title">My role</h2>
+          <p class="case-text">
+            I built the tool on my own, based on my own podcast editing routine: I mapped out the
+            repetitive steps, wrote the pipeline in Python and organized the code into modules for
+            syncing, cutting, transcription and reporting, with all settings centralized in
+            <code>config.py</code>.
+          </p>
+        </section>
+
+        <!-- 5. Technologies -->
+        <section class="case-section" aria-labelledby="tech-title">
+          <h2 class="case-title" id="tech-title">Technologies</h2>
+          <ul class="tech-list" aria-label="Technologies used">
+            <li>Python</li>
+            <li>FFmpeg</li>
+            <li>Pydub</li>
+            <li>NumPy</li>
+            <li>SciPy</li>
+            <li>OpenAI Whisper</li>
+            <li>PyTorch</li>
+          </ul>
+        </section>
+
+        <!-- 6. Features -->
+        <section class="case-section" aria-labelledby="features-title">
+          <h2 class="case-title" id="features-title">Features</h2>
+          <ul class="check-list two-cols">
+            <li><i class="bx bx-pulse" aria-hidden="true"></i><span><strong>Automatic syncing</strong> of both microphones based on hand claps.</span></li>
+            <li><i class="bx bx-cut" aria-hidden="true"></i><span><strong>Long-pause trimming</strong>, with identical cuts on both files.</span></li>
+            <li><i class="bx bx-headphone" aria-hidden="true"></i><span><strong>Normalized reference mix</strong> to check the result.</span></li>
+            <li><i class="bx bx-text" aria-hidden="true"></i><span><strong>Whisper transcription</strong> in Portuguese, with word-level timestamps.</span></li>
+            <li><i class="bx bx-flag" aria-hidden="true"></i><span><strong>Markers</strong> for repetitions, stutters and the “corta” (“cut”) cue spoken during recording.</span></li>
+            <li><i class="bx bx-time-five" aria-hidden="true"></i><span><strong>Timestamps in CapCut's timeline</strong>, already offset by the intro jingle's length.</span></li>
+            <li><i class="bx bx-spreadsheet" aria-hidden="true"></i><span><strong>TXT, SRT and CSV reports</strong>, including the list of shortened pauses.</span></li>
+            <li><i class="bx bx-stopwatch" aria-hidden="true"></i><span><strong>Final summary</strong> with the expected episode length and a warning if it falls under one hour.</span></li>
+          </ul>
+        </section>
+
+        <!-- 7. Technical decisions -->
+        <section class="case-section" aria-labelledby="decisions-title">
+          <h2 class="case-title" id="decisions-title">Technical decisions</h2>
+          <ul class="check-list two-cols">
+            <li><i class="bx bx-git-merge" aria-hidden="true"></i><span><strong>One command, separate stages.</strong> <code>main.py</code> only orchestrates; each stage lives in its own module (<code>audio/</code>, <code>analysis/</code>, <code>reports/</code>, <code>utils/</code>).</span></li>
+            <li><i class="bx bx-slider-alt" aria-hidden="true"></i><span><strong>Settings in <code>config.py</code>.</strong> Thresholds, durations and paths change without touching the logic.</span></li>
+            <li><i class="bx bx-shield-quarter" aria-hidden="true"></i><span><strong>Fail early.</strong> If syncing isn't reliable, the program stops with a clear message instead of producing a broken episode.</span></li>
+            <li><i class="bx bx-user-check" aria-hidden="true"></i><span><strong>The transcript flags, it doesn't cut.</strong> Speech mistakes become review markers; the decision to cut stays human.</span></li>
+          </ul>
+        </section>
+
+        <!-- 8. Challenges -->
+        <section class="case-section" aria-labelledby="challenges-title">
+          <h2 class="case-title" id="challenges-title">Challenges and solutions</h2>
+          <div class="challenges">
+            <div class="challenge">
+              <div>
+                <span class="challenge-label"><i class="bx bx-error-circle" aria-hidden="true"></i> Challenge</span>
+                <h3>Reliably detecting the claps</h3>
+                <p>The claps are the sync reference, but the start of a recording also has speech, noise and other loud sounds.</p>
+              </div>
+              <div>
+                <span class="challenge-label"><i class="bx bx-check-circle" aria-hidden="true"></i> Solution</span>
+                <h3>RMS energy + peak detection</h3>
+                <p>Only the first 20 seconds are analyzed. The audio is converted into RMS energy over windows of about 10 ms, peaks are found with <code>scipy.signal.find_peaks</code>, and the program picks the strongest pair spaced between 350 ms and 1.2 s apart.</p>
+              </div>
+            </div>
+
+            <div class="challenge">
+              <div>
+                <span class="challenge-label"><i class="bx bx-error-circle" aria-hidden="true"></i> Challenge</span>
+                <h3>Never delivering out-of-sync audio</h3>
+                <p>A wrong alignment ruins the whole episode, and it's hard to notice the error by listening to just one part.</p>
+              </div>
+              <div>
+                <span class="challenge-label"><i class="bx bx-check-circle" aria-hidden="true"></i> Solution</span>
+                <h3>Validate before cutting</h3>
+                <p>If the gap between the claps differs by more than 150 ms between microphones, the process stops with an error message. Otherwise, the offset is calculated from the center of the clap pair, the claps are removed and both files are trimmed to the same length.</p>
+              </div>
+            </div>
+
+            <div class="challenge">
+              <div>
+                <span class="challenge-label"><i class="bx bx-error-circle" aria-hidden="true"></i> Challenge</span>
+                <h3>Shortening pauses without choppy speech</h3>
+                <p>Removing every silence makes the conversation sound unnatural, and a fixed threshold doesn't work for recordings with different volumes.</p>
+              </div>
+              <div>
+                <span class="challenge-label"><i class="bx bx-check-circle" aria-hidden="true"></i> Solution</span>
+                <h3>Adaptive threshold and center cuts</h3>
+                <p>Only pauses longer than 2.5 s are changed. The silence threshold is derived from the recording's average loudness (dBFS − 18, clamped between −50 and −32 dBFS). The program removes only the middle of each pause and keeps 0.8 to 1.2 s, depending on its original length.</p>
+              </div>
+            </div>
+
+            <div class="challenge">
+              <div>
+                <span class="challenge-label"><i class="bx bx-error-circle" aria-hidden="true"></i> Challenge</span>
+                <h3>Keeping both microphones aligned after cutting</h3>
+                <p>If each microphone were cut based on its own audio, the files would drift out of sync again.</p>
+              </div>
+              <div>
+                <span class="challenge-label"><i class="bx bx-check-circle" aria-hidden="true"></i> Solution</span>
+                <h3>A single cut map</h3>
+                <p>The cut map is calculated once, on the mix of both microphones, and applied identically to both files.</p>
+              </div>
+            </div>
+
+            <div class="challenge">
+              <div>
+                <span class="challenge-label"><i class="bx bx-error-circle" aria-hidden="true"></i> Challenge</span>
+                <h3>Finding speech mistakes in a long episode</h3>
+                <p>Listening to over an hour of audio to find repetitions and parts to cut is slow and tiring.</p>
+              </div>
+              <div>
+                <span class="challenge-label"><i class="bx bx-check-circle" aria-hidden="true"></i> Solution</span>
+                <h3>Normalized transcript + rules</h3>
+                <p>The transcript is normalized (lowercase, no accents or punctuation) and matched against Portuguese correction phrases such as “corta” (“cut”) and “vou repetir” (“let me repeat that”). Repeated words and short phrases are flagged too, each with a 1.5 s margin before and after.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 9. Results -->
+        <section class="case-section" aria-labelledby="results-title">
+          <h2 class="case-title" id="results-title">Verifiable results</h2>
+          <!-- PENDENTE: se você medir o tempo de edição por episódio antes e depois da ferramenta, adicionar aqui. -->
+          <ul class="check-list">
+            <li><i class="bx bxl-github" aria-hidden="true"></i><span>Public code organized into modules in the <a href="https://github.com/felipezfroes/papotech-editor" target="_blank" rel="noopener noreferrer">project repository</a>.</span></li>
+            <li><i class="bx bx-terminal" aria-hidden="true"></i><span>A complete eight-step pipeline that runs with a single command.</span></li>
+            <li><i class="bx bx-folder-open" aria-hidden="true"></i><span>Eight output files ready for the final edit in CapCut: edited audio, a reference mix, a transcript, subtitles and reports.</span></li>
+          </ul>
+        </section>
+
+        <!-- 10. What I learned -->
+        <section class="case-section" aria-labelledby="learnings-title">
+          <h2 class="case-title" id="learnings-title">What I learned</h2>
+          <!-- PENDENTE: revisar e complementar com aprendizados pessoais. -->
+          <ul class="check-list two-cols">
+            <li><i class="bx bx-line-chart" aria-hidden="true"></i><span>Hands-on audio processing: RMS energy, peak detection and dBFS thresholds.</span></li>
+            <li><i class="bx bx-shield-quarter" aria-hidden="true"></i><span>Validating input and failing with a clear message instead of producing a wrong result.</span></li>
+            <li><i class="bx bx-layer" aria-hidden="true"></i><span>Splitting code into modules with clear responsibilities and centralizing configuration.</span></li>
+            <li><i class="bx bx-user-check" aria-hidden="true"></i><span>Automating only what's repetitive and leaving creative decisions to a human editor.</span></li>
+          </ul>
+        </section>
+
+        <!-- 11. Gallery: the tool has no GUI, so this shows its output -->
+        <section class="case-section" aria-labelledby="output-title">
+          <h2 class="case-title" id="output-title">What the tool produces</h2>
+          <!-- PENDENTE: capturas reais do terminal durante uma execução e de um CSV de marcações (ver docs/MIDIAS_PENDENTES.md). -->
+          <pre class="code-block" aria-label="Output folder structure"><code>saida/
+├── 01_MIC1_EDITADO.wav     <span class="comment"># microphone 1 with the cuts applied</span>
+├── 02_MIC2_EDITADO.wav     <span class="comment"># microphone 2 with the same cuts</span>
+├── 03_MIX_REFERENCIA.mp3   <span class="comment"># mix for review</span>
+├── 04_transcricao.txt      <span class="comment"># transcript</span>
+├── 05_transcricao.srt      <span class="comment"># subtitles</span>
+├── 06_marcacoes.txt        <span class="comment"># spots to review</span>
+├── 07_marcacoes.csv        <span class="comment"># start and end in CapCut's timeline</span>
+└── 08_cortes_pausas.csv    <span class="comment"># every shortened pause</span></code></pre>
+          <p class="code-caption">Files written to the <code>saida/</code> (output) folder, using the Portuguese names defined in the project's code.</p>
+        </section>
+
+        <!-- 12. Links -->
+        <section class="case-section" aria-labelledby="links-title">
+          <h2 class="case-title" id="links-title">Links</h2>
+          <div class="button-row">
+            <a href="https://github.com/felipezfroes/papotech-editor" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+              Repository on GitHub <i class="bx bxl-github" aria-hidden="true"></i>
+            </a>
+            <a href="https://open.spotify.com/episode/2IP40OF1JJQwI08dFBaYFG" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              Papotech Podcast <i class="bx bxl-spotify" aria-hidden="true"></i>
+            </a>
+          </div>
+        </section>
+      </div>
+
+      <nav class="case-nav" aria-label="Other case studies">
+        <a href="../relogio-das-consequencias/" class="prev">
+          <span>← Previous</span>
+          <strong>O Relógio das Consequências</strong>
+        </a>
+        <a href="../maniprotein/" class="next">
+          <span>Next →</span>
+          <strong>ManiProtein</strong>
+        </a>
+      </nav>
+
+      <aside class="case-cta" aria-label="Contact">
+        <div class="case-cta-box">
+          <div>
+            <h2>Need to automate a repetitive task?</h2>
+            <p>I'm open to internships, freelance projects and technical collaborations.</p>
+          </div>
+          <a href="../../?topic=automacao#contact" class="btn btn-primary">
+            Talk about a project <i class="bx bx-message-rounded-dots" aria-hidden="true"></i>
+          </a>
+        </div>
+      </aside>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <a href="../../" class="footer-logo" aria-label="FZF — homepage">FZF<span>.</span></a>
+        <p>Front-end developer in training: web, automation and games. Software Engineering and Digital Games student.</p>
+      </div>
+      <div class="footer-socials">
+        <a href="https://github.com/felipezfroes" target="_blank" rel="noopener noreferrer" aria-label="GitHub (opens in a new tab)"><i class="bx bxl-github" aria-hidden="true"></i></a>
+        <a href="https://www.linkedin.com/in/felipezfroesdev/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in a new tab)"><i class="bx bxl-linkedin" aria-hidden="true"></i></a>
+        <a href="https://fzf-dev.itch.io" target="_blank" rel="noopener noreferrer" aria-label="itch.io (opens in a new tab)"><i class="bx bx-joystick" aria-hidden="true"></i></a>
+        <a href="https://www.youtube.com/@FZFDev" target="_blank" rel="noopener noreferrer" aria-label="FZF Dev on YouTube (opens in a new tab)"><i class="bx bxl-youtube" aria-hidden="true"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 Felipe Zotareli Froes · FZF Dev</div>
+  </footer>
+
+  <script src="../../../js/main.js?v=20261104" defer></script>
+</body>
+</html>

@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>O Relógio das Consequências — A game shipped in 5 days | Felipe Zotareli Froes</title>
+  <meta name="description" content="Case study of O Relógio das Consequências, a puzzle game built in 5 days for NoNeJam 13 in GameMaker: scope control, time echoes and a final boss." />
+  <meta name="author" content="Felipe Zotareli Froes" />
+  <meta name="theme-color" content="#060f1a" />
+  <link rel="canonical" href="https://felipezfroes.com/en/projects/relogio-das-consequencias/" />
+  <link rel="alternate" hreflang="pt-BR" href="https://felipezfroes.com/projetos/relogio-das-consequencias/" />
+  <link rel="alternate" hreflang="en" href="https://felipezfroes.com/en/projects/relogio-das-consequencias/" />
+  <link rel="alternate" hreflang="x-default" href="https://felipezfroes.com/projetos/relogio-das-consequencias/" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="pt_BR" />
+  <meta property="og:site_name" content="Felipe Zotareli Froes" />
+  <meta property="og:title" content="O Relógio das Consequências — Case study" />
+  <meta property="og:description" content="A puzzle-action game built in 5 days for NoNeJam 13: record your steps and use an echo of your past self to move forward." />
+  <meta property="og:url" content="https://felipezfroes.com/en/projects/relogio-das-consequencias/" />
+  <meta property="og:image" content="https://felipezfroes.com/img/og/og-relogio-das-consequencias.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Title screen of O Relógio das Consequências" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="O Relógio das Consequências — Case study" />
+  <meta name="twitter:description" content="A puzzle-action game built in 5 days for NoNeJam 13: record your steps and use an echo of your past self to move forward." />
+  <meta name="twitter:image" content="https://felipezfroes.com/img/og/og-relogio-das-consequencias.jpg" />
+
+  <link rel="icon" href="../../../favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../../../favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="../../../apple-touch-icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../../../styles.css?v=20261104" />
+  <link rel="stylesheet" href="../../../projetos/css/case-study.css?v=20261104" />
+
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoGame",
+      "name": "O Relógio das Consequências",
+      "description": "A 2D puzzle-action game built in 5 days for NoNeJam 13, based on time echoes that replay the player's actions.",
+      "url": "https://felipezfroes.com/en/projects/relogio-das-consequencias/",
+      "image": "https://felipezfroes.com/projetos/img/relogio/relogio-4.webp",
+      "sameAs": ["https://fzf-dev.itch.io/o-relogio-das-consequencias", "https://github.com/felipezfroes/NoneJam-13"],
+      "genre": ["Puzzle", "Action"],
+      "gamePlatform": "Windows",
+      "inLanguage": "pt-BR",
+      "author": { "@type": "Person", "name": "Felipe Zotareli Froes", "url": "https://felipezfroes.com/en/" }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://felipezfroes.com/en/" },
+        { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://felipezfroes.com/en/#more-projects" },
+        { "@type": "ListItem", "position": 3, "name": "O Relógio das Consequências", "item": "https://felipezfroes.com/en/projects/relogio-das-consequencias/" }
+      ]
+    }
+  ]
+  </script>
+</head>
+
+<body data-project="relogio-das-consequencias">
+  <a href="#content" class="skip-link">Skip to content</a>
+
+  <div class="bg-orbs" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="grain"></div>
+  </div>
+
+  <header class="header">
+    <nav class="nav" aria-label="Main navigation">
+      <a href="../../" class="nav-logo" aria-label="FZF — homepage">FZF<span>.</span></a>
+      <ul class="nav-menu">
+        <li><a href="../../#home">Home</a></li>
+        <li><a href="../../#projects" class="is-active">Projects</a></li>
+        <li><a href="../../#services">Services</a></li>
+        <li><a href="../../#about">About</a></li>
+        <li><a href="../../#skills">Skills</a></li>
+        <li><a href="../../#contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="lang-switch" role="group" aria-label="Language / Idioma">
+          <a href="../../../projetos/relogio-das-consequencias/" lang="pt-BR" hreflang="pt-BR" data-lang-switch aria-label="Português">PT</a>
+          <span class="lang-sep" aria-hidden="true">|</span>
+          <a href="./" lang="en" hreflang="en" aria-current="true" aria-label="English">EN</a>
+        </div>
+        <a href="../../../assets/Felipe_Zotareli_Froes_CV_Frontend.pdf" download hreflang="pt-BR" class="nav-cta" aria-label="Download CV in Portuguese (PDF)">
+          CV <small>PT</small> <i class="bx bx-download" aria-hidden="true"></i>
+        </a>
+      </div>
+    </nav>
+
+    <div class="lang-switch lang-switch-mobile" role="group" aria-label="Language / Idioma">
+      <a href="../../../projetos/relogio-das-consequencias/" lang="pt-BR" hreflang="pt-BR" data-lang-switch aria-label="Português">PT</a>
+      <span class="lang-sep" aria-hidden="true">|</span>
+      <a href="./" lang="en" hreflang="en" aria-current="true" aria-label="English">EN</a>
+    </div>
+
+    <nav class="mobile-nav" aria-label="Mobile navigation">
+      <a href="../../" aria-label="Home"><i class="bx bxs-home" aria-hidden="true"></i></a>
+      <a href="../../#projects" aria-label="Projects" class="is-active"><i class="bx bx-code-alt" aria-hidden="true"></i></a>
+      <a href="../../#services" aria-label="Services"><i class="bx bx-briefcase-alt-2" aria-hidden="true"></i></a>
+      <a href="../../#about" aria-label="About"><i class="bx bxs-user" aria-hidden="true"></i></a>
+      <a href="../../#contact" aria-label="Contact"><i class="bx bxs-envelope" aria-hidden="true"></i></a>
+      <a href="../../../assets/Felipe_Zotareli_Froes_CV_Frontend.pdf" download hreflang="pt-BR" aria-label="Download CV in Portuguese (PDF)"><i class="bx bx-download" aria-hidden="true"></i></a>
+    </nav>
+  </header>
+
+  <main id="content">
+    <article>
+      <!-- 1. Overview -->
+      <header class="case-hero">
+        <nav class="breadcrumb" aria-label="You are here">
+          <ol>
+            <li><a href="../../">Home</a></li>
+            <li><a href="../../#more-projects">Projects</a></li>
+            <li aria-current="page">O Relógio das Consequências</li>
+          </ol>
+        </nav>
+
+        <div class="case-hero-grid">
+          <div>
+            <span class="section-label">Game Development · Game jam</span>
+            <h1>O Relógio das Consequências</h1>
+            <p class="case-tagline">A complete game in five days, driven by a single mechanic</p>
+            <p class="case-summary">
+              (“The Clock of Consequences”) A 2D top-down puzzle-action game built in 5 days for NoNeJam 13,
+              my first game jam. Your movements are recorded: when you create a time echo, a copy of your
+              past self replays your path while you play a new timeline.
+            </p>
+            <div class="button-row">
+              <a href="https://fzf-dev.itch.io/o-relogio-das-consequencias" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                Download on itch.io <i class="bx bx-joystick" aria-hidden="true"></i>
+              </a>
+              <a href="https://github.com/felipezfroes/NoneJam-13" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                Code on GitHub <i class="bx bxl-github" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+          <dl class="case-facts">
+            <div><dt>Type</dt><dd>2D puzzle-action game</dd></div>
+            <div><dt>Role</dt><dd>Solo developer</dd></div>
+            <div><dt>Deadline</dt><dd>5 days, during NoNeJam 13</dd></div>
+            <div><dt>Tools</dt><dd>GameMaker · GML</dd></div>
+          </dl>
+        </div>
+
+        <figure class="case-cover">
+          <img src="../../../projetos/img/relogio/relogio-4.webp" alt="Title screen with the game's name and the subtitle Your steps leave echoes (in Portuguese)" width="1280" height="720" fetchpriority="high" decoding="async" />
+          <figcaption>Title screen: “your steps leave echoes”.</figcaption>
+        </figure>
+      </header>
+
+      <div class="case-body">
+        <!-- 2 & 3. Problem and goal -->
+        <section class="case-section" aria-labelledby="context-title">
+          <h2 class="case-title" id="context-title">Problem and goal</h2>
+          <div class="case-grid">
+            <div class="case-box">
+              <h3>The jam theme</h3>
+              <p>
+                The theme was <strong>Chain Reaction / Butterfly Effect</strong>. Instead of using it only
+                in the story, I turned it into the core mechanic: something you do now triggers
+                consequences a few seconds later.
+              </p>
+            </div>
+            <div class="case-box">
+              <h3>The goal</h3>
+              <p>
+                Ship a short but complete experience in 5 days: a clear mechanic, a gradual introduction,
+                puzzles, a visual identity, sound, a menu, a beginning, middle and end — and a final boss.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. My role -->
+        <section class="case-section" aria-labelledby="role-title">
+          <h2 class="case-title" id="role-title">My role</h2>
+          <p class="case-text">
+            Solo development: programming, project direction, game design, level design, visual identity,
+            production and systems integration. Sound effects come from the 400 Sounds Pack (by Cafofo),
+            and the fonts are Alagard and Algerian, all credited in the project.
+          </p>
+        </section>
+
+        <!-- 5. Technologies -->
+        <section class="case-section" aria-labelledby="tech-title">
+          <h2 class="case-title" id="tech-title">Technologies</h2>
+          <ul class="tech-list" aria-label="Technologies used">
+            <li>GameMaker</li>
+            <li>GML</li>
+            <li>Level Design</li>
+            <li>Git & GitHub</li>
+          </ul>
+        </section>
+
+        <!-- 6. Features -->
+        <section class="case-section" aria-labelledby="features-title">
+          <h2 class="case-title" id="features-title">Core mechanic: the time echo</h2>
+          <ol class="pipeline">
+            <li><strong>Record</strong>During a level, the game records the player's movements.</li>
+            <li><strong>Create the echo</strong>Pressing Space turns the recorded path into an echo.</li>
+            <li><strong>Replay</strong>The echo spawns at the start and repeats every recorded step.</li>
+            <li><strong>Cooperate</strong>The player returns to the start and acts alongside their own past.</li>
+          </ol>
+          <p class="case-text">
+            This lets the player press two plates at once, keep a mechanism active while taking another
+            path, push boxes into place and open doors with synchronized actions. I also implemented:
+          </p>
+          <ul class="check-list two-cols">
+            <li><i class="bx bx-move" aria-hidden="true"></i><span><strong>Top-down movement</strong> with collision and directional sprites.</span></li>
+            <li><i class="bx bx-cube" aria-hidden="true"></i><span><strong>Pushable boxes</strong>, pressure plates and time plates.</span></li>
+            <li><i class="bx bx-door-open" aria-hidden="true"></i><span><strong>Doors and barriers</strong> opened by synchronized actions.</span></li>
+            <li><i class="bx bx-revision" aria-hidden="true"></i><span><strong>Quick level restart</strong> and room transitions.</span></li>
+            <li><i class="bx bx-target-lock" aria-hidden="true"></i><span><strong>Final boss</strong> with projectiles and attack patterns.</span></li>
+            <li><i class="bx bx-rewind" aria-hidden="true"></i><span><strong>Time rewind</strong>: boss attacks send the player back to an earlier position.</span></li>
+            <li><i class="bx bx-volume-full" aria-hidden="true"></i><span><strong>Menu, victory screen</strong>, sound effects and visual feedback.</span></li>
+            <li><i class="bx bx-history" aria-hidden="true"></i><span><strong>Time echoes</strong>: recording and replaying the player's actions.</span></li>
+          </ul>
+        </section>
+
+        <!-- 7. Technical decisions -->
+        <section class="case-section" aria-labelledby="decisions-title">
+          <h2 class="case-title" id="decisions-title">Technical decisions</h2>
+          <ul class="check-list two-cols">
+            <li><i class="bx bx-bulb" aria-hidden="true"></i><span><strong>The theme became the mechanic.</strong> Every level, including the boss, uses the idea of actions that cause consequences later.</span></li>
+            <li><i class="bx bx-git-compare" aria-hidden="true"></i><span><strong>Recording and replaying kept separate.</strong> <code>obj_time_manager</code> records; <code>obj_echo</code> replays the sequence.</span></li>
+            <li><i class="bx bx-revision" aria-hidden="true"></i><span><strong>Failing should be cheap.</strong> In a trial-and-error puzzle, restarting a level is instant.</span></li>
+            <li><i class="bx bx-music" aria-hidden="true"></i><span><strong>Credited third-party sound and fonts.</strong> Jam time went into gameplay, not into making audio from scratch.</span></li>
+          </ul>
+        </section>
+
+        <!-- 8. Challenges -->
+        <section class="case-section" aria-labelledby="challenges-title">
+          <h2 class="case-title" id="challenges-title">Challenges and solutions</h2>
+          <div class="challenges">
+            <div class="challenge">
+              <div>
+                <span class="challenge-label"><i class="bx bx-error-circle" aria-hidden="true"></i> Challenge</span>
+                <h3>Five days for a complete game</h3>
+                <p>There were more ideas than time. The risk was ending the jam with several half-finished mechanics.</p>
+              </div>
+              <div>
+                <span class="challenge-label"><i class="bx bx-check-circle" aria-hidden="true"></i> Solution</span>
+                <h3>Scope control</h3>
+                <p>A single core mechanic guided every decision. Several ideas were simplified or cut to guarantee a beginning, middle and end, sound and polish.</p>
+              </div>
+            </div>
+
+            <div class="challenge">
+              <div>
+                <span class="challenge-label"><i class="bx bx-error-circle" aria-hidden="true"></i> Challenge</span>
+                <h3>Teaching an unusual mechanic</h3>
+                <p>Cooperating with your own past isn't intuitive, and game jam players usually only play for a few minutes.</p>
+              </div>
+              <div>
+                <span class="challenge-label"><i class="bx bx-check-circle" aria-hidden="true"></i> Solution</span>
+                <h3>Step-by-step progression</h3>
+                <p>The flow goes from the menu to the echo tutorial, then the box tutorial, the main puzzle and the boss: each system appears on its own before being combined.</p>
+              </div>
+            </div>
+
+            <div class="challenge">
+              <div>
+                <span class="challenge-label"><i class="bx bx-error-circle" aria-hidden="true"></i> Challenge</span>
+                <h3>Replaying the player's actions exactly</h3>
+                <p>The echo only works if it reproduces the recorded path faithfully, at the same pace.</p>
+              </div>
+              <div>
+                <span class="challenge-label"><i class="bx bx-check-circle" aria-hidden="true"></i> Solution</span>
+                <h3>A time manager + an echo object</h3>
+                <p>Movements are recorded during the level, and when an echo is created it spawns at the starting point and replays the stored sequence.</p>
+              </div>
+            </div>
+
+            <div class="challenge">
+              <div>
+                <span class="challenge-label"><i class="bx bx-error-circle" aria-hidden="true"></i> Challenge</span>
+                <h3>Bringing the theme into combat</h3>
+                <p>The boss needed to use the idea of time, not be just another fight.</p>
+              </div>
+              <div>
+                <span class="challenge-label"><i class="bx bx-check-circle" aria-hidden="true"></i> Solution</span>
+                <h3>A position history</h3>
+                <p>The game keeps a short history of the player's positions. Some boss attacks force the player back to where they were moments earlier.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 9. Results -->
+        <section class="case-section" aria-labelledby="results-title">
+          <h2 class="case-title" id="results-title">Verifiable results</h2>
+          <!-- PENDENTE: se a jam divulgou colocação ou avaliações, adicionar aqui com o link. -->
+          <ul class="check-list">
+            <li><i class="bx bx-check-double" aria-hidden="true"></i><span>Jam version finished on time and published on <a href="https://fzf-dev.itch.io/o-relogio-das-consequencias" target="_blank" rel="noopener noreferrer">itch.io</a>, with a Windows download.</span></li>
+            <li><i class="bx bxl-github" aria-hidden="true"></i><span>Full source code on <a href="https://github.com/felipezfroes/NoneJam-13" target="_blank" rel="noopener noreferrer">GitHub</a>, with a README covering mechanics, controls and project structure.</span></li>
+            <li><i class="bx bxl-youtube" aria-hidden="true"></i><span>Development process recorded on video (in Portuguese) on the <a href="https://www.youtube.com/@FZFDev" target="_blank" rel="noopener noreferrer">FZF Dev channel</a>.</span></li>
+          </ul>
+        </section>
+
+        <!-- 10. What I learned -->
+        <section class="case-section" aria-labelledby="learnings-title">
+          <h2 class="case-title" id="learnings-title">What I learned</h2>
+          <p class="case-text">
+            More than implementing systems, the biggest challenge was deciding what really needed to be
+            ready for the idea to become a complete game in five days.
+          </p>
+          <ul class="check-list two-cols">
+            <li><i class="bx bx-crop" aria-hidden="true"></i><span>Scope control and prioritization under a deadline.</span></li>
+            <li><i class="bx bx-bulb" aria-hidden="true"></i><span>Game design driven by a single core mechanic.</span></li>
+            <li><i class="bx bx-map-alt" aria-hidden="true"></i><span>Level design that introduces systems gradually.</span></li>
+            <li><i class="bx bx-rocket" aria-hidden="true"></i><span>Finishing and shipping, with visual and audio feedback.</span></li>
+          </ul>
+        </section>
+
+        <!-- 11. Gallery -->
+        <section class="case-section" aria-labelledby="gallery-title">
+          <h2 class="case-title" id="gallery-title">Gallery</h2>
+          <div class="carousel" data-carousel role="region" aria-roledescription="carousel" aria-label="Screenshots of O Relógio das Consequências" tabindex="0">
+            <div class="carousel-viewport">
+              <figure class="carousel-slide">
+                <img src="../../../projetos/img/relogio/relogio-1.webp" alt="First level: the player and the time echo in the room, with the goal of reaching the exit" width="1280" height="720" loading="lazy" decoding="async" />
+                <figcaption>The time echo tutorial: the echo repeats the recorded path.</figcaption>
+              </figure>
+              <figure class="carousel-slide">
+                <img src="../../../projetos/img/relogio/relogio-2.webp" alt="A level where the echo and a box must be combined to open the way" width="1280" height="720" loading="lazy" decoding="async" />
+                <figcaption>Combining the echo and a box to open the way.</figcaption>
+              </figure>
+              <figure class="carousel-slide">
+                <img src="../../../projetos/img/relogio/relogio-3.webp" alt="Fighting the boss, a clock with an hourglass, while dodging projectiles" width="1280" height="720" loading="lazy" decoding="async" />
+                <figcaption>The final boss: deflect the projectile and move the box.</figcaption>
+              </figure>
+              <figure class="carousel-slide">
+                <img src="../../../projetos/img/relogio/relogio-5.webp" alt="Victory screen with the message You broke the cycle (in Portuguese)" width="1280" height="720" loading="lazy" decoding="async" />
+                <figcaption>The victory screen.</figcaption>
+              </figure>
+            </div>
+            <div class="carousel-controls">
+              <button type="button" class="carousel-btn prev" aria-label="Previous image"><i class="bx bx-chevron-left" aria-hidden="true"></i></button>
+              <div class="carousel-indicators"></div>
+              <span class="carousel-counter" aria-live="polite"></span>
+              <button type="button" class="carousel-btn next" aria-label="Next image"><i class="bx bx-chevron-right" aria-hidden="true"></i></button>
+            </div>
+          </div>
+        </section>
+
+        <!-- 12. Links -->
+        <section class="case-section" aria-labelledby="links-title">
+          <h2 class="case-title" id="links-title">Links</h2>
+          <div class="button-row">
+            <a href="https://fzf-dev.itch.io/o-relogio-das-consequencias" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+              Play on itch.io <i class="bx bx-joystick" aria-hidden="true"></i>
+            </a>
+            <a href="https://github.com/felipezfroes/NoneJam-13" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              Repository on GitHub <i class="bx bxl-github" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.youtube.com/@FZFDev" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              Video on YouTube <i class="bx bxl-youtube" aria-hidden="true"></i>
+            </a>
+          </div>
+        </section>
+      </div>
+
+      <nav class="case-nav" aria-label="Other case studies">
+        <a href="../chipre/" class="prev">
+          <span>← Previous</span>
+          <strong>C.H.I.P.R.E.</strong>
+        </a>
+        <a href="../papotech-editor/" class="next">
+          <span>Next →</span>
+          <strong>Papotech Editor</strong>
+        </a>
+      </nav>
+
+      <aside class="case-cta" aria-label="Contact">
+        <div class="case-cta-box">
+          <div>
+            <h2>Need someone who ships on time?</h2>
+            <p>I'm open to internships, freelance projects and technical collaborations, including game jams.</p>
+          </div>
+          <a href="../../#contact" class="btn btn-primary">
+            Get in touch <i class="bx bx-message-rounded-dots" aria-hidden="true"></i>
+          </a>
+        </div>
+      </aside>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <a href="../../" class="footer-logo" aria-label="FZF — homepage">FZF<span>.</span></a>
+        <p>Front-end developer in training: web, automation and games. Software Engineering and Digital Games student.</p>
+      </div>
+      <div class="footer-socials">
+        <a href="https://github.com/felipezfroes" target="_blank" rel="noopener noreferrer" aria-label="GitHub (opens in a new tab)"><i class="bx bxl-github" aria-hidden="true"></i></a>
+        <a href="https://www.linkedin.com/in/felipezfroesdev/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in a new tab)"><i class="bx bxl-linkedin" aria-hidden="true"></i></a>
+        <a href="https://fzf-dev.itch.io" target="_blank" rel="noopener noreferrer" aria-label="itch.io (opens in a new tab)"><i class="bx bx-joystick" aria-hidden="true"></i></a>
+        <a href="https://www.youtube.com/@FZFDev" target="_blank" rel="noopener noreferrer" aria-label="FZF Dev on YouTube (opens in a new tab)"><i class="bx bxl-youtube" aria-hidden="true"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 Felipe Zotareli Froes · FZF Dev</div>
+  </footer>
+
+  <script src="../../../js/main.js?v=20261104" defer></script>
+  <script src="../../../projetos/js/gallery.js?v=20261104" defer></script>
+</body>
+</html>

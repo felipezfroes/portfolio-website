@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Ecos do Olimpo — Jogo independente com múltiplos sistemas integrados | Felipe Zotareli Froes</title>
+  <meta name="description" content="Estudo de caso do Ecos do Olimpo, jogo indie 2D feito solo em GameMaker: crafting, construção em grid, agricultura e automação. Alpha 0.1.2 pública e Atualização de Deméter em desenvolvimento." />
+  <meta name="author" content="Felipe Zotareli Froes" />
+  <meta name="theme-color" content="#060f1a" />
+  <link rel="canonical" href="https://felipezfroes.com/projetos/ecos-do-olimpo/" />
+  <link rel="alternate" hreflang="pt-BR" href="https://felipezfroes.com/projetos/ecos-do-olimpo/" />
+  <link rel="alternate" hreflang="en" href="https://felipezfroes.com/en/projects/ecos-do-olimpo/" />
+  <link rel="alternate" hreflang="x-default" href="https://felipezfroes.com/projetos/ecos-do-olimpo/" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:site_name" content="Felipe Zotareli Froes" />
+  <meta property="og:title" content="Ecos do Olimpo — Estudo de caso" />
+  <meta property="og:description" content="Jogo indie 2D desenvolvido solo em GameMaker. Reconstrua o Olimpo com crafting, construção em grid, agricultura e automação." />
+  <meta property="og:url" content="https://felipezfroes.com/projetos/ecos-do-olimpo/" />
+  <meta property="og:image" content="https://felipezfroes.com/img/og/og-ecos-do-olimpo.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Estátuas de Zeus e Deméter restauradas no Ecos do Olimpo" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ecos do Olimpo — Estudo de caso" />
+  <meta name="twitter:description" content="Jogo indie 2D desenvolvido solo em GameMaker. Reconstrua o Olimpo com crafting, construção em grid, agricultura e automação." />
+  <meta name="twitter:image" content="https://felipezfroes.com/img/og/og-ecos-do-olimpo.jpg" />
+
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../../favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="../../apple-touch-icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css?v=20261104" />
+  <link rel="stylesheet" href="../css/case-study.css?v=20261104" />
+
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoGame",
+      "name": "Ecos do Olimpo",
+      "description": "Jogo indie 2D top-down em pixel art sobre reconstruir o Olimpo com coleta, crafting, construção em grid, agricultura, mineração e automação.",
+      "url": "https://felipezfroes.com/projetos/ecos-do-olimpo/",
+      "image": "https://felipezfroes.com/projetos/img/ecos-olimpo/alpha-templo.webp",
+      "sameAs": ["https://fzf-dev.itch.io/ecos-do-olimpo", "https://ecos-do-olimpo.felipezfroes.com"],
+      "genre": ["Farming", "Crafting", "Automação"],
+      "inLanguage": ["pt-BR", "en"],
+      "author": { "@type": "Person", "name": "Felipe Zotareli Froes", "url": "https://felipezfroes.com/" }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://felipezfroes.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Projetos", "item": "https://felipezfroes.com/#projetos" },
+        { "@type": "ListItem", "position": 3, "name": "Ecos do Olimpo", "item": "https://felipezfroes.com/projetos/ecos-do-olimpo/" }
+      ]
+    }
+  ]
+  </script>
+</head>
+
+<body data-project="ecos-do-olimpo">
+  <a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
+
+  <div class="bg-orbs" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="grain"></div>
+  </div>
+
+  <header class="header">
+    <nav class="nav" aria-label="Navegação principal">
+      <a href="../../" class="nav-logo" aria-label="FZF — página inicial">FZF<span>.</span></a>
+      <ul class="nav-menu">
+        <li><a href="../../#inicio">Início</a></li>
+        <li><a href="../../#projetos" class="is-active">Projetos</a></li>
+        <li><a href="../../#servicos">Serviços</a></li>
+        <li><a href="../../#sobre">Sobre</a></li>
+        <li><a href="../../#habilidades">Habilidades</a></li>
+        <li><a href="../../#contato">Contato</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="lang-switch" role="group" aria-label="Idioma / Language">
+          <a href="./" lang="pt-BR" hreflang="pt-BR" aria-current="true" aria-label="Português">PT</a>
+          <span class="lang-sep" aria-hidden="true">|</span>
+          <a href="../../en/projects/ecos-do-olimpo/" lang="en" hreflang="en" data-lang-switch aria-label="English">EN</a>
+        </div>
+        <a href="../../assets/Felipe_Zotareli_Froes_CV_Frontend.pdf" download class="nav-cta">
+          Baixar CV <i class="bx bx-download" aria-hidden="true"></i>
+        </a>
+      </div>
+    </nav>
+
+    <div class="lang-switch lang-switch-mobile" role="group" aria-label="Idioma / Language">
+      <a href="./" lang="pt-BR" hreflang="pt-BR" aria-current="true" aria-label="Português">PT</a>
+      <span class="lang-sep" aria-hidden="true">|</span>
+      <a href="../../en/projects/ecos-do-olimpo/" lang="en" hreflang="en" data-lang-switch aria-label="English">EN</a>
+    </div>
+
+    <nav class="mobile-nav" aria-label="Navegação mobile">
+      <a href="../../" aria-label="Início"><i class="bx bxs-home" aria-hidden="true"></i></a>
+      <a href="../../#projetos" aria-label="Projetos" class="is-active"><i class="bx bx-code-alt" aria-hidden="true"></i></a>
+      <a href="../../#servicos" aria-label="Serviços"><i class="bx bx-briefcase-alt-2" aria-hidden="true"></i></a>
+      <a href="../../#sobre" aria-label="Sobre"><i class="bx bxs-user" aria-hidden="true"></i></a>
+      <a href="../../#contato" aria-label="Contato"><i class="bx bxs-envelope" aria-hidden="true"></i></a>
+      <a href="../../assets/Felipe_Zotareli_Froes_CV_Frontend.pdf" download aria-label="Baixar currículo em PDF"><i class="bx bx-download" aria-hidden="true"></i></a>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <article>
+      <!-- 1. Visão geral -->
+      <header class="case-hero">
+        <nav class="breadcrumb" aria-label="Você está em">
+          <ol>
+            <li><a href="../../">Início</a></li>
+            <li><a href="../../#projetos">Projetos</a></li>
+            <li aria-current="page">Ecos do Olimpo</li>
+          </ol>
+        </nav>
+
+        <div class="case-hero-grid">
+          <div>
+            <span class="section-label">GameDev · Projeto autoral</span>
+            <h1>Ecos do Olimpo</h1>
+            <p class="case-tagline">Desenvolvimento independente de um jogo com múltiplos sistemas integrados</p>
+            <p class="case-summary">
+              Jogo 2D top-down em pixel art que desenvolvo sozinho em GameMaker. O Olimpo caiu, e o
+              jogador o reconstrói com coleta, crafting, construção em grid, agricultura, mineração e
+              automação. A Alpha 0.1.2 está publicada e pode ser jogada no navegador; a Atualização de
+              Deméter está em desenvolvimento.
+            </p>
+            <div class="button-row">
+              <a href="https://fzf-dev.itch.io/ecos-do-olimpo" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                Jogar a Alpha <i class="bx bx-joystick" aria-hidden="true"></i>
+              </a>
+              <a href="https://ecos-do-olimpo.felipezfroes.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                Site do jogo <i class="bx bx-globe" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+          <dl class="case-facts">
+            <div><dt>Tipo</dt><dd>Jogo indie 2D top-down</dd></div>
+            <div><dt>Papel</dt><dd>Desenvolvimento solo</dd></div>
+            <div><dt>Status</dt><dd>Alpha 0.1.2 pública · Atualização de Deméter em desenvolvimento</dd></div>
+            <div><dt>Ferramentas</dt><dd>GameMaker · GML · Aseprite</dd></div>
+          </dl>
+        </div>
+
+        <figure class="case-cover">
+          <img
+            src="../img/ecos-olimpo/demeter-estatuas-1280.webp"
+            srcset="../img/ecos-olimpo/demeter-estatuas-1280.webp 1280w, ../img/ecos-olimpo/demeter-estatuas.webp 1920w"
+            sizes="(max-width: 1140px) 100vw, 1044px"
+            alt="Estátuas de Zeus e Deméter restauradas na área de Deméter, com a mensagem A presença de Zeus retorna ao Olimpo"
+            width="1280" height="720" fetchpriority="high" decoding="async" />
+          <figcaption>Zeus e Deméter restaurados. Captura da build em desenvolvimento (Atualização de Deméter), ainda não publicada.</figcaption>
+        </figure>
+      </header>
+
+      <div class="case-body">
+        <!-- 2 e 3. Problema e objetivo -->
+        <section class="case-section" aria-labelledby="contexto-title">
+          <h2 class="case-title" id="contexto-title">Problema e objetivo</h2>
+          <div class="case-grid">
+            <div class="case-box">
+              <h3>O desafio do projeto</h3>
+              <p>
+                Fazer coleta, crafting, construção, agricultura e automação funcionarem como um único
+                ciclo — em que cada recurso coletado ajuda a reconstruir o Olimpo — e que ainda seja
+                compreensível para quem joga pela primeira vez.
+              </p>
+            </div>
+            <div class="case-box">
+              <h3>O que a Alpha precisava provar</h3>
+              <p>
+                Fechar o loop principal e colocá-lo nas mãos de jogadores antes de expandir: o objetivo está
+                claro? Os sistemas são fáceis de entender? A progressão é recompensadora? A interface é
+                confortável?
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. Minha participação -->
+        <section class="case-section" aria-labelledby="participacao-title">
+          <h2 class="case-title" id="participacao-title">Minha participação</h2>
+          <!-- PENDENTE: confirmar se toda a arte do jogo é autoral para citar aqui. -->
+          <p class="case-text">
+            É um projeto individual. Cuido da programação em GML, do game design e do desenho dos sistemas,
+            da interface e do balanceamento, além da publicação: página no itch.io, site oficial do jogo e
+            devlogs no canal FZF Dev.
+          </p>
+        </section>
+
+        <!-- 5. Tecnologias -->
+        <section class="case-section" aria-labelledby="tecnologias-title">
+          <h2 class="case-title" id="tecnologias-title">Tecnologias</h2>
+          <ul class="tech-list" aria-label="Tecnologias utilizadas">
+            <li>GameMaker</li>
+            <li>GML</li>
+            <li>Aseprite</li>
+            <li>Game Design</li>
+            <li>HTML, CSS e JavaScript (site do jogo)</li>
+          </ul>
+        </section>
+
+        <!-- 6. Funcionalidades -->
+        <section class="case-section" aria-labelledby="funcionalidades-title">
+          <h2 class="case-title" id="funcionalidades-title">O que já está na Alpha 0.1.2 (pública)</h2>
+          <ul class="check-list two-cols">
+            <li><i class="bx bx-package" aria-hidden="true"></i><span><strong>Inventário e barra de ferramentas</strong> com itens empilháveis, divisão de pilhas e descarte.</span></li>
+            <li><i class="bx bx-leaf" aria-hidden="true"></i><span><strong>Agricultura</strong> com sementes sagradas e vários estágios de crescimento.</span></li>
+            <li><i class="bx bx-diamond" aria-hidden="true"></i><span><strong>Mineração</strong> de pedra, carvão e minério de Azurelita.</span></li>
+            <li><i class="bx bx-grid-alt" aria-hidden="true"></i><span><strong>Crafting 3×3</strong> com receitas de progressão.</span></li>
+            <li><i class="bx bxs-hot" aria-hidden="true"></i><span><strong>Fornalha</strong> para refinar materiais brutos.</span></li>
+            <li><i class="bx bx-building-house" aria-hidden="true"></i><span><strong>Construção em grid</strong> com rotação de estruturas.</span></li>
+            <li><i class="bx bx-cog" aria-hidden="true"></i><span><strong>Automação inicial</strong> com esteiras, baús, fornalhas e mineração automática.</span></li>
+            <li><i class="bx bxs-zap" aria-hidden="true"></i><span><strong>Oferendas divinas</strong> com os primeiros conjuntos de Zeus e Deméter.</span></li>
+            <li><i class="bx bx-target-lock" aria-hidden="true"></i><span><strong>Objetivos e dicas contextuais</strong> que guiam a progressão.</span></li>
+            <li><i class="bx bx-world" aria-hidden="true"></i><span><strong>Português e inglês</strong>, tela cheia, escala da interface, distância da câmera e partículas.</span></li>
+          </ul>
+        </section>
+
+        <!-- 7. Decisões técnicas -->
+        <section class="case-section" aria-labelledby="decisoes-title">
+          <h2 class="case-title" id="decisoes-title">Decisões técnicas e de produto</h2>
+          <ul class="check-list two-cols">
+            <li><i class="bx bx-git-branch" aria-hidden="true"></i><span><strong>Versões pequenas e frequentes.</strong> A Alpha saiu com o loop principal fechado e recebeu duas correções na mesma semana, em vez de esperar o jogo inteiro.</span></li>
+            <li><i class="bx bx-sitemap" aria-hidden="true"></i><span><strong>Oferendas como eixo da progressão.</strong> Cada sistema produz itens que alimentam o próximo, e as oferendas dão um destino a todos eles.</span></li>
+            <li><i class="bx bx-message-dots" aria-hidden="true"></i><span><strong>Feedback com dois canais.</strong> Comentários na página do jogo para impressões gerais e um formulário para bugs e sugestões detalhadas.</span></li>
+            <li><i class="bx bx-world" aria-hidden="true"></i><span><strong>Bilíngue e configurável desde a Alpha.</strong> Português, inglês e ajustes de interface e câmera já na primeira versão pública.</span></li>
+          </ul>
+        </section>
+
+        <!-- 8. Desafios -->
+        <section class="case-section" aria-labelledby="desafios-title">
+          <h2 class="case-title" id="desafios-title">Desafios e soluções</h2>
+          <div class="challenges">
+            <div class="challenge">
+              <div>
+                <span class="challenge-label"><i class="bx bx-error-circle" aria-hidden="true"></i> Desafio</span>
+                <h3>Posicionar estruturas com precisão</h3>
+                <p>Em um mundo top-down, o jogador precisa saber exatamente onde uma máquina vai ficar antes de gastar recursos com ela.</p>
+              </div>
+              <div>
+                <span class="challenge-label"><i class="bx bx-check-circle" aria-hidden="true"></i> Solução</span>
+                <h3>Construção em grid com prévia</h3>
+                <p>Antes de posicionar, a estrutura aparece como uma prévia: verde quando o local é válido, vermelha quando não é. A tecla <code>R</code> gira a estrutura.</p>
+              </div>
+            </div>
+
+            <div class="challenge">
+              <div>
+                <span class="challenge-label"><i class="bx bx-error-circle" aria-hidden="true"></i> Desafio</span>
+                <h3>Fazer as máquinas trabalharem juntas</h3>
+                <p>A automação só faz sentido se baús, fornalhas e mineradoras puderem trocar itens sem o jogador carregar tudo à mão.</p>
+              </div>
+              <div>
+                <span class="challenge-label"><i class="bx bx-check-circle" aria-hidden="true"></i> Solução</span>
+                <h3>Esteiras com autotile</h3>
+                <p>As esteiras se ajustam automaticamente às vizinhas e ligam as máquinas em cadeias de produção, que continuam funcionando enquanto o jogador explora.</p>
+              </div>
+            </div>
+
+            <div class="challenge">
+              <div>
+                <span class="challenge-label"><i class="bx bx-error-circle" aria-hidden="true"></i> Desafio</span>
+                <h3>Muitos sistemas para um jogador novo</h3>
+                <p>Agricultura, mineração, crafting, construção e automação de uma vez podem deixar o jogador sem saber o que fazer.</p>
+              </div>
+              <div>
+                <span class="challenge-label"><i class="bx bx-check-circle" aria-hidden="true"></i> Solução</span>
+                <h3>Objetivos, dicas e oferendas</h3>
+                <p>A progressão é guiada por objetivos e dicas contextuais, e as oferendas dão propósito a cada recurso: entregar os itens pedidos restaura os conjuntos dos deuses.</p>
+              </div>
+            </div>
+
+            <div class="challenge">
+              <div>
+                <span class="challenge-label"><i class="bx bx-error-circle" aria-hidden="true"></i> Desafio</span>
+                <h3>Gerenciar muitos itens</h3>
+                <p>Um jogo de crafting gera dezenas de itens, e jogadores da Alpha apontaram que faltavam atalhos comuns no gênero.</p>
+              </div>
+              <div>
+                <span class="challenge-label"><i class="bx bx-check-circle" aria-hidden="true"></i> Solução</span>
+                <h3>Atalhos pedidos pelos jogadores</h3>
+                <p>Na 0.1.2 entraram as teclas <code>1</code>–<code>9</code> na barra, <code>Shift</code> + clique para mover itens entre interfaces e craft em lote, além do inventário com <code>TAB</code> e descarte com <code>Q</code>.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 9. Resultados -->
+        <section class="case-section" aria-labelledby="resultados-title">
+          <h2 class="case-title" id="resultados-title">Resultados verificáveis</h2>
+          <!-- PENDENTE: se houver números de playtest (downloads, jogadores, respostas do formulário), adicionar aqui com a fonte. -->
+          <p class="case-text">Histórico público de versões, segundo os devlogs da página do jogo:</p>
+          <ol class="pipeline">
+            <li><strong>Alpha 0.1 · 24/06/2026</strong>Primeira versão pública, com o loop principal e formulário de feedback.</li>
+            <li><strong>Alpha 0.1.1 · 28/06</strong>Colheita mais clara e correção de um bug em que o jogador ficava preso ao construir.</li>
+            <li><strong>Alpha 0.1.2 · 30/06</strong>Atalhos de inventário e crafting e correção do contador do altar, a partir de comentários de jogadores.</li>
+            <li><strong>Prévia · outubro</strong>Devlog com o redesenho das construções e a prévia da Atualização de Deméter.</li>
+          </ol>
+          <ul class="check-list">
+            <li><i class="bx bx-joystick" aria-hidden="true"></i><span>Alpha 0.1.2 jogável no navegador, na <a href="https://fzf-dev.itch.io/ecos-do-olimpo" target="_blank" rel="noopener noreferrer">página do jogo no itch.io</a>. Segundo a própria página, o conteúdo atual pode ser jogado do início ao fim.</span></li>
+            <li><i class="bx bx-globe" aria-hidden="true"></i><span><a href="https://ecos-do-olimpo.felipezfroes.com" target="_blank" rel="noopener noreferrer">Site oficial</a> com galeria, roadmap, versão em português e inglês e lista de espera.</span></li>
+            <li><i class="bx bxl-youtube" aria-hidden="true"></i><span>Desenvolvimento documentado em devlogs no itch.io e no <a href="https://www.youtube.com/@FZFDev" target="_blank" rel="noopener noreferrer">canal FZF Dev</a>.</span></li>
+          </ul>
+        </section>
+
+        <!-- Em desenvolvimento -->
+        <section class="case-section" aria-labelledby="desenvolvimento-title">
+          <h2 class="case-title" id="desenvolvimento-title">Em desenvolvimento</h2>
+          <p class="case-note">
+            <i class="bx bx-info-circle" aria-hidden="true"></i>
+            <span>
+              Nada desta seção está na versão pública. Segundo o devlog de outubro, a Atualização de Deméter
+              foca em agricultura e vegetação — progressão de cultivos, rega e aspersores, produção de
+              sementes e a floresta de Deméter — junto com o redesenho das construções em um visual inspirado
+              na Grécia Antiga e mais feedback visual nas máquinas.
+            </span>
+          </p>
+          <p class="case-text">O roadmap do site oficial também lista três atualizações planejadas:</p>
+          <ol class="pipeline three">
+            <li><strong>Animais e fazenda</strong>Criaturas sagradas, estufa automatizada e sistema de energia.</li>
+            <li><strong>Pets e criaturas</strong>Espíritos companheiros dos deuses, bênçãos e alquimia.</li>
+            <li><strong>Exploração e combate</strong>Ruínas, monstros mitológicos, chefes e a lore dos deuses.</li>
+          </ol>
+        </section>
+
+        <!-- 10. Aprendizados -->
+        <section class="case-section" aria-labelledby="aprendizados-title">
+          <h2 class="case-title" id="aprendizados-title">Aprendizados</h2>
+          <!-- PENDENTE: revisar e complementar com aprendizados pessoais. -->
+          <ul class="check-list two-cols">
+            <li><i class="bx bx-git-branch" aria-hidden="true"></i><span>Dividir o projeto em versões para publicar algo jogável sem esperar o jogo inteiro.</span></li>
+            <li><i class="bx bx-sitemap" aria-hidden="true"></i><span>Projetar sistemas dependentes — coleta alimenta crafting, que alimenta construção e automação — sem que um quebre o outro.</span></li>
+            <li><i class="bx bx-user-voice" aria-hidden="true"></i><span>Testar cedo com jogadores: os comentários da Alpha viraram a lista de melhorias da 0.1.2.</span></li>
+            <li><i class="bx bx-video-recording" aria-hidden="true"></i><span>Documentar o processo em devlogs, o que obriga a explicar cada decisão de design.</span></li>
+          </ul>
+        </section>
+
+        <!-- 11. Galeria -->
+        <section class="case-section" aria-labelledby="galeria-title">
+          <h2 class="case-title" id="galeria-title">Galeria</h2>
+
+          <div class="gallery-group">
+            <h3 class="gallery-title">Alpha 0.1.2 — versão pública</h3>
+            <p class="gallery-desc">O que qualquer pessoa encontra hoje ao jogar no itch.io.</p>
+            <div class="carousel" data-carousel role="region" aria-roledescription="carrossel" aria-label="Capturas de tela da Alpha 0.1.2" tabindex="0">
+              <div class="carousel-viewport">
+                <figure class="carousel-slide">
+                  <img src="../img/ecos-olimpo/alpha-templo.webp" alt="Personagem no templo do Olimpo, entre as estátuas de Zeus e Deméter" width="1148" height="718" loading="lazy" decoding="async" />
+                  <figcaption>Templo do Olimpo: as oferendas restauram as estátuas dos deuses.</figcaption>
+                </figure>
+                <figure class="carousel-slide">
+                  <img src="../img/ecos-olimpo/alpha-crafting.webp" alt="Mesa de crafting 3×3 com a lista de receitas aberta" width="1280" height="720" loading="lazy" decoding="async" />
+                  <figcaption>Mesa de crafting 3×3 com receitas de progressão.</figcaption>
+                </figure>
+                <figure class="carousel-slide">
+                  <img src="../img/ecos-olimpo/alpha-fornalha.webp" alt="Interface da fornalha transformando minério de Azurelita em barra" width="1280" height="720" loading="lazy" decoding="async" />
+                  <figcaption>Fornalha refinando minério de Azurelita em barras.</figcaption>
+                </figure>
+                <figure class="carousel-slide">
+                  <img src="../img/ecos-olimpo/alpha-inventario.webp" alt="Inventário aberto com o objetivo atual e a barra de progresso do Olimpo" width="1280" height="720" loading="lazy" decoding="async" />
+                  <figcaption>Inventário com o objetivo atual e o progresso de reconstrução.</figcaption>
+                </figure>
+                <figure class="carousel-slide">
+                  <img src="../img/ecos-olimpo/alpha-altar.webp" alt="Altar dos deuses com a escolha de oferenda para Zeus ou Deméter" width="1280" height="720" loading="lazy" decoding="async" />
+                  <figcaption>Altar dos deuses: cada oferenda pede um conjunto de itens.</figcaption>
+                </figure>
+                <figure class="carousel-slide">
+                  <img src="../img/ecos-olimpo/ecos-4.webp" alt="Linha de produção com esteiras, baús e máquinas conectadas" width="1273" height="716" loading="lazy" decoding="async" />
+                  <figcaption>Esteiras e máquinas conectadas (build anterior à Alpha).</figcaption>
+                </figure>
+                <figure class="carousel-slide">
+                  <img src="../img/ecos-olimpo/alpha-menu.webp" alt="Menu inicial do Ecos do Olimpo com as opções Jogar, Controles e Sair" width="1278" height="715" loading="lazy" decoding="async" />
+                  <figcaption>Menu inicial, com seleção de idioma.</figcaption>
+                </figure>
+              </div>
+              <div class="carousel-controls">
+                <button type="button" class="carousel-btn prev" aria-label="Imagem anterior"><i class="bx bx-chevron-left" aria-hidden="true"></i></button>
+                <div class="carousel-indicators"></div>
+                <span class="carousel-counter" aria-live="polite"></span>
+                <button type="button" class="carousel-btn next" aria-label="Próxima imagem"><i class="bx bx-chevron-right" aria-hidden="true"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-group">
+            <h3 class="gallery-title">Atualização de Deméter — em desenvolvimento</h3>
+            <p class="gallery-desc">Capturas reais da build de desenvolvimento, com novo personagem e novo visual. Ainda não publicadas; podem mudar até o lançamento.</p>
+            <div class="carousel" data-carousel role="region" aria-roledescription="carrossel" aria-label="Capturas da Atualização de Deméter, em desenvolvimento" tabindex="0">
+              <div class="carousel-viewport">
+                <figure class="carousel-slide">
+                  <img src="../img/ecos-olimpo/demeter-campo.webp" alt="Campo de íris-azuis e girassóis irrigado por aspersores, com Fabricadores de Sementes ao fundo" width="1920" height="1080" loading="lazy" decoding="async" />
+                  <figcaption>Campo irrigado por aspersores, com Fabricadores de Sementes ao fundo (build de testes, com inventário liberado).</figcaption>
+                </figure>
+                <figure class="carousel-slide">
+                  <img src="../img/ecos-olimpo/demeter-estatua.webp" alt="Estátua de Deméter restaurada no meio da floresta, com a mensagem A terra volta a florescer sob a bênção de Deméter" width="1920" height="1080" loading="lazy" decoding="async" />
+                  <figcaption>Oferenda concluída: a estátua de Deméter é restaurada e a floresta ganha vida.</figcaption>
+                </figure>
+                <figure class="carousel-slide">
+                  <img src="../img/ecos-olimpo/demeter-aspersores.webp" alt="Personagem colocando aspersores que molham a terra ao redor na horta" width="1920" height="1080" loading="lazy" decoding="async" />
+                  <figcaption>Aspersores molham a terra ao redor e aceleram o cultivo (build de testes).</figcaption>
+                </figure>
+                <figure class="carousel-slide">
+                  <img src="../img/ecos-olimpo/demeter-fabricadores.webp" alt="Fileiras de Fabricadores de Sementes com sementes prontas para coleta" width="1920" height="1080" loading="lazy" decoding="async" />
+                  <figcaption>Fabricadores de Sementes: produção automatizada de sementes (build de testes).</figcaption>
+                </figure>
+                <figure class="carousel-slide">
+                  <img src="../img/ecos-olimpo/demeter-mesa-aspersor.webp" alt="Mesa de Trabalho com a receita do Aspersor e o item pronto no espaço de saída" width="1920" height="1080" loading="lazy" decoding="async" />
+                  <figcaption>Mesa de Trabalho com a receita do Aspersor, na nova interface.</figcaption>
+                </figure>
+                <figure class="carousel-slide">
+                  <img src="../img/ecos-olimpo/demeter-colheita.webp" alt="Personagem colhendo íris-azuis na horta, com os avisos Íris Azul +1 e Semente de Íris Azul +2" width="1920" height="1080" loading="lazy" decoding="async" />
+                  <figcaption>Colheita de íris-azuis, que rende flores e novas sementes.</figcaption>
+                </figure>
+              </div>
+              <div class="carousel-controls">
+                <button type="button" class="carousel-btn prev" aria-label="Imagem anterior"><i class="bx bx-chevron-left" aria-hidden="true"></i></button>
+                <div class="carousel-indicators"></div>
+                <span class="carousel-counter" aria-live="polite"></span>
+                <button type="button" class="carousel-btn next" aria-label="Próxima imagem"><i class="bx bx-chevron-right" aria-hidden="true"></i></button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 12. Links -->
+        <section class="case-section" aria-labelledby="links-title">
+          <h2 class="case-title" id="links-title">Links</h2>
+          <div class="button-row">
+            <a href="https://fzf-dev.itch.io/ecos-do-olimpo" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+              Jogar no itch.io <i class="bx bx-joystick" aria-hidden="true"></i>
+            </a>
+            <a href="https://ecos-do-olimpo.felipezfroes.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              Site oficial <i class="bx bx-globe" aria-hidden="true"></i>
+            </a>
+            <a href="https://ecos-do-olimpo.felipezfroes.com#waitlist" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              Lista de espera <i class="bx bx-bell" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.youtube.com/@FZFDev" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              Devlogs <i class="bx bxl-youtube" aria-hidden="true"></i>
+            </a>
+          </div>
+        </section>
+      </div>
+
+      <nav class="case-nav" aria-label="Outros estudos de caso">
+        <a href="../maniprotein/" class="prev">
+          <span>← Anterior</span>
+          <strong>ManiProtein</strong>
+        </a>
+        <a href="../chipre/" class="next">
+          <span>Próximo →</span>
+          <strong>C.H.I.P.R.E.</strong>
+        </a>
+      </nav>
+
+      <aside class="case-cta" aria-label="Contato">
+        <div class="case-cta-box">
+          <div>
+            <h2>Tem um projeto ou uma vaga em mente?</h2>
+            <p>Estou aberto a estágio, projetos freelance de desenvolvimento web e colaborações técnicas.</p>
+          </div>
+          <a href="../../#contato" class="btn btn-primary">
+            Entrar em contato <i class="bx bx-message-rounded-dots" aria-hidden="true"></i>
+          </a>
+        </div>
+      </aside>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <a href="../../" class="footer-logo" aria-label="FZF — página inicial">FZF<span>.</span></a>
+        <p>Desenvolvedor Front-End em formação: web, automação e jogos. Estudante de Engenharia de Software e Jogos Digitais.</p>
+      </div>
+      <div class="footer-socials">
+        <a href="https://github.com/felipezfroes" target="_blank" rel="noopener noreferrer" aria-label="GitHub (abre em nova aba)"><i class="bx bxl-github" aria-hidden="true"></i></a>
+        <a href="https://www.linkedin.com/in/felipezfroesdev/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (abre em nova aba)"><i class="bx bxl-linkedin" aria-hidden="true"></i></a>
+        <a href="https://fzf-dev.itch.io" target="_blank" rel="noopener noreferrer" aria-label="itch.io (abre em nova aba)"><i class="bx bx-joystick" aria-hidden="true"></i></a>
+        <a href="https://www.youtube.com/@FZFDev" target="_blank" rel="noopener noreferrer" aria-label="YouTube da FZF Dev (abre em nova aba)"><i class="bx bxl-youtube" aria-hidden="true"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 Felipe Zotareli Froes · FZF Dev</div>
+  </footer>
+
+  <script src="../../js/main.js?v=20261104" defer></script>
+  <script src="../js/gallery.js?v=20261104" defer></script>
+</body>
+</html>

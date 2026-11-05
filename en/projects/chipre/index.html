@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>C.H.I.P.R.E. — UniCesumar × Elotech Hackathon | Felipe Zotareli Froes</title>
+  <meta name="description" content="C.H.I.P.R.E., a prototype built by the Legião do Chipre team at the UniCesumar × Elotech Hackathon (WorkInTech 2026) for the school dropout challenge. 2nd place." />
+  <meta name="author" content="Felipe Zotareli Froes" />
+  <meta name="theme-color" content="#060f1a" />
+  <link rel="canonical" href="https://felipezfroes.com/en/projects/chipre/" />
+  <link rel="alternate" hreflang="pt-BR" href="https://felipezfroes.com/projetos/chipre/" />
+  <link rel="alternate" hreflang="en" href="https://felipezfroes.com/en/projects/chipre/" />
+  <link rel="alternate" hreflang="x-default" href="https://felipezfroes.com/projetos/chipre/" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="pt_BR" />
+  <meta property="og:site_name" content="Felipe Zotareli Froes" />
+  <meta property="og:title" content="C.H.I.P.R.E. — 2nd place at the UniCesumar × Elotech Hackathon" />
+  <meta property="og:description" content="A prototype for supporting student retention, from early signal to real support. Built as a team at WorkInTech 2026." />
+  <meta property="og:url" content="https://felipezfroes.com/en/projects/chipre/" />
+  <meta property="og:image" content="https://felipezfroes.com/img/og/og-chipre.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="C.H.I.P.R.E. prototype screen with fictional data" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="C.H.I.P.R.E. — 2nd place at the UniCesumar × Elotech Hackathon" />
+  <meta name="twitter:description" content="A prototype for supporting student retention, from early signal to real support. Built as a team at WorkInTech 2026." />
+  <meta name="twitter:image" content="https://felipezfroes.com/img/og/og-chipre.jpg" />
+
+  <link rel="icon" href="../../../favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../../../favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="../../../apple-touch-icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../../../styles.css?v=20261104" />
+  <link rel="stylesheet" href="../../../projetos/css/case-study.css?v=20261104" />
+
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "CreativeWork",
+      "name": "C.H.I.P.R.E. — Central de Habilidades, Inteligência e Personalização de Recursos Educacionais",
+      "description": "A prototype for supporting student retention, built by the Legião do Chipre team at the UniCesumar × Elotech Hackathon (WorkInTech 2026). Demo with fictional data.",
+      "url": "https://felipezfroes.com/en/projects/chipre/",
+      "image": "https://felipezfroes.com/projetos/img/chipre/chipre-capa.webp",
+      "dateCreated": "2026-10",
+      "award": "2nd place — UniCesumar × Elotech Hackathon (WorkInTech 2026)",
+      "contributor": { "@type": "Person", "name": "Felipe Zotareli Froes", "url": "https://felipezfroes.com/en/" }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://felipezfroes.com/en/" },
+        { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://felipezfroes.com/en/#more-projects" },
+        { "@type": "ListItem", "position": 3, "name": "C.H.I.P.R.E.", "item": "https://felipezfroes.com/en/projects/chipre/" }
+      ]
+    }
+  ]
+  </script>
+</head>
+
+<body data-project="chipre">
+  <a href="#content" class="skip-link">Skip to content</a>
+
+  <div class="bg-orbs" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="grain"></div>
+  </div>
+
+  <header class="header">
+    <nav class="nav" aria-label="Main navigation">
+      <a href="../../" class="nav-logo" aria-label="FZF — homepage">FZF<span>.</span></a>
+      <ul class="nav-menu">
+        <li><a href="../../#home">Home</a></li>
+        <li><a href="../../#projects" class="is-active">Projects</a></li>
+        <li><a href="../../#services">Services</a></li>
+        <li><a href="../../#about">About</a></li>
+        <li><a href="../../#skills">Skills</a></li>
+        <li><a href="../../#contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="lang-switch" role="group" aria-label="Language / Idioma">
+          <a href="../../../projetos/chipre/" lang="pt-BR" hreflang="pt-BR" data-lang-switch aria-label="Português">PT</a>
+          <span class="lang-sep" aria-hidden="true">|</span>
+          <a href="./" lang="en" hreflang="en" aria-current="true" aria-label="English">EN</a>
+        </div>
+        <a href="../../../assets/Felipe_Zotareli_Froes_CV_Frontend.pdf" download hreflang="pt-BR" class="nav-cta" aria-label="Download CV in Portuguese (PDF)">
+          CV <small>PT</small> <i class="bx bx-download" aria-hidden="true"></i>
+        </a>
+      </div>
+    </nav>
+
+    <div class="lang-switch lang-switch-mobile" role="group" aria-label="Language / Idioma">
+      <a href="../../../projetos/chipre/" lang="pt-BR" hreflang="pt-BR" data-lang-switch aria-label="Português">PT</a>
+      <span class="lang-sep" aria-hidden="true">|</span>
+      <a href="./" lang="en" hreflang="en" aria-current="true" aria-label="English">EN</a>
+    </div>
+
+    <nav class="mobile-nav" aria-label="Mobile navigation">
+      <a href="../../" aria-label="Home"><i class="bx bxs-home" aria-hidden="true"></i></a>
+      <a href="../../#projects" aria-label="Projects" class="is-active"><i class="bx bx-code-alt" aria-hidden="true"></i></a>
+      <a href="../../#services" aria-label="Services"><i class="bx bx-briefcase-alt-2" aria-hidden="true"></i></a>
+      <a href="../../#about" aria-label="About"><i class="bx bxs-user" aria-hidden="true"></i></a>
+      <a href="../../#contact" aria-label="Contact"><i class="bx bxs-envelope" aria-hidden="true"></i></a>
+      <a href="../../../assets/Felipe_Zotareli_Froes_CV_Frontend.pdf" download hreflang="pt-BR" aria-label="Download CV in Portuguese (PDF)"><i class="bx bx-download" aria-hidden="true"></i></a>
+    </nav>
+  </header>
+
+  <main id="content">
+    <article>
+      <!-- 1. Overview -->
+      <header class="case-hero">
+        <nav class="breadcrumb" aria-label="You are here">
+          <ol>
+            <li><a href="../../">Home</a></li>
+            <li><a href="../../#more-projects">Projects</a></li>
+            <li aria-current="page">C.H.I.P.R.E.</li>
+          </ol>
+        </nav>
+
+        <div class="case-hero-grid">
+          <div>
+            <span class="section-label">Hackathon · Product · Teamwork</span>
+            <h1>C.H.I.P.R.E.</h1>
+            <p class="case-tagline">Central de Habilidades, Inteligência e Personalização de Recursos Educacionais</p>
+            <p class="case-summary">
+              A prototype built by the Legião do Chipre team at the UniCesumar × Elotech Hackathon, during
+              WorkInTech 2026, for the school dropout challenge. Instead of only flagging who is at risk, it
+              helps a school understand what is pushing a student out and route the problem to whoever can
+              solve it. The project won 2nd place.
+            </p>
+            <div class="button-row">
+              <a href="../../#achievements" class="btn btn-secondary">
+                See it in achievements <i class="bx bxs-trophy" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+          <dl class="case-facts">
+            <div><dt>Event</dt><dd>WorkInTech 2026 Hackathon · UniCesumar × Elotech</dd></div>
+            <div><dt>Challenge</dt><dd>“Before it's too late”: school dropout</dd></div>
+            <div><dt>Format</dt><dd>Prototype with fictional data</dd></div>
+            <div><dt>Result</dt><dd>2nd place, as a team</dd></div>
+          </dl>
+        </div>
+
+        <figure class="case-cover">
+          <img src="../../../projetos/img/chipre/chipre-capa.webp" alt="Prototype screen (in Portuguese) with a fictional student's profile, the support plan and the tagline Data that guides, people who support" width="1600" height="900" fetchpriority="high" decoding="async" />
+          <figcaption>A frame from the prototype's presentation video (in Portuguese). All data shown is fictional.</figcaption>
+        </figure>
+      </header>
+
+      <div class="case-body">
+        <!-- Hackathon context -->
+        <section class="case-section" aria-labelledby="hackathon-title">
+          <h2 class="case-title" id="hackathon-title">Hackathon context</h2>
+          <p class="case-text">
+            The hackathon was part of WorkInTech week at UniCesumar, from October 28 to 30, 2026. It was run
+            by UniCesumar and Axion, the university's IT student-run company, and sponsored by Elotech, a
+            public-sector software company based in Maringá, Brazil. The theme was “Education that reaches
+            everyone: technology against barriers to learning”, and the team chose Challenge 1, “Before it's
+            too late”, on school dropout.
+          </p>
+          <p class="case-text">
+            The rules shaped the project from the start: use only fictional or public open data, design for
+            the people who would use it every day, propose something a school network could realistically
+            adopt, and never expose, label or punish a student — a person always makes the decision.
+          </p>
+        </section>
+
+        <!-- 2 & 3. Problem and goal -->
+        <section class="case-section" aria-labelledby="context-title">
+          <h2 class="case-title" id="context-title">Problem and goal</h2>
+          <div class="case-grid">
+            <div class="case-box">
+              <h3>The problem</h3>
+              <p>
+                Students show signs before they leave — absences go up, grades go down — but schools often
+                notice only after they're gone. According to Brazil's 2024 PNAD Contínua Educação survey
+                (IBGE), 42% of young people without a high school diploma cite the need to work as the main
+                reason.
+              </p>
+              <p>
+                Systems that predict who will drop out already exist. The team concluded that the
+                bottleneck is something else: what happens after the alert.
+              </p>
+            </div>
+            <div class="case-box">
+              <h3>The goal</h3>
+              <p>
+                Give schools time and a path to act: listen to the student before deciding, understand the
+                barrier behind the absences and bring that barrier to whoever can solve it — with no labels,
+                rankings or automated messages.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Solution idea -->
+        <section class="case-section" aria-labelledby="idea-title">
+          <h2 class="case-title" id="idea-title">The idea: from signal to support</h2>
+          <p class="case-text">
+            The inspiration came from churn analysis in Customer Success teams, which spot customers about
+            to cancel and treat each one differently. In C.H.I.P.R.E., every case goes through four steps:
+          </p>
+          <ol class="pipeline">
+            <li><strong>Signal</strong>A drop compared with the student's own pattern. The system doesn't invent a cause.</li>
+            <li><strong>Listen</strong>A person talks to the student; what they report is kept apart from what has been verified.</li>
+            <li><strong>Support</strong>Options registered by the school that fit the student's routine.</li>
+            <li><strong>Review</strong>Improvement doesn't close the case: follow-up continues with an owner and a deadline.</li>
+          </ol>
+          <p class="case-text">
+            What sets it apart is looking beyond the individual: matching absences among students who share
+            a bus route, a shift or a day become a single collective action, sent to the department
+            responsible.
+          </p>
+        </section>
+
+        <!-- 4. Teamwork -->
+        <section class="case-section" aria-labelledby="role-title">
+          <h2 class="case-title" id="role-title">Teamwork</h2>
+          <!-- PENDENTE: descrever sua função específica (ex.: front-end, pitch, slides, vídeo de apresentação)
+               quando confirmada. Não publicar funções individuais sem confirmação. -->
+          <div class="case-grid">
+            <div class="case-box">
+              <h3>How the team worked</h3>
+              <p>
+                Legião do Chipre split the work between fictional data, analysis rules, the interface and
+                the pitch, and kept a shared log of product decisions throughout the three days.
+              </p>
+            </div>
+            <div class="case-box">
+              <h3>Use of AI</h3>
+              <p>
+                As the rules allowed, the team used AI as support to build the prototype's interface. The
+                solution design and the product decisions were the team's own.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 6. Prototype -->
+        <section class="case-section" aria-labelledby="prototype-title">
+          <h2 class="case-title" id="prototype-title">The prototype</h2>
+          <p class="case-note">
+            <i class="bx bx-info-circle" aria-hidden="true"></i>
+            <span>
+              What was demonstrated is an MVP of the follow-up workflow, with signals calculated on fictional
+              data. The machine learning model described below is part of the implementation proposal, not
+              of the prototype that was presented.
+            </span>
+          </p>
+          <ul class="check-list two-cols">
+            <li><i class="bx bx-line-chart" aria-hidden="true"></i><span><strong>Drop signals</strong> calculated on fictional data and compared with the student's own pattern.</span></li>
+            <li><i class="bx bx-id-card" aria-hidden="true"></i><span><strong>Student profile</strong> with the Signals, Listen, Plan and Review steps.</span></li>
+            <li><i class="bx bx-calendar-check" aria-hidden="true"></i><span><strong>Retention plan</strong> with an owner, a deadline, a status and the next review.</span></li>
+            <li><i class="bx bx-bus" aria-hidden="true"></i><span><strong>Collective barriers</strong>: matching absences by route, shift or day.</span></li>
+            <li><i class="bx bx-git-repo-forked" aria-hidden="true"></i><span><strong>Proposed two-layer engine</strong>: explainable rules across six areas (attendance, performance, behavior and climate, socioeconomic, family and school history), then a model trained on the network's own history.</span></li>
+            <li><i class="bx bx-data" aria-hidden="true"></i><span><strong>Feasibility</strong>: it uses data schools already have (class records, grades, incident reports and enrollment).</span></li>
+          </ul>
+        </section>
+
+        <!-- 7. Decisions -->
+        <section class="case-section" aria-labelledby="decisions-title">
+          <h2 class="case-title" id="decisions-title">Product decisions</h2>
+          <ul class="check-list two-cols">
+            <li><i class="bx bx-label" aria-hidden="true"></i><span><strong>Levels describe the school's action, not the student</strong>: Observe, Talk, Intervene and Mobilize the network. No ranking and no percentage next to a name.</span></li>
+            <li><i class="bx bx-shield-quarter" aria-hidden="true"></i><span><strong>Social context alone never triggers an alert.</strong> Only changes observed at school open a case.</span></li>
+            <li><i class="bx bx-hide" aria-hidden="true"></i><span><strong>Left out of the calculation</strong>: race, sex, disability and health.</span></li>
+            <li><i class="bx bx-user-voice" aria-hidden="true"></i><span><strong>No automated messages.</strong> A person always talks to the student and the family.</span></li>
+          </ul>
+        </section>
+
+        <!-- 9. Result -->
+        <section class="case-section" aria-labelledby="results-title">
+          <h2 class="case-title" id="results-title">Result</h2>
+          <ul class="check-list">
+            <li><i class="bx bxs-medal" aria-hidden="true"></i><span><strong>2nd place</strong> at the UniCesumar × Elotech Hackathon, won by the Legião do Chipre team.</span></li>
+            <li><i class="bx bx-slideshow" aria-hidden="true"></i><span>A demo built around one complete fictional case: from a drop in attendance to a collective action with the transportation department.</span></li>
+            <li><i class="bx bx-target-lock" aria-hidden="true"></i><span>Proposed metrics for a pilot in a municipal school network: how early the first signal appears, how many support actions actually happen and how many collective barriers get solved.</span></li>
+          </ul>
+        </section>
+
+        <!-- 10. What I learned -->
+        <section class="case-section" aria-labelledby="learnings-title">
+          <h2 class="case-title" id="learnings-title">What I learned</h2>
+          <!-- PENDENTE: revisar e complementar com aprendizados pessoais. -->
+          <ul class="check-list two-cols">
+            <li><i class="bx bx-search-alt" aria-hidden="true"></i><span>Starting from the real problem — what happens after the alert — instead of the technology.</span></li>
+            <li><i class="bx bx-shield-quarter" aria-hidden="true"></i><span>Treating the protection of the people affected as a product requirement, not a detail.</span></li>
+            <li><i class="bx bx-check-double" aria-hidden="true"></i><span>Being clear with the judges about what the prototype does and what is still a proposal.</span></li>
+            <li><i class="bx bx-group" aria-hidden="true"></i><span>Splitting work and logging decisions as a team with only hours to deliver.</span></li>
+          </ul>
+        </section>
+
+        <!-- 11. Gallery -->
+        <section class="case-section" aria-labelledby="gallery-title">
+          <h2 class="case-title" id="gallery-title">Gallery</h2>
+          <div class="carousel" data-carousel role="region" aria-roledescription="carousel" aria-label="C.H.I.P.R.E. prototype screens" tabindex="0">
+            <div class="carousel-viewport">
+              <figure class="carousel-slide">
+                <img src="../../../projetos/img/chipre/chipre-sinais.webp" alt="Attendance chart dropping from 96% to 71% over eight weeks, with the title The signals appear (in Portuguese)" width="1600" height="900" loading="lazy" decoding="async" />
+                <figcaption>The problem: attendance drops weeks before a student leaves.</figcaption>
+              </figure>
+              <figure class="carousel-slide">
+                <img src="../../../projetos/img/chipre/chipre-escuta.webp" alt="A fictional student's profile at the Signals step, showing recurring Friday absences (in Portuguese)" width="1600" height="900" loading="lazy" decoding="async" />
+                <figcaption>A signal doesn't define the cause: listening brings the context.</figcaption>
+              </figure>
+              <figure class="carousel-slide">
+                <img src="../../../projetos/img/chipre/chipre-plano.webp" alt="Retention plan with an owner, a deadline and the next review, and attendance going back up (in Portuguese)" width="1600" height="900" loading="lazy" decoding="async" />
+                <figcaption>The retention plan: attendance improves and follow-up continues.</figcaption>
+              </figure>
+            </div>
+            <div class="carousel-controls">
+              <button type="button" class="carousel-btn prev" aria-label="Previous image"><i class="bx bx-chevron-left" aria-hidden="true"></i></button>
+              <div class="carousel-indicators"></div>
+              <span class="carousel-counter" aria-live="polite"></span>
+              <button type="button" class="carousel-btn next" aria-label="Next image"><i class="bx bx-chevron-right" aria-hidden="true"></i></button>
+            </div>
+          </div>
+          <p class="code-caption">Frames from the team's presentation video, showing prototype screens with fictional data.</p>
+        </section>
+
+        <!-- 12. Links -->
+        <section class="case-section" aria-labelledby="links-title">
+          <h2 class="case-title" id="links-title">Links</h2>
+          <!-- PENDENTE: repositório e demonstração ainda não são públicos. Adicionar quando a equipe publicar. -->
+          <div class="button-row">
+            <a href="https://www.workintech.com.br/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              WorkInTech website <i class="bx bx-link-external" aria-hidden="true"></i>
+            </a>
+            <a href="../../#achievements" class="btn btn-secondary">
+              All achievements <i class="bx bxs-trophy" aria-hidden="true"></i>
+            </a>
+          </div>
+        </section>
+      </div>
+
+      <nav class="case-nav" aria-label="Other case studies">
+        <a href="../ecos-do-olimpo/" class="prev">
+          <span>← Previous</span>
+          <strong>Ecos do Olimpo</strong>
+        </a>
+        <a href="../relogio-das-consequencias/" class="next">
+          <span>Next →</span>
+          <strong>O Relógio das Consequências</strong>
+        </a>
+      </nav>
+
+      <aside class="case-cta" aria-label="Contact">
+        <div class="case-cta-box">
+          <div>
+            <h2>Looking for someone to join your team?</h2>
+            <p>I'm open to software development internships and technical collaborations.</p>
+          </div>
+          <a href="../../?topic=estagio#contact" class="btn btn-primary">
+            Get in touch <i class="bx bx-message-rounded-dots" aria-hidden="true"></i>
+          </a>
+        </div>
+      </aside>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <a href="../../" class="footer-logo" aria-label="FZF — homepage">FZF<span>.</span></a>
+        <p>Front-end developer in training: web, automation and games. Software Engineering and Digital Games student.</p>
+      </div>
+      <div class="footer-socials">
+        <a href="https://github.com/felipezfroes" target="_blank" rel="noopener noreferrer" aria-label="GitHub (opens in a new tab)"><i class="bx bxl-github" aria-hidden="true"></i></a>
+        <a href="https://www.linkedin.com/in/felipezfroesdev/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in a new tab)"><i class="bx bxl-linkedin" aria-hidden="true"></i></a>
+        <a href="https://fzf-dev.itch.io" target="_blank" rel="noopener noreferrer" aria-label="itch.io (opens in a new tab)"><i class="bx bx-joystick" aria-hidden="true"></i></a>
+        <a href="https://www.youtube.com/@FZFDev" target="_blank" rel="noopener noreferrer" aria-label="FZF Dev on YouTube (opens in a new tab)"><i class="bx bxl-youtube" aria-hidden="true"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 Felipe Zotareli Froes · FZF Dev</div>
+  </footer>
+
+  <script src="../../../js/main.js?v=20261104" defer></script>
+  <script src="../../../projetos/js/gallery.js?v=20261104" defer></script>
+</body>
+</html>

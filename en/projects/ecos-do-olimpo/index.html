@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Ecos do Olimpo — An indie game built from many connected systems | Felipe Zotareli Froes</title>
+  <meta name="description" content="Case study of Ecos do Olimpo, a 2D indie game built solo in GameMaker: crafting, grid-based building, farming and automation. Public Alpha 0.1.2 and the Demeter Update in development." />
+  <meta name="author" content="Felipe Zotareli Froes" />
+  <meta name="theme-color" content="#060f1a" />
+  <link rel="canonical" href="https://felipezfroes.com/en/projects/ecos-do-olimpo/" />
+  <link rel="alternate" hreflang="pt-BR" href="https://felipezfroes.com/projetos/ecos-do-olimpo/" />
+  <link rel="alternate" hreflang="en" href="https://felipezfroes.com/en/projects/ecos-do-olimpo/" />
+  <link rel="alternate" hreflang="x-default" href="https://felipezfroes.com/projetos/ecos-do-olimpo/" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="pt_BR" />
+  <meta property="og:site_name" content="Felipe Zotareli Froes" />
+  <meta property="og:title" content="Ecos do Olimpo — Case study" />
+  <meta property="og:description" content="A 2D indie game developed solo in GameMaker. Rebuild Olympus through crafting, grid-based building, farming and automation." />
+  <meta property="og:url" content="https://felipezfroes.com/en/projects/ecos-do-olimpo/" />
+  <meta property="og:image" content="https://felipezfroes.com/img/og/og-ecos-do-olimpo.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Restored statues of Zeus and Demeter in Ecos do Olimpo" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ecos do Olimpo — Case study" />
+  <meta name="twitter:description" content="A 2D indie game developed solo in GameMaker. Rebuild Olympus through crafting, grid-based building, farming and automation." />
+  <meta name="twitter:image" content="https://felipezfroes.com/img/og/og-ecos-do-olimpo.jpg" />
+
+  <link rel="icon" href="../../../favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../../../favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="../../../apple-touch-icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../../../styles.css?v=20261104" />
+  <link rel="stylesheet" href="../../../projetos/css/case-study.css?v=20261104" />
+
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoGame",
+      "name": "Ecos do Olimpo",
+      "description": "A 2D top-down pixel art indie game about rebuilding Olympus through gathering, crafting, grid-based building, farming, mining and automation.",
+      "url": "https://felipezfroes.com/en/projects/ecos-do-olimpo/",
+      "image": "https://felipezfroes.com/projetos/img/ecos-olimpo/alpha-templo.webp",
+      "sameAs": ["https://fzf-dev.itch.io/ecos-do-olimpo", "https://ecos-do-olimpo.felipezfroes.com"],
+      "genre": ["Farming", "Crafting", "Automation"],
+      "inLanguage": ["pt-BR", "en"],
+      "author": { "@type": "Person", "name": "Felipe Zotareli Froes", "url": "https://felipezfroes.com/en/" }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://felipezfroes.com/en/" },
+        { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://felipezfroes.com/en/#projects" },
+        { "@type": "ListItem", "position": 3, "name": "Ecos do Olimpo", "item": "https://felipezfroes.com/en/projects/ecos-do-olimpo/" }
+      ]
+    }
+  ]
+  </script>
+</head>
+
+<body data-project="ecos-do-olimpo">
+  <a href="#content" class="skip-link">Skip to content</a>
+
+  <div class="bg-orbs" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="grain"></div>
+  </div>
+
+  <header class="header">
+    <nav class="nav" aria-label="Main navigation">
+      <a href="../../" class="nav-logo" aria-label="FZF — homepage">FZF<span>.</span></a>
+      <ul class="nav-menu">
+        <li><a href="../../#home">Home</a></li>
+        <li><a href="../../#projects" class="is-active">Projects</a></li>
+        <li><a href="../../#services">Services</a></li>
+        <li><a href="../../#about">About</a></li>
+        <li><a href="../../#skills">Skills</a></li>
+        <li><a href="../../#contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="lang-switch" role="group" aria-label="Language / Idioma">
+          <a href="../../../projetos/ecos-do-olimpo/" lang="pt-BR" hreflang="pt-BR" data-lang-switch aria-label="Português">PT</a>
+          <span class="lang-sep" aria-hidden="true">|</span>
+          <a href="./" lang="en" hreflang="en" aria-current="true" aria-label="English">EN</a>
+        </div>
+        <a href="../../../assets/Felipe_Zotareli_Froes_CV_Frontend.pdf" download hreflang="pt-BR" class="nav-cta" aria-label="Download CV in Portuguese (PDF)">
+          CV <small>PT</small> <i class="bx bx-download" aria-hidden="true"></i>
+        </a>
+      </div>
+    </nav>
+
+    <div class="lang-switch lang-switch-mobile" role="group" aria-label="Language / Idioma">
+      <a href="../../../projetos/ecos-do-olimpo/" lang="pt-BR" hreflang="pt-BR" data-lang-switch aria-label="Português">PT</a>
+      <span class="lang-sep" aria-hidden="true">|</span>
+      <a href="./" lang="en" hreflang="en" aria-current="true" aria-label="English">EN</a>
+    </div>
+
+    <nav class="mobile-nav" aria-label="Mobile navigation">
+      <a href="../../" aria-label="Home"><i class="bx bxs-home" aria-hidden="true"></i></a>
+      <a href="../../#projects" aria-label="Projects" class="is-active"><i class="bx bx-code-alt" aria-hidden="true"></i></a>
+      <a href="../../#services" aria-label="Services"><i class="bx bx-briefcase-alt-2" aria-hidden="true"></i></a>
+      <a href="../../#about" aria-label="About"><i class="bx bxs-user" aria-hidden="true"></i></a>
+      <a href="../../#contact" aria-label="Contact"><i class="bx bxs-envelope" aria-hidden="true"></i></a>
+      <a href="../../../assets/Felipe_Zotareli_Froes_CV_Frontend.pdf" download hreflang="pt-BR" aria-label="Download CV in Portuguese (PDF)"><i class="bx bx-download" aria-hidden="true"></i></a>
+    </nav>
+  </header>
+
+  <main id="content">
+    <article>
+      <!-- 1. Overview -->
+      <header class="case-hero">
+        <nav class="breadcrumb" aria-label="You are here">
+          <ol>
+            <li><a href="../../">Home</a></li>
+            <li><a href="../../#projects">Projects</a></li>
+            <li aria-current="page">Ecos do Olimpo</li>
+          </ol>
+        </nav>
+
+        <div class="case-hero-grid">
+          <div>
+            <span class="section-label">Game Development · Personal project</span>
+            <h1>Ecos do Olimpo</h1>
+            <p class="case-tagline">Solo development of a game built from many connected systems</p>
+            <p class="case-summary">
+              A 2D top-down pixel art game I'm developing solo in GameMaker. Olympus has fallen, and the
+              player rebuilds it through gathering, crafting, grid-based building, farming, mining and
+              automation. Alpha 0.1.2 is published and playable in the browser; the Demeter Update is in
+              development.
+            </p>
+            <div class="button-row">
+              <a href="https://fzf-dev.itch.io/ecos-do-olimpo" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                Play the alpha <i class="bx bx-joystick" aria-hidden="true"></i>
+              </a>
+              <a href="https://ecos-do-olimpo.felipezfroes.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                Game website <i class="bx bx-globe" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+          <dl class="case-facts">
+            <div><dt>Type</dt><dd>2D top-down indie game</dd></div>
+            <div><dt>Role</dt><dd>Solo developer</dd></div>
+            <div><dt>Status</dt><dd>Public Alpha 0.1.2 · Demeter Update in development</dd></div>
+            <div><dt>Tools</dt><dd>GameMaker · GML · Aseprite</dd></div>
+          </dl>
+        </div>
+
+        <figure class="case-cover">
+          <img
+            src="../../../projetos/img/ecos-olimpo/demeter-estatuas-1280.webp"
+            srcset="../../../projetos/img/ecos-olimpo/demeter-estatuas-1280.webp 1280w, ../../../projetos/img/ecos-olimpo/demeter-estatuas.webp 1920w"
+            sizes="(max-width: 1140px) 100vw, 1044px"
+            alt="Restored statues of Zeus and Demeter in Demeter's area, with an in-game message (in Portuguese) saying Zeus's presence returns to Olympus"
+            width="1280" height="720" fetchpriority="high" decoding="async" />
+          <figcaption>Zeus and Demeter restored. Screenshot from the development build (Demeter Update), not yet released.</figcaption>
+        </figure>
+      </header>
+
+      <div class="case-body">
+        <!-- 2 & 3. Problem and goal -->
+        <section class="case-section" aria-labelledby="context-title">
+          <h2 class="case-title" id="context-title">Problem and goal</h2>
+          <div class="case-grid">
+            <div class="case-box">
+              <h3>The project's challenge</h3>
+              <p>
+                Make gathering, crafting, building, farming and automation work as a single loop — where
+                every resource helps rebuild Olympus — while staying easy to understand for someone playing
+                for the first time.
+              </p>
+            </div>
+            <div class="case-box">
+              <h3>What the alpha had to prove</h3>
+              <p>
+                Close the core loop and put it in front of players before expanding. Is the goal clear? Are
+                the systems easy to understand? Does progression feel rewarding? Is the interface
+                comfortable?
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. My role -->
+        <section class="case-section" aria-labelledby="role-title">
+          <h2 class="case-title" id="role-title">My role</h2>
+          <!-- PENDENTE: confirmar se toda a arte do jogo é autoral para citar aqui. -->
+          <p class="case-text">
+            This is a solo project. I handle the GML programming, game design and systems design, the
+            UI and balancing, as well as publishing: the itch.io page, the official game website and the
+            devlogs on the FZF Dev channel.
+          </p>
+        </section>
+
+        <!-- 5. Technologies -->
+        <section class="case-section" aria-labelledby="tech-title">
+          <h2 class="case-title" id="tech-title">Technologies</h2>
+          <ul class="tech-list" aria-label="Technologies used">
+            <li>GameMaker</li>
+            <li>GML</li>
+            <li>Aseprite</li>
+            <li>Game Design</li>
+            <li>HTML, CSS and JavaScript (game website)</li>
+          </ul>
+        </section>
+
+        <!-- 6. Features -->
+        <section class="case-section" aria-labelledby="features-title">
+          <h2 class="case-title" id="features-title">What's in Alpha 0.1.2 (public)</h2>
+          <ul class="check-list two-cols">
+            <li><i class="bx bx-package" aria-hidden="true"></i><span><strong>Inventory and toolbar</strong> with stackable items, stack splitting and item dropping.</span></li>
+            <li><i class="bx bx-leaf" aria-hidden="true"></i><span><strong>Farming</strong> with sacred seeds and multiple growth stages.</span></li>
+            <li><i class="bx bx-diamond" aria-hidden="true"></i><span><strong>Mining</strong> for stone, coal and Azurelite ore.</span></li>
+            <li><i class="bx bx-grid-alt" aria-hidden="true"></i><span><strong>3×3 crafting</strong> with progression recipes.</span></li>
+            <li><i class="bx bxs-hot" aria-hidden="true"></i><span><strong>Furnace</strong> for refining raw materials.</span></li>
+            <li><i class="bx bx-building-house" aria-hidden="true"></i><span><strong>Grid-based building</strong> with structure rotation.</span></li>
+            <li><i class="bx bx-cog" aria-hidden="true"></i><span><strong>Early automation</strong> with conveyor belts, chests, furnaces and auto-mining.</span></li>
+            <li><i class="bx bxs-zap" aria-hidden="true"></i><span><strong>Divine offerings</strong> featuring the first Zeus and Demeter sets.</span></li>
+            <li><i class="bx bx-target-lock" aria-hidden="true"></i><span><strong>Objectives and contextual hints</strong> that guide progression.</span></li>
+            <li><i class="bx bx-world" aria-hidden="true"></i><span><strong>Portuguese and English</strong>, plus fullscreen, UI scale, camera distance and particle settings.</span></li>
+          </ul>
+        </section>
+
+        <!-- 7. Technical decisions -->
+        <section class="case-section" aria-labelledby="decisions-title">
+          <h2 class="case-title" id="decisions-title">Technical and product decisions</h2>
+          <ul class="check-list two-cols">
+            <li><i class="bx bx-git-branch" aria-hidden="true"></i><span><strong>Small, frequent releases.</strong> The alpha shipped with the core loop closed and got two fixes within the same week, instead of waiting for the full game.</span></li>
+            <li><i class="bx bx-sitemap" aria-hidden="true"></i><span><strong>Offerings as the backbone of progression.</strong> Each system produces items that feed the next, and offerings give all of them a purpose.</span></li>
+            <li><i class="bx bx-message-dots" aria-hidden="true"></i><span><strong>Two feedback channels.</strong> Comments on the game page for general impressions and a form for bugs and detailed suggestions.</span></li>
+            <li><i class="bx bx-world" aria-hidden="true"></i><span><strong>Bilingual and configurable from the first alpha.</strong> Portuguese, English and interface and camera settings from day one.</span></li>
+          </ul>
+        </section>
+
+        <!-- 8. Challenges -->
+        <section class="case-section" aria-labelledby="challenges-title">
+          <h2 class="case-title" id="challenges-title">Challenges and solutions</h2>
+          <div class="challenges">
+            <div class="challenge">
+              <div>
+                <span class="challenge-label"><i class="bx bx-error-circle" aria-hidden="true"></i> Challenge</span>
+                <h3>Placing structures precisely</h3>
+                <p>In a top-down world, players need to know exactly where a machine will go before spending resources on it.</p>
+              </div>
+              <div>
+                <span class="challenge-label"><i class="bx bx-check-circle" aria-hidden="true"></i> Solution</span>
+                <h3>Grid-based building with a preview</h3>
+                <p>Before placing, the structure shows up as a preview: green when the spot is valid, red when it isn't. The <code>R</code> key rotates it.</p>
+              </div>
+            </div>
+
+            <div class="challenge">
+              <div>
+                <span class="challenge-label"><i class="bx bx-error-circle" aria-hidden="true"></i> Challenge</span>
+                <h3>Making machines work together</h3>
+                <p>Automation only makes sense if chests, furnaces and miners can pass items along without the player carrying everything by hand.</p>
+              </div>
+              <div>
+                <span class="challenge-label"><i class="bx bx-check-circle" aria-hidden="true"></i> Solution</span>
+                <h3>Autotiling conveyor belts</h3>
+                <p>Belts automatically adapt to their neighbors and link machines into production chains that keep running while the player explores.</p>
+              </div>
+            </div>
+
+            <div class="challenge">
+              <div>
+                <span class="challenge-label"><i class="bx bx-error-circle" aria-hidden="true"></i> Challenge</span>
+                <h3>Too many systems for a new player</h3>
+                <p>Farming, mining, crafting, building and automation all at once can leave players unsure of what to do next.</p>
+              </div>
+              <div>
+                <span class="challenge-label"><i class="bx bx-check-circle" aria-hidden="true"></i> Solution</span>
+                <h3>Objectives, hints and offerings</h3>
+                <p>Progression is guided by objectives and contextual hints, and offerings give every resource a purpose: delivering the requested items restores the gods' sets.</p>
+              </div>
+            </div>
+
+            <div class="challenge">
+              <div>
+                <span class="challenge-label"><i class="bx bx-error-circle" aria-hidden="true"></i> Challenge</span>
+                <h3>Managing lots of items</h3>
+                <p>A crafting game produces dozens of items, and alpha players pointed out that common genre shortcuts were missing.</p>
+              </div>
+              <div>
+                <span class="challenge-label"><i class="bx bx-check-circle" aria-hidden="true"></i> Solution</span>
+                <h3>Shortcuts requested by players</h3>
+                <p>Version 0.1.2 added <code>1</code>–<code>9</code> hotbar keys, <code>Shift</code> + click to move items between interfaces and batch crafting, on top of <code>TAB</code> for the inventory and <code>Q</code> to drop items.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 9. Results -->
+        <section class="case-section" aria-labelledby="results-title">
+          <h2 class="case-title" id="results-title">Verifiable results</h2>
+          <!-- PENDENTE: se houver números de playtest (downloads, jogadores, respostas do formulário), adicionar aqui com a fonte. -->
+          <p class="case-text">Public release history, according to the devlogs on the game's page:</p>
+          <ol class="pipeline">
+            <li><strong>Alpha 0.1 · Jun 24, 2026</strong>First public version, with the core loop and a feedback form.</li>
+            <li><strong>Alpha 0.1.1 · Jun 28</strong>Clearer harvesting and a fix for a bug that trapped players while building.</li>
+            <li><strong>Alpha 0.1.2 · Jun 30</strong>Inventory and crafting shortcuts plus an altar counter fix, based on player comments.</li>
+            <li><strong>Preview · October</strong>A devlog showing the building overhaul and a preview of the Demeter Update.</li>
+          </ol>
+          <ul class="check-list">
+            <li><i class="bx bx-joystick" aria-hidden="true"></i><span>Alpha 0.1.2 is playable in the browser on the <a href="https://fzf-dev.itch.io/ecos-do-olimpo" target="_blank" rel="noopener noreferrer">game's itch.io page</a>. According to that page, the current content can be played from beginning to end.</span></li>
+            <li><i class="bx bx-globe" aria-hidden="true"></i><span>An <a href="https://ecos-do-olimpo.felipezfroes.com" target="_blank" rel="noopener noreferrer">official website</a> with a gallery, roadmap, Portuguese and English versions and a waitlist.</span></li>
+            <li><i class="bx bxl-youtube" aria-hidden="true"></i><span>Development documented in devlogs on itch.io and (in Portuguese) on the <a href="https://www.youtube.com/@FZFDev" target="_blank" rel="noopener noreferrer">FZF Dev channel</a>.</span></li>
+          </ul>
+        </section>
+
+        <!-- In development -->
+        <section class="case-section" aria-labelledby="development-title">
+          <h2 class="case-title" id="development-title">In development</h2>
+          <p class="case-note">
+            <i class="bx bx-info-circle" aria-hidden="true"></i>
+            <span>
+              Nothing in this section is in the public build. According to the October devlog, the Demeter
+              Update focuses on farming and vegetation — crop progression, watering and sprinklers, seed
+              production and Demeter's forest — together with a building redesign inspired by Ancient
+              Greece and more visual feedback on machines.
+            </span>
+          </p>
+          <p class="case-text">The roadmap on the official website also lists three planned updates:</p>
+          <ol class="pipeline three">
+            <li><strong>Animals and farming</strong>Sacred creatures, an automated greenhouse and an energy system.</li>
+            <li><strong>Pets and creatures</strong>Companion spirits of the gods, blessings and alchemy.</li>
+            <li><strong>Exploration and combat</strong>Ruins, mythological monsters, bosses and the gods' lore.</li>
+          </ol>
+        </section>
+
+        <!-- 10. What I learned -->
+        <section class="case-section" aria-labelledby="learnings-title">
+          <h2 class="case-title" id="learnings-title">What I learned</h2>
+          <!-- PENDENTE: revisar e complementar com aprendizados pessoais. -->
+          <ul class="check-list two-cols">
+            <li><i class="bx bx-git-branch" aria-hidden="true"></i><span>Splitting the project into versions to ship something playable without waiting for the full game.</span></li>
+            <li><i class="bx bx-sitemap" aria-hidden="true"></i><span>Designing interdependent systems — gathering feeds crafting, which feeds building and automation — without one breaking another.</span></li>
+            <li><i class="bx bx-user-voice" aria-hidden="true"></i><span>Testing early with players: alpha comments became the to-do list for 0.1.2.</span></li>
+            <li><i class="bx bx-video-recording" aria-hidden="true"></i><span>Documenting the process in devlogs, which forces me to explain every design decision.</span></li>
+          </ul>
+        </section>
+
+        <!-- 11. Gallery -->
+        <section class="case-section" aria-labelledby="gallery-title">
+          <h2 class="case-title" id="gallery-title">Gallery</h2>
+
+          <div class="gallery-group">
+            <h3 class="gallery-title">Alpha 0.1.2 — public build</h3>
+            <p class="gallery-desc">What anyone finds today when playing on itch.io.</p>
+            <div class="carousel" data-carousel role="region" aria-roledescription="carousel" aria-label="Alpha 0.1.2 screenshots" tabindex="0">
+              <div class="carousel-viewport">
+                <figure class="carousel-slide">
+                  <img src="../../../projetos/img/ecos-olimpo/alpha-templo.webp" alt="Player character in the Olympus temple, between the statues of Zeus and Demeter" width="1148" height="718" loading="lazy" decoding="async" />
+                  <figcaption>The Olympus temple: offerings restore the gods' statues.</figcaption>
+                </figure>
+                <figure class="carousel-slide">
+                  <img src="../../../projetos/img/ecos-olimpo/alpha-crafting.webp" alt="3×3 crafting table with the recipe list open" width="1280" height="720" loading="lazy" decoding="async" />
+                  <figcaption>The 3×3 crafting table with progression recipes.</figcaption>
+                </figure>
+                <figure class="carousel-slide">
+                  <img src="../../../projetos/img/ecos-olimpo/alpha-fornalha.webp" alt="Furnace interface turning Azurelite ore into a bar" width="1280" height="720" loading="lazy" decoding="async" />
+                  <figcaption>The furnace refining Azurelite ore into bars.</figcaption>
+                </figure>
+                <figure class="carousel-slide">
+                  <img src="../../../projetos/img/ecos-olimpo/alpha-inventario.webp" alt="Open inventory showing the current objective and the Olympus progress bar" width="1280" height="720" loading="lazy" decoding="async" />
+                  <figcaption>The inventory, with the current objective and rebuilding progress.</figcaption>
+                </figure>
+                <figure class="carousel-slide">
+                  <img src="../../../projetos/img/ecos-olimpo/alpha-altar.webp" alt="Gods' altar with the choice of an offering for Zeus or Demeter" width="1280" height="720" loading="lazy" decoding="async" />
+                  <figcaption>The gods' altar: each offering asks for a set of items.</figcaption>
+                </figure>
+                <figure class="carousel-slide">
+                  <img src="../../../projetos/img/ecos-olimpo/ecos-4.webp" alt="Production line with conveyor belts, chests and connected machines" width="1273" height="716" loading="lazy" decoding="async" />
+                  <figcaption>Conveyor belts and connected machines (pre-alpha build).</figcaption>
+                </figure>
+                <figure class="carousel-slide">
+                  <img src="../../../projetos/img/ecos-olimpo/alpha-menu.webp" alt="Ecos do Olimpo main menu with the options Play, Controls and Quit (in Portuguese)" width="1278" height="715" loading="lazy" decoding="async" />
+                  <figcaption>The main menu, with language selection.</figcaption>
+                </figure>
+              </div>
+              <div class="carousel-controls">
+                <button type="button" class="carousel-btn prev" aria-label="Previous image"><i class="bx bx-chevron-left" aria-hidden="true"></i></button>
+                <div class="carousel-indicators"></div>
+                <span class="carousel-counter" aria-live="polite"></span>
+                <button type="button" class="carousel-btn next" aria-label="Next image"><i class="bx bx-chevron-right" aria-hidden="true"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-group">
+            <h3 class="gallery-title">Demeter Update — in development</h3>
+            <p class="gallery-desc">Real screenshots from the development build, with a new character and a new look. Not released yet; they may change before launch.</p>
+            <div class="carousel" data-carousel role="region" aria-roledescription="carousel" aria-label="Demeter Update screenshots, in development" tabindex="0">
+              <div class="carousel-viewport">
+                <figure class="carousel-slide">
+                  <img src="../../../projetos/img/ecos-olimpo/demeter-campo.webp" alt="A field of blue irises and sunflowers watered by sprinklers, with Seed Makers in the background" width="1920" height="1080" loading="lazy" decoding="async" />
+                  <figcaption>A field watered by sprinklers, with Seed Makers in the background (test build with an unlocked inventory).</figcaption>
+                </figure>
+                <figure class="carousel-slide">
+                  <img src="../../../projetos/img/ecos-olimpo/demeter-estatua.webp" alt="Demeter's statue restored in the middle of the forest, with an in-game message in Portuguese" width="1920" height="1080" loading="lazy" decoding="async" />
+                  <figcaption>Offering complete: Demeter's statue is restored and the forest comes back to life.</figcaption>
+                </figure>
+                <figure class="carousel-slide">
+                  <img src="../../../projetos/img/ecos-olimpo/demeter-aspersores.webp" alt="Player placing sprinklers that water the soil around them in the garden" width="1920" height="1080" loading="lazy" decoding="async" />
+                  <figcaption>Sprinklers water the surrounding soil and speed up crops (test build).</figcaption>
+                </figure>
+                <figure class="carousel-slide">
+                  <img src="../../../projetos/img/ecos-olimpo/demeter-fabricadores.webp" alt="Rows of Seed Makers with seeds ready to collect" width="1920" height="1080" loading="lazy" decoding="async" />
+                  <figcaption>Seed Makers: automated seed production (test build).</figcaption>
+                </figure>
+                <figure class="carousel-slide">
+                  <img src="../../../projetos/img/ecos-olimpo/demeter-mesa-aspersor.webp" alt="Workbench showing the Sprinkler recipe and the finished item in the output slot (interface in Portuguese)" width="1920" height="1080" loading="lazy" decoding="async" />
+                  <figcaption>The workbench with the Sprinkler recipe, in the new interface.</figcaption>
+                </figure>
+                <figure class="carousel-slide">
+                  <img src="../../../projetos/img/ecos-olimpo/demeter-colheita.webp" alt="Player harvesting blue irises in the garden, with pop-ups for the flower and new seeds" width="1920" height="1080" loading="lazy" decoding="async" />
+                  <figcaption>Harvesting blue irises, which yields flowers and new seeds.</figcaption>
+                </figure>
+              </div>
+              <div class="carousel-controls">
+                <button type="button" class="carousel-btn prev" aria-label="Previous image"><i class="bx bx-chevron-left" aria-hidden="true"></i></button>
+                <div class="carousel-indicators"></div>
+                <span class="carousel-counter" aria-live="polite"></span>
+                <button type="button" class="carousel-btn next" aria-label="Next image"><i class="bx bx-chevron-right" aria-hidden="true"></i></button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 12. Links -->
+        <section class="case-section" aria-labelledby="links-title">
+          <h2 class="case-title" id="links-title">Links</h2>
+          <div class="button-row">
+            <a href="https://fzf-dev.itch.io/ecos-do-olimpo" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+              Play on itch.io <i class="bx bx-joystick" aria-hidden="true"></i>
+            </a>
+            <a href="https://ecos-do-olimpo.felipezfroes.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              Official website <i class="bx bx-globe" aria-hidden="true"></i>
+            </a>
+            <a href="https://ecos-do-olimpo.felipezfroes.com#waitlist" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              Waitlist <i class="bx bx-bell" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.youtube.com/@FZFDev" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              Devlogs <i class="bx bxl-youtube" aria-hidden="true"></i>
+            </a>
+          </div>
+        </section>
+      </div>
+
+      <nav class="case-nav" aria-label="Other case studies">
+        <a href="../maniprotein/" class="prev">
+          <span>← Previous</span>
+          <strong>ManiProtein</strong>
+        </a>
+        <a href="../chipre/" class="next">
+          <span>Next →</span>
+          <strong>C.H.I.P.R.E.</strong>
+        </a>
+      </nav>
+
+      <aside class="case-cta" aria-label="Contact">
+        <div class="case-cta-box">
+          <div>
+            <h2>Have a project or a role in mind?</h2>
+            <p>I'm open to internships, freelance web development projects and technical collaborations.</p>
+          </div>
+          <a href="../../#contact" class="btn btn-primary">
+            Get in touch <i class="bx bx-message-rounded-dots" aria-hidden="true"></i>
+          </a>
+        </div>
+      </aside>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <a href="../../" class="footer-logo" aria-label="FZF — homepage">FZF<span>.</span></a>
+        <p>Front-end developer in training: web, automation and games. Software Engineering and Digital Games student.</p>
+      </div>
+      <div class="footer-socials">
+        <a href="https://github.com/felipezfroes" target="_blank" rel="noopener noreferrer" aria-label="GitHub (opens in a new tab)"><i class="bx bxl-github" aria-hidden="true"></i></a>
+        <a href="https://www.linkedin.com/in/felipezfroesdev/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in a new tab)"><i class="bx bxl-linkedin" aria-hidden="true"></i></a>
+        <a href="https://fzf-dev.itch.io" target="_blank" rel="noopener noreferrer" aria-label="itch.io (opens in a new tab)"><i class="bx bx-joystick" aria-hidden="true"></i></a>
+        <a href="https://www.youtube.com/@FZFDev" target="_blank" rel="noopener noreferrer" aria-label="FZF Dev on YouTube (opens in a new tab)"><i class="bx bxl-youtube" aria-hidden="true"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 Felipe Zotareli Froes · FZF Dev</div>
+  </footer>
+
+  <script src="../../../js/main.js?v=20261104" defer></script>
+  <script src="../../../projetos/js/gallery.js?v=20261104" defer></script>
+</body>
+</html>
